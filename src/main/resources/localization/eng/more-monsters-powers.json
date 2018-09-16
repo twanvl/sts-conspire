@@ -1,0 +1,44 @@
+{
+  "CubeRune": {
+    "NAME": "Cubic Rune",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card, take #b"," damage."
+    ]
+  },
+  "DomedRune": {
+    "NAME": "Dome-shaped Rune",
+    "DESCRIPTIONS": [
+      "You can no longer see enemy intents."
+    ]
+  },
+  "Ghostly": {
+    "NAME": "Ghostly",
+    "DESCRIPTIONS": [
+      "Reduce the first damage taken to #b1 each turn."
+    ]
+  },
+  "TemporaryConfusion": {
+    "NAME": "Temporary Confusion",
+    "DESCRIPTIONS": [
+      "For #b"," turns, whenever you draw a card, randomize its cost."
+    ]
+  },
+  "Capricious": {
+    "NAME": "Capricious",
+    "DESCRIPTION": [
+      "Changes its intent each time you play a card."
+    ]
+  },
+  "ReflectAttack": {
+    "NAME": "Mirrored Claws",
+    "DESCRIPTIONS": [
+      "When receiving damage, deals #b","% back next turn."
+    ]
+  },
+  "ReflectBlock": {
+    "NAME": "Mirrored Hide",
+    "DESCRIPTIONS": [
+      "Whenever you gain block, gains #b","% block next turn."
+    ]
+  }
+}

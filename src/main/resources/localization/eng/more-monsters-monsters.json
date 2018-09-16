@@ -1,0 +1,12 @@
+{
+  "RoseBush": {
+    "NAME": "Rose Bush",
+    "MOVES": ["Prick","Grow"],
+    "DIALOG": []
+  },
+  "GlowingRune": {
+    "NAME": "Mysterious Rune",
+    "MOVES": ["Dome","Pyramid","Cube","Glow"],
+    "DIALOG": []
+  }
+}

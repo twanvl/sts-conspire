@@ -1,0 +1,74 @@
+package moremonsters;
+
+import java.nio.charset.StandardCharsets;
+
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.localization.RelicStrings;
+import com.megacrit.cardcrawl.monsters.MonsterInfo;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
+
+import basemod.BaseMod;
+import basemod.helpers.RelicType;
+import basemod.interfaces.EditCardsSubscriber;
+import basemod.interfaces.EditCharactersSubscriber;
+import basemod.interfaces.EditRelicsSubscriber;
+import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.PostInitializeSubscriber;
+
+import moremonsters.monsters.*;
+
+@SpireInitializer
+public class MoreMonsters implements
+        PostInitializeSubscriber,
+        EditCardsSubscriber,
+        EditStringsSubscriber {
+    public static final String MODNAME = "More Monsters";
+    public static final String AUTHOR = "twanvl";
+    public static final String DESCRIPTION = "Adds new monsters, elites and bosses.";
+
+    public MoreMonsters() {
+        BaseMod.subscribe(this);
+    }
+
+    public static void initialize() {
+        new MoreMonsters();
+    }
+
+    @Override
+    public void receivePostInitialize() {
+        Texture badgeTexture = new Texture("images/MoreMonstersBadge.png");
+        BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, null);
+        receiveEditMonsters();
+    }
+
+    public void receiveEditMonsters() {
+        BaseMod.addMonster(RoseBush.ENCOUNTER_NAME, RoseBush.NAME, () -> new RoseBush(0.0f, 0.0f));
+        BaseMod.addMonster(RoseBush.DOUBLE_ENCOUNTER_NAME, RoseBush.DOUBLE_ENCOUNTER_NAME, () -> new MonsterGroup(
+                new AbstractMonster[] { new RoseBush(-280.0f, 10.0f), new RoseBush(80.0f, 30.0f) }));
+        BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(RoseBush.ENCOUNTER_NAME, 2.0f));
+        BaseMod.addStrongMonsterEncounter(Exordium.ID, new MonsterInfo(RoseBush.DOUBLE_ENCOUNTER_NAME, 1.5f));
+    }
+
+    @Override
+    public void receiveEditStrings() {
+        BaseMod.loadCustomStrings(CardStrings.class, loadJson("localization/eng/more-monsters-cards.json"));
+        BaseMod.loadCustomStrings(MonsterStrings.class, loadJson("localization/eng/more-monsters-monsters.json"));
+        BaseMod.loadCustomStrings(PowerStrings.class, loadJson("localization/eng/more-monsters-powers.json"));
+    }
+    private static String loadJson(String jsonPath) {
+        return Gdx.files.internal(jsonPath).readString(String.valueOf(StandardCharsets.UTF_8));
+    }
+
+    @Override
+    public void receiveEditCards() {
+
+    }
+}
+

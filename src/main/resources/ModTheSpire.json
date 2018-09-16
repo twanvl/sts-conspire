@@ -1,0 +1,11 @@
+{
+  "modid": "MoreMonsters",
+  "name": "More Monsters",
+  "author_list": ["twanvl"],
+  "description": "Adds new monsters, elites and bosses.",
+  "version": "1.0.0",
+  "sts_version": "08-30-2018",
+  "mts_version": "3.0.0",
+  "dependencies": ["basemod"],
+  "update_json": "https://api.github.com/repos/twanvl/sts-more-monsters/releases/latest"
+}
