@@ -10,10 +10,13 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
+import moremonsters.helpers.AscensionHelper;
 import moremonsters.helpers.MovePicker;
 
 public class RoseBush extends AbstractMonster {
@@ -32,43 +35,69 @@ public class RoseBush extends AbstractMonster {
     // stats
     private static final int HP_MIN = 30;
     private static final int HP_MAX = 35;
-    private static final int HP_MIN_A7 = HP_MIN + 5;
-    private static final int HP_MAX_A7 = HP_MAX + 5;
+    private static final int HP_MIN_A = HP_MIN + 5;
+    private static final int HP_MAX_A = HP_MAX + 5;
     private static final int THORNS = 2;
-    private static final int THORNS_A2 = 3;
+    private static final int THORNS_A = 3;
     private static final int ATTACK_DMG = 4;
-    private static final int ATTACK_DMG_A2 = 5;
+    private static final int ATTACK_DMG_A = 5;
     private static final int PRICK_DMG = 1;
-    private static final int PRICK_DMG_A2 = 1;
+    private static final int PRICK_DMG_A = 1;
     private static final int PRICK_WEAK = 1;
-    private static final int PRICK_WEAK_A17 = 1;
+    private static final int PRICK_WEAK_A = 2;
     private static final int GROW_STRENGTH = 2;
-    private static final int GROW_STRENGTH_A17 = 3;
+    private static final int GROW_STRENGTH_A = 3;
     private int thornsAmt;
     private int attackDmg;
     private int prickDmg;
     private int prickWeak;
     private int growStrength;
+    private RoseColor color;
     // moves
     private static final byte ATTACK = 1;
     private static final byte PRICK  = 2;
     private static final byte GROW   = 3;
 
+    enum RoseColor {
+        RED, WHITE, YELLOW
+    }
+
     public RoseBush(float x, float y) {
-        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "images/monsters/RoseBush.png", x, y);
-        if (AbstractDungeon.ascensionLevel >= 7) {
-            this.setHp(HP_MIN_A7, HP_MAX_A7);
+        this(x,y,randomColor());
+    }
+
+    public RoseBush(float x, float y, RoseColor color) {
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, imageFile(color), x, y);
+        this.color = color;
+        if (AscensionHelper.tougher(this.type)) {
+            this.setHp(HP_MIN_A, HP_MAX_A);
         } else {
             this.setHp(HP_MIN, HP_MAX);
         }
         // damage amounts
-        this.thornsAmt    = AbstractDungeon.ascensionLevel >= 2 ? THORNS_A2 : THORNS;
-        this.attackDmg    = AbstractDungeon.ascensionLevel >= 2 ? ATTACK_DMG_A2 : ATTACK_DMG;
-        this.prickDmg     = AbstractDungeon.ascensionLevel >= 2 ? PRICK_DMG_A2 : PRICK_DMG;
-        this.prickWeak    = AbstractDungeon.ascensionLevel >= 2 ? PRICK_WEAK_A17 : PRICK_WEAK;
-        this.growStrength = AbstractDungeon.ascensionLevel >= 17 ? GROW_STRENGTH_A17 : GROW_STRENGTH;
+        this.thornsAmt    = AscensionHelper.deadlier(this.type) ? THORNS_A : THORNS;
+        this.attackDmg    = AscensionHelper.deadlier(this.type) ? ATTACK_DMG_A : ATTACK_DMG;
+        this.prickDmg     = AscensionHelper.deadlier(this.type) ? PRICK_DMG_A : PRICK_DMG;
+        this.prickWeak    = AscensionHelper.harder(this.type) ? PRICK_WEAK_A : PRICK_WEAK;
+        this.growStrength = AscensionHelper.harder(this.type) ? GROW_STRENGTH_A : GROW_STRENGTH;
         this.damage.add(new DamageInfo(this, attackDmg));
         this.damage.add(new DamageInfo(this, prickDmg));
+    }
+
+    private static RoseColor randomColor() {
+        int i = AbstractDungeon.monsterHpRng.random(2);
+        if (i == 0)      return RoseColor.RED;
+        else if (i == 1) return RoseColor.WHITE;
+        else             return RoseColor.YELLOW;
+    }
+
+    private static String imageFile(RoseColor c) {
+        switch (c) {
+            case RED:    return "images/monsters/RoseBush.png";
+            case WHITE:  return "images/monsters/RoseBushW.png";
+            case YELLOW: return "images/monsters/RoseBushY.png";
+        }
+        return "";
     }
 
     @Override
@@ -87,7 +116,20 @@ public class RoseBush extends AbstractMonster {
             case PRICK: {
                 AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(this));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AttackEffect.BLUNT_LIGHT));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.prickWeak, true), prickWeak));
+                switch (this.color) {
+                    case RED: {
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.prickWeak, true), prickWeak));
+                        break;
+                    }
+                    case WHITE: {
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, this.prickWeak, true), prickWeak));
+                        break;
+                    }
+                    case YELLOW: {
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, this.prickWeak, true), prickWeak));
+                        break;
+                    }
+                }
                 break;
             }
             case GROW: {
