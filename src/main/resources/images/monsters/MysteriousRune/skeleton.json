@@ -1,0 +1,260 @@
+{
+  "skeleton": { "hash": "", "spine": "3.4.02", "width": 300, "height": 455, "images": "./images/" },
+  "bones": [
+    { "name": "root", "x": 0, "y": 225 },
+    { "name": "Ao", "parent": "root", "x": 10, "y": 0, "length": 10, "rotation": 180, "color": "55ffffff" },
+    { "name": "Bo", "parent": "root", "x": -10, "y": 0, "length": 10, "rotation": 180, "color": "55ffffff" },
+    { "name": "A", "parent": "Ao", "x": 10, "y": 0, "length": 10, "rotation": 180, "color": "ff55ffff" },
+    { "name": "B", "parent": "Bo", "x": -10, "y": 0, "length": 10, "rotation": 180, "color": "ff55ffff" },
+    { "name": "B1", "parent": "B", "x": 0, "y": 113.5 },
+    { "name": "B2", "parent": "B", "x": 0, "y": -114 },
+    { "name": "shadow", "parent": "root", "x": 0, "y": -225, "scaleX": 0.85 }
+  ],
+  "slots": [
+    { "name": "glowB1", "bone": "B1", "attachment": "glowB1" },
+    { "name": "runeB1", "bone": "B1", "attachment": "runeB1" },
+    { "name": "glowA",  "bone": "A",  "attachment": "glowA" },
+    { "name": "runeA",  "bone": "A",  "attachment": "runeA" },
+    { "name": "glowB2", "bone": "B2", "attachment": "glowB2" },
+    { "name": "runeB2", "bone": "B2", "attachment": "runeB2" },
+    { "name": "shadow", "bone": "shadow", "attachment": "shadow" }
+  ],
+  "skins": {
+    "default": {
+      "runeB1": { "runeB1": { "x": 0, "y": 0, "width": 300, "height": 227 } },
+      "glowB1": { "glowB1": { "x": 0, "y": 0, "width": 300, "height": 227 } },
+      "glowA":  { "glowA":  { "x": 0, "y": 0, "width": 300, "height": 455 } },
+      "runeA":  { "runeA":  { "x": 0, "y": 0, "width": 300, "height": 455 } },
+      "glowB2": { "glowB2": { "x": 0, "y": 0, "width": 300, "height": 228 } },
+      "runeB2": { "runeB2": { "x": 0, "y": 0, "width": 300, "height": 228 } },
+      "shadow": { "shadow": { "x": 0, "y": 0, "width": 240, "height": 33 } }
+    }
+  },
+  "animations": {
+    "Idle": {
+      "bones": {
+        "Ao": {
+          "rotate": [
+            { "time": 0, "angle": 0 },
+            { "time": 2, "angle": 120 },
+            { "time": 4, "angle": 240 },
+            { "time": 6, "angle": 360 }
+          ]
+        },
+        "A": {
+          "rotate": [
+            { "time": 0, "angle": -0 },
+            { "time": 2, "angle": -120 },
+            { "time": 4, "angle": -240 },
+            { "time": 6, "angle": -360 }
+          ]
+        },
+        "Bo": {
+          "rotate": [
+            { "time": 0, "angle": 0 },
+            { "time": 2, "angle": 120 },
+            { "time": 4, "angle": 240 },
+            { "time": 6, "angle": 360 }
+          ]
+        },
+        "B": {
+          "rotate": [
+            { "time": 0, "angle": -0 },
+            { "time": 2, "angle": -120 },
+            { "time": 4, "angle": -240 },
+            { "time": 6, "angle": -360 }
+          ]
+        },
+        "shadow": {
+          "scale": [
+            { "time": 0, "x": 1.0, "y": 1,   "curve": [0.5,0,0.5,1] },
+            { "time": 3, "x": 1.1, "y": 0.9, "curve": [0.5,0,0.5,1] },
+            { "time": 6, "x": 1.0, "y": 1 }
+          ]
+        }
+      },
+      "slots": {
+        "glowA": {
+          "color": [
+            { "time": 0, "color": "ffffffff" },
+            { "time": 2, "color": "ffffffbb" },
+            { "time": 3, "color": "88888888" },
+            { "time": 4, "color": "ddddddcc" },
+            { "time": 6, "color": "ffffffff" }
+          ]
+        },
+        "glowB1": {
+          "color": [
+            { "time": 0, "color": "ffffffff" },
+            { "time": 2, "color": "ffffffbb" },
+            { "time": 3, "color": "88888888" },
+            { "time": 4, "color": "ddddddcc" },
+            { "time": 6, "color": "ffffffff" }
+          ]
+        },
+        "glowB2": {
+          "color": [
+            { "time": 0, "color": "ffffffff" },
+            { "time": 2, "color": "ffffffbb" },
+            { "time": 3, "color": "88888888" },
+            { "time": 4, "color": "ddddddcc" },
+            { "time": 6, "color": "ffffffff" }
+          ]
+        }
+      }
+    },
+    "OldIdle": {
+      "bones": {
+        "A": {
+          "translate": [
+            { "time": 0, "x": 0,  "y": 0,   "curve": [ 0.1, 0.1, 0.7, 1 ] },
+            { "time": 1, "x": 10, "y": -10, "curve": [ 0.3, 0, 0.9, 0.9 ] },
+            { "time": 2, "x": 0,  "y": 0,   "curve": [ 0.1, 0.1, 0.7, 1 ] },
+            { "time": 3, "x": 10, "y": 10,  "curve": [ 0.3, 0, 0.9, 0.9 ] },
+            { "time": 4, "x": 0,  "y": 0 }
+          ]
+        },
+        "B": {
+          "translate": [
+            { "time": 0, "x": 0,   "y": 0,   "curve": [ 0.1, 0.1, 0.7, 1 ] },
+            { "time": 1, "x": -10, "y": 10,  "curve": [ 0.3, 0, 0.9, 0.9 ] },
+            { "time": 2, "x": 0,   "y": 0,   "curve": [ 0.1, 0.1, 0.7, 1 ] },
+            { "time": 3, "x": -10, "y": -10, "curve": [ 0.3, 0, 0.9, 0.9 ] },
+            { "time": 4, "x": 0,   "y": 0 }
+          ]
+        }
+      },
+      "slots": {
+        "glowA": {
+          "color": [
+            { "time": 0, "color": "ffffffdd" },
+            { "time": 1, "color": "ffffff88" },
+            { "time": 2, "color": "ffffffff" },
+            { "time": 3, "color": "ffffff88" },
+            { "time": 4, "color": "ffffffdd" }
+          ]
+        },
+        "glowB1": {
+          "color": [
+            { "time": 0, "color": "ffffffff" },
+            { "time": 1, "color": "ffffff88" },
+            { "time": 2, "color": "ffffffdd" },
+            { "time": 3, "color": "ffffff88" },
+            { "time": 4, "color": "ffffffff" }
+          ]
+        },
+        "glowB2": {
+          "color": [
+            { "time": 0, "color": "ffffffff" },
+            { "time": 1, "color": "ffffff88" },
+            { "time": 2, "color": "ffffffdd" },
+            { "time": 3, "color": "ffffff88" },
+            { "time": 4, "color": "ffffffff" }
+          ]
+        }
+      }
+    },
+    "Hit": {
+      "bones": {
+        "A": {
+          "translate": [
+            { "time": 0,   "x": 0,  "y": 0, "curve": [ 0.5, 0, 0.9, 0.9 ] },
+            { "time": 0.2, "x": 8, "y": 0 },
+            { "time": 0.65, "x": -2, "y": 0, "curve": [ 0.1, 0.2, 0.5, 1 ] },
+            { "time": 0.8, "x": 0,  "y": 0 }
+          ]
+        },
+        "B": {
+          "translate": [
+            { "time": 0,   "x": 0,  "y": 0, "curve": [ 0.5, 0, 0.9, 0.9 ] },
+            { "time": 0.2, "x": -8, "y": 0 },
+            { "time": 0.65, "x": 2, "y": 0, "curve": [ 0.1, 0.2, 0.5, 1 ] },
+            { "time": 0.8, "x": 0,  "y": 0 }
+          ]
+        },
+        "shadow": {
+          "scale": [
+            { "time": 0, "x": 1, "y": 1, "curve": [ 0.5, 0, 0.9, 0.9 ] },
+            { "time": 0.2, "x": 1.02, "y": 1 },
+            { "time": 0.45, "x": 1, "y": 1 },
+            { "time": 0.65, "x": 1.02, "y": 1 },
+            { "time": 0.8, "x": 1, "y": 1 }
+          ]
+        }
+      },
+      "slots": {
+        "glowA": {
+          "color": [
+            { "time": 0,   "color": "ffffffdd" },
+            { "time": 0.2, "color": "88888800" },
+            { "time": 0.6, "color": "ffffffdd" }
+          ]
+        },
+        "glowB1": {
+          "color": [
+            { "time": 0,   "color": "ffffffdd" },
+            { "time": 0.2, "color": "88888800" },
+            { "time": 0.6, "color": "ffffffdd" }
+          ]
+        },
+        "glowB2": {
+          "color": [
+            { "time": 0,   "color": "ffffffdd" },
+            { "time": 0.2, "color": "88888800" },
+            { "time": 0.6, "color": "ffffffdd" }
+          ]
+        }
+      }
+    },
+    "Glow": {
+      "slots": {
+        "glowA": {
+          "color": [
+            { "time": 0, "color": "ffffffff", "curve": [ 0.3, 0, 0.9, 0.9 ] },
+            { "time": 0.1, "color": "ff0000ff", "curve": [ 0.1, 0.1, 0.7, 1 ] },
+            { "time": 0.5, "color": "ffffffff" }
+          ]
+        },
+        "glowB1": {
+          "color": [
+            { "time": 0, "color": "ffffffff", "curve": [ 0.3, 0, 0.9, 0.9 ] },
+            { "time": 0.1, "color": "ff0000ff", "curve": [ 0.1, 0.1, 0.7, 1 ] },
+            { "time": 0.5, "color": "ffffffff" }
+          ]
+        },
+        "glowB2": {
+          "color": [
+            { "time": 0, "color": "ffffffff", "curve": [ 0.3, 0, 0.9, 0.9 ] },
+            { "time": 0.1, "color": "ff0000ff", "curve": [ 0.1, 0.1, 0.7, 1 ] },
+            { "time": 0.5, "color": "ffffffff" }
+          ]
+        }
+      }
+    },
+    "Dark": {
+      "slots": {
+        "glowA": {
+          "color": [
+            { "time": 0, "color": "ffffffdd" },
+            { "time": 0.2, "color": "000000ff" },
+            { "time": 1, "color": "ffffffdd" }
+          ]
+        },
+        "glowB1": {
+          "color": [
+            { "time": 0, "color": "ffffffdd" },
+            { "time": 0.2, "color": "000000ff" },
+            { "time": 1, "color": "ffffffdd" }
+          ]
+        },
+        "glowB2": {
+          "color": [
+            { "time": 0, "color": "ffffffdd" },
+            { "time": 0.2, "color": "000000ff" },
+            { "time": 1, "color": "ffffffdd" }
+          ]
+        }
+      }
+    }
+  }
+}
