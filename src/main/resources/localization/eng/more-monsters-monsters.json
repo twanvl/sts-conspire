@@ -4,9 +4,14 @@
     "MOVES": ["Prick","Grow"],
     "DIALOG": []
   },
-  "GlowingRune": {
+  "SneckoGhost": {
+    "NAME": "Snecko Ghost",
+    "MOVES": ["Perplexing Glare","Tail Whip","Bite"],
+    "DIALOG": []
+  },
+  "MysteriousRune": {
     "NAME": "Mysterious Rune",
-    "MOVES": ["Dome","Pyramid","Cube","Glow"],
+    "MOVES": ["Glow","Dome","Pyramid","Cube","Capacitor"],
     "DIALOG": []
   }
 }

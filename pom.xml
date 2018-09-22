@@ -52,17 +52,24 @@
           <excludes>
             <exclude>**/*.xcf</exclude>
             <exclude>**/*.pl</exclude>
+            <exclude>**/*.sh</exclude>
             <exclude>**/*.svg</exclude>
             <exclude>**/Makefile</exclude>
-            <exclude>**/.goutputstream</exclude>
-            <exclude>img/cards/large</exclude>
-            <exclude>img/cards/large/*</exclude>
-            <exclude>img/monsters/large</exclude>
-            <exclude>img/monsters/large/*</exclude>
-            <exclude>img/powers/large</exclude>
-            <exclude>img/powers/large/*</exclude>
-            <exclude>img/relics/large</exclude>
-            <exclude>img/relics/large/*</exclude>
+            <exclude>**/.goutputstream*</exclude>
+            <exclude>**/packer-config.json</exclude>
+            <exclude>images/cards/large</exclude>
+            <exclude>images/cards/large/**</exclude>
+            <exclude>images/monsters/large</exclude>
+            <exclude>images/monsters/large/**</exclude>
+            <exclude>images/monsters/*/large/**</exclude>
+            <exclude>images/monsters/*/images/**</exclude>
+            <exclude>images/monsters/*/images2/**</exclude>
+            <exclude>images/monsters/*/junk/**</exclude>
+            <exclude>images/monsters/*/output/**</exclude>
+            <exclude>images/powers/large</exclude>
+            <exclude>images/powers/large/*</exclude>
+            <exclude>images/relics/large</exclude>
+            <exclude>images/relics/large/*</exclude>
           </excludes>
         </configuration>
       </plugin>
