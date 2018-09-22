@@ -29,7 +29,7 @@ public class RoseBush extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     // location
     private static final float HB_X = 0.0f;
-    private static final float HB_Y = -6.0f;
+    private static final float HB_Y = 0.0f;
     private static final float HB_W = 260.0f;
     private static final float HB_H = 220.0f;
     // stats
