@@ -46,6 +46,7 @@ public class MysteriousRune extends AbstractMonster {
     private static final int ATTACK_DMG_A = ATTACK_DMG + 3;
     private static final int ATTACK_2_DMG = 6;
     private static final int ATTACK_2_DMG_A = ATTACK_DMG + 2;
+    private static final int ATTACK_2_TIMES = 2;
     private static final int DEBUFF_DMG = 9;
     private static final int DEBUFF_DMG_A = DEBUFF_DMG + 2;
     private static final int PYRAMID_AMT = 3;
@@ -123,17 +124,25 @@ public class MysteriousRune extends AbstractMonster {
     @Override
     public void changeState(String stateName) {
         switch (stateName) {
+            case "ROTATE": {
+                this.state.setAnimation(0, "Rotate", false);
+                this.state.addAnimation(0, "Idle", true, 0.0f);
+                break;
+            }
             case "GLOW": {
                 this.state.setAnimation(0, "Glow", false);
                 this.state.addAnimation(0, "Idle", true, 0.0f);
+                break;
             }
             case "DARK": {
                 this.state.setAnimation(0, "Dark", false);
                 this.state.addAnimation(0, "Idle", true, 0.0f);
+                break;
             }
             case "BUFF": {
                 this.state.setAnimation(0, "Buff", false);
                 this.state.addAnimation(0, "Idle", true, 0.0f);
+                break;
             }
         }
     }
@@ -151,14 +160,15 @@ public class MysteriousRune extends AbstractMonster {
     public void takeTurn() {
         switch (this.nextMove) {
             case ATTACK: {
-                AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(this));
+                AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "ROTATE"));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AttackEffect.BLUNT_HEAVY));
                 break;
             }
             case ATTACK_2: {
                 AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(this));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AttackEffect.BLUNT_LIGHT));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AttackEffect.BLUNT_LIGHT));
+                for (int i = 0 ; i < ATTACK_2_TIMES ; i++) {
+                    AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AttackEffect.BLUNT_LIGHT));
+                }
                 break;
             }
             case DOME: {
@@ -205,13 +215,13 @@ public class MysteriousRune extends AbstractMonster {
             moves.add(MOVES[0], ATTACK, Intent.ATTACK, this.damage.get(0).base, 1.0f);
         }
         if (!this.lastMove(ATTACK_2) && !this.moveHistory.isEmpty()) {
-            moves.add(MOVES[1], ATTACK_2, Intent.ATTACK, this.damage.get(0).base, 1.0f);
+            moves.add(MOVES[1], ATTACK_2, Intent.ATTACK, this.damage.get(1).base, ATTACK_2_TIMES, true, 1.0f);
         }
         if (this.lastMove(ATTACK) || this.lastMove(ATTACK_2) || this.moveHistory.isEmpty()) {
-            if (!doneDome) moves.add(MOVES[2], DOME, Intent.ATTACK_DEBUFF, this.damage.get(1).base, 0.5f);
-            if (!doneCube) moves.add(MOVES[3], CUBE, Intent.ATTACK_DEBUFF, this.damage.get(2).base, 1.0f);
-            if (!this.lastMove(PYRAMID)) moves.add(MOVES[4], PYRAMID, Intent.ATTACK_DEBUFF, this.damage.get(3).base, 1.0f);
-            if (!doneCapacitor && AbstractDungeon.player.hasOrb()) moves.add(MOVES[5], CAPACITOR, Intent.ATTACK_DEBUFF, this.damage.get(4).base, 1.0f);
+            if (!doneDome) moves.add(MOVES[2], DOME, Intent.ATTACK_DEBUFF, this.damage.get(2).base, 0.5f);
+            if (!doneCube) moves.add(MOVES[3], CUBE, Intent.ATTACK_DEBUFF, this.damage.get(3).base, 1.0f);
+            if (!this.lastMove(PYRAMID)) moves.add(MOVES[4], PYRAMID, Intent.ATTACK_DEBUFF, this.damage.get(4).base, 1.0f);
+            if (!doneCapacitor && AbstractDungeon.player.hasOrb()) moves.add(MOVES[5], CAPACITOR, Intent.ATTACK_DEBUFF, this.damage.get(5).base, 1.0f);
             if (!this.hasPower(DodecahedronRunePower.POWER_ID)) moves.add(MOVES[6], DODECAHEDRON, Intent.BUFF, 2.0f);
         }
         moves.pickRandomMove(this);

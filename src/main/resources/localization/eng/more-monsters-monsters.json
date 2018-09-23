@@ -11,7 +11,7 @@
   },
   "MysteriousRune": {
     "NAME": "Mysterious Rune",
-    "MOVES": ["Glow","Revolve","Dome","Pyramid","Cube","Capacitor","Dodecahedron"],
+    "MOVES": ["Sphere","Plane","Dome","Cube","Pyramid","Capacitor","Dodecahedron"],
     "DIALOG": []
   },
   "FuzzyDie": {

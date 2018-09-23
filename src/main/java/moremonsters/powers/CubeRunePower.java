@@ -41,7 +41,7 @@ public class CubeRunePower extends AbstractPower implements PostDrawSubscriber {
         if (AbstractDungeon.player.hasPower(POWER_ID)) {
             int aboutToDraw = AbstractDungeon.player.gameHandSize;
             aboutToDraw = Math.min(aboutToDraw, 10 - AbstractDungeon.player.hand.size());
-            AbstractDungeon.player.loseBlock(AbstractDungeon.player.currentBlock - aboutToDraw);
+            AbstractDungeon.player.loseBlock(Math.max(0, AbstractDungeon.player.currentBlock - aboutToDraw));
         } else {
             AbstractDungeon.player.loseBlock();
         }
