@@ -1,4 +1,3 @@
-// Make TemporaryConfusion work like confusion
 package moremonsters.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
@@ -18,14 +17,6 @@ public class GameActionManagerNextActionPatch {
                 // check for CubeRunePower
                 if (m.getMethodName().equals("loseBlock") && first) {
                     first = false;
-                    // Note: this hideous code is needed to prevent CannotCompileException: inconsistent stack height -1
-                    //m.replace("if ( com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.hasPower(moremonsters.powers.CubeRunePower.POWER_ID))) { $_ = moremonsters.powers.CubeRunePower.loseBlockReplacement(); } else { $_ = $proceed($$); }");
-                    /*m.replace(
-                        "if (com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.hasPower(moremonsters.powers.CubeRunePower.POWER_ID)) {"+
-                            "moremonsters.powers.CubeRunePower.loseBlockReplacement();"+
-                        "} else {"+
-                            "$_ = $proceed($$);"+
-                        "}");*/
                     m.replace("moremonsters.powers.CubeRunePower.loseBlockReplacement();");
                 }
             }
