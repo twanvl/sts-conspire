@@ -10,20 +10,18 @@ import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.localization.RelicStrings;
-import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.monsters.MonsterInfo;
 
 import basemod.BaseMod;
-import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
-import basemod.interfaces.EditCharactersSubscriber;
-import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
-
-import moremonsters.monsters.*;
+import moremonsters.monsters.FuzzyDie;
+import moremonsters.monsters.MysteriousRune;
+import moremonsters.monsters.RoseBush;
+import moremonsters.monsters.SneckoGhost;
 
 @SpireInitializer
 public class MoreMonsters implements
