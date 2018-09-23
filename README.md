@@ -2,10 +2,13 @@
 
 Adds new monsters, elites and bosses to Slay the Spire.
 
+![Fuzzy Dice](github_resources/FuzzyDice.png)
+![A Mysterious Rune](github_resources/MysteriousRune.png)
+
 ## Requirements ##
 * Slay the Spire
 * ModTheSpire v3.0.0 or newer (https://github.com/t-larson/ModTheSpire/releases)
-* BaseMod v3.0.0 or newer (https://github.com/daviscook477/BaseMod/releases)
+* BaseMod v3.2.0 or newer (https://github.com/daviscook477/BaseMod/releases)
 * Java 8+
 
 ## Installation ##
