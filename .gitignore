@@ -11,6 +11,8 @@ src/main/resources/images/cards/*.png
 src/main/resources/images/cards/large/old
 src/main/resources/images/monsters/RoseBush/*.atlas
 src/main/resources/images/monsters/RoseBush/skeleton*.png
+src/main/resources/images/monsters/FuzzyDie/*.atlas
+src/main/resources/images/monsters/FuzzyDie/skeleton*.png
 src/main/resources/images/relics/*.png
 src/main/resources/images/relics/outline
 src/main/resources/images/powers/32

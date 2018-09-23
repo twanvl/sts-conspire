@@ -7,11 +7,16 @@
   "SneckoGhost": {
     "NAME": "Snecko Ghost",
     "MOVES": ["Perplexing Glare","Tail Whip","Bite"],
-    "DIALOG": []
+    "DIALOG": ["Give back my ssskull","Give back my eye!"]
   },
   "MysteriousRune": {
     "NAME": "Mysterious Rune",
     "MOVES": ["Glow","Dome","Pyramid","Cube","Capacitor"],
+    "DIALOG": []
+  },
+  "FuzzyDie": {
+    "NAME": "Fuzzy Die",
+    "MOVES": ["Wound"],
     "DIALOG": []
   }
 }

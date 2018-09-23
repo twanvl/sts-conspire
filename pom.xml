@@ -55,6 +55,7 @@
             <exclude>**/*.sh</exclude>
             <exclude>**/*.hs</exclude>
             <exclude>**/*.svg</exclude>
+            <exclude>**/gimp/**</exclude>
             <exclude>**/Makefile</exclude>
             <exclude>**/.goutputstream*</exclude>
             <exclude>**/packer-config.json</exclude>
