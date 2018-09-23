@@ -212,10 +212,10 @@ public class MysteriousRune extends AbstractMonster {
     protected void getMove(int num) {
         MovePicker moves = new MovePicker();
         if (!this.lastMove(ATTACK) && !this.moveHistory.isEmpty()) {
-            moves.add(MOVES[0], ATTACK, Intent.ATTACK, this.damage.get(0).base, 1.0f);
+            moves.add(MOVES[0], ATTACK, Intent.ATTACK, this.damage.get(0).base, 1.2f);
         }
         if (!this.lastMove(ATTACK_2) && !this.moveHistory.isEmpty()) {
-            moves.add(MOVES[1], ATTACK_2, Intent.ATTACK, this.damage.get(1).base, ATTACK_2_TIMES, true, 1.0f);
+            moves.add(MOVES[1], ATTACK_2, Intent.ATTACK, this.damage.get(1).base, ATTACK_2_TIMES, true, 0.8f);
         }
         if (this.lastMove(ATTACK) || this.lastMove(ATTACK_2) || this.moveHistory.isEmpty()) {
             if (!doneDome) moves.add(MOVES[2], DOME, Intent.ATTACK_DEBUFF, this.damage.get(2).base, 0.5f);
