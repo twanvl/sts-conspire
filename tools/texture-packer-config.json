@@ -1,0 +1,7 @@
+{
+  "pot": false,
+  "rotation": true,
+  "filterMin": "Linear",
+  "filterMag": "Linear",
+  "premultiplyAlpha": true,
+}

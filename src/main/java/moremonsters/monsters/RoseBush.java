@@ -1,5 +1,7 @@
 package moremonsters.monsters;
 
+import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -30,8 +32,8 @@ public class RoseBush extends AbstractMonster {
     // location
     private static final float HB_X = 0.0f;
     private static final float HB_Y = 0.0f;
-    private static final float HB_W = 260.0f;
-    private static final float HB_H = 220.0f;
+    private static final float HB_W = 270.0f;
+    private static final float HB_H = 240.0f;
     // stats
     private static final int HP_MIN = 30;
     private static final int HP_MAX = 35;
@@ -67,8 +69,11 @@ public class RoseBush extends AbstractMonster {
     }
 
     public RoseBush(float x, float y, RoseColor color) {
-        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, imageFile(color), x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, null, x, y);
         this.color = color;
+        this.loadAnimation(atlasFile(color), "images/monsters/RoseBush/skeleton.json", 1.0f);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+        e.setTime(e.getEndTime() * MathUtils.random());
         if (AscensionHelper.tougher(this.type)) {
             this.setHp(HP_MIN_A, HP_MAX_A);
         } else {
@@ -91,11 +96,11 @@ public class RoseBush extends AbstractMonster {
         else             return RoseColor.YELLOW;
     }
 
-    private static String imageFile(RoseColor c) {
+    private static String atlasFile(RoseColor c) {
         switch (c) {
-            case RED:    return "images/monsters/RoseBush.png";
-            case WHITE:  return "images/monsters/RoseBushW.png";
-            case YELLOW: return "images/monsters/RoseBushY.png";
+            case RED:    return "images/monsters/RoseBush/skeletonR.atlas";
+            case WHITE:  return "images/monsters/RoseBush/skeletonW.atlas";
+            case YELLOW: return "images/monsters/RoseBush/skeletonY.atlas";
         }
         return "";
     }

@@ -53,6 +53,7 @@
             <exclude>**/*.xcf</exclude>
             <exclude>**/*.pl</exclude>
             <exclude>**/*.sh</exclude>
+            <exclude>**/*.hs</exclude>
             <exclude>**/*.svg</exclude>
             <exclude>**/Makefile</exclude>
             <exclude>**/.goutputstream*</exclude>
@@ -64,6 +65,7 @@
             <exclude>images/monsters/*/large/**</exclude>
             <exclude>images/monsters/*/images/**</exclude>
             <exclude>images/monsters/*/images2/**</exclude>
+            <exclude>images/monsters/*/images-*/**</exclude>
             <exclude>images/monsters/*/junk/**</exclude>
             <exclude>images/monsters/*/output/**</exclude>
             <exclude>images/powers/large</exclude>
