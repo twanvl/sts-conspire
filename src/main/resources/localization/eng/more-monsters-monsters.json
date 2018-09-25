@@ -18,5 +18,10 @@
     "NAME": "Fuzzy Die",
     "MOVES": ["Wound"],
     "DIALOG": []
+  },
+  "HeadLouse": {
+    "NAME": "Head Louse",
+    "MOVES": ["Shed","Defend","Grow"],
+    "DIALOG": []
   }
 }

@@ -9,7 +9,7 @@ Adds new monsters, elites and bosses to Slay the Spire.
 * Slay the Spire
 * ModTheSpire v3.0.0 or newer (https://github.com/t-larson/ModTheSpire/releases)
 * BaseMod v3.2.0 or newer (https://github.com/daviscook477/BaseMod/releases)
-* Java 8+
+* Java 8
 
 ## Installation ##
 1. [Download `ModTheSpire.jar`](https://github.com/kiooeht/ModTheSpire/releases)

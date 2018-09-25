@@ -3,7 +3,7 @@
 
   <groupId>moremonsters</groupId>
   <artifactId>MoreMonsters</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
 
   <name>MoreMonsters</name>
   <description>Adds new monsters, elites and bosses.</description>

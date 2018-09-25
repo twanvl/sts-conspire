@@ -3,7 +3,7 @@
   "name": "More Monsters",
   "author_list": ["twanvl"],
   "description": "Adds new monsters, elites and bosses.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "sts_version": "08-30-2018",
   "mts_version": "3.0.0",
   "dependencies": ["basemod"],
