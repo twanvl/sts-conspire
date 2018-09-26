@@ -226,4 +226,13 @@ public class MysteriousRune extends AbstractMonster {
         }
         moves.pickRandomMove(this);
     }
+
+    @Override
+    public void die() {
+        this.useFastShakeAnimation(5.0f);
+        CardCrawlGame.screenShake.rumble(4.0f);
+        this.deathTimer += 1.5f;
+        super.die();
+        this.onBossVictoryLogic();
+    }
 }
