@@ -31,7 +31,9 @@ public class DodecahedronRunePower extends AbstractPower {
     }
 
     public void onUseEnergy(int amount) {
-        AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, amount));
+        if (amount > 0) {
+            AbstractDungeon.actionManager.addToBottom(new ReducePowerAction(this.owner, this.owner, POWER_ID, amount));
+        }
     }
 
     @Override
