@@ -2,7 +2,8 @@
   "CubeRune": {
     "NAME": "Cubic Rune",
     "DESCRIPTIONS": [
-      "Whenever you draw a card, take #b"," damage. Damage at the start of your turn can be prevented with the previous turn's #yBlock."
+      "Whenever you draw a card, take #b"," damage. Damage at the start of your turn can be prevented with the previous turn's #yBlock.",
+      "At the end of your turn take #b"," damage for each card drawn.", " (Currently taking #b"," damage)"
     ]
   },
   "DomeRune": {
@@ -38,13 +39,25 @@
   "ReflectAttack": {
     "NAME": "Mirrored Claws",
     "DESCRIPTIONS": [
-      "When receiving damage, deals #b","% back next turn."
+      "When receiving damage, deals #b","% back next turn."," (Will deal #b"," damage)"
     ]
   },
   "ReflectBlock": {
     "NAME": "Mirrored Hide",
     "DESCRIPTIONS": [
-      "Whenever you gain block, gains #b","% block next turn."
+      "Whenever you gain #yBlock, gains #b","% Block next turn."," (Will gain #b"," #yBlock)"
     ]
+  },
+  "DivineProtection": {
+    "NAME": "Divine Protection",
+    "DESCRIPTIONS": ["Prevent all damage taken and HP loss."]
+  },
+  "DrawnBlood": {
+    "NAME": "Drawn Blood",
+    "DESCRIPTIONS": ["On death, heals you for #b"," #yHP"]
+  },
+  "Shedding": {
+    "NAME": "Shedding",
+    "DESCRIPTIONS": ["On taking #yAttack damage, spawns a minion. (Once per turn)"]
   }
 }
