@@ -1,0 +1,27 @@
+{
+  "conspire:RoseBush": {
+    "NAME": "Rose Bush",
+    "MOVES": ["Prick","Grow"],
+    "DIALOG": []
+  },
+  "conspire:SneckoGhost": {
+    "NAME": "Snecko Ghost",
+    "MOVES": ["Perplexing Glare","Tail Whip","Bite"],
+    "DIALOG": ["Give back my ssskull","Give back my eye!"]
+  },
+  "conspire:MysteriousRune": {
+    "NAME": "Mysterious Rune",
+    "MOVES": ["Sphere","Plane","Dome","Cube","Pyramid","Capacitor","Dodecahedron"],
+    "DIALOG": []
+  },
+  "conspire:FuzzyDie": {
+    "NAME": "Fuzzy Die",
+    "MOVES": ["Wound"],
+    "DIALOG": []
+  },
+  "conspire:HeadLouse": {
+    "NAME": "Head Louse",
+    "MOVES": ["Shed","Defend","Grow"],
+    "DIALOG": []
+  }
+}

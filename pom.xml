@@ -1,12 +1,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>moremonsters</groupId>
-  <artifactId>MoreMonsters</artifactId>
-  <version>1.1.0</version>
+  <groupId>conspire</groupId>
+  <artifactId>Conspire</artifactId>
+  <version>1.2.0</version>
 
-  <name>MoreMonsters</name>
-  <description>Adds new monsters, elites and bosses.</description>
+  <name>Conspire</name>
+  <description>Adds new monsters, elites, bosses, relics and cards.</description>
 
   <dependencies>
     <dependency>
@@ -33,7 +33,7 @@
   </dependencies>
 
   <build>
-    <finalName>MoreMonsters</finalName>
+    <finalName>Conspire</finalName>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -59,21 +59,21 @@
             <exclude>**/Makefile</exclude>
             <exclude>**/.goutputstream*</exclude>
             <exclude>**/packer-config.json</exclude>
-            <exclude>images/cards/large</exclude>
-            <exclude>images/cards/large/**</exclude>
-            <exclude>images/monsters/large</exclude>
-            <exclude>images/monsters/large/**</exclude>
-            <exclude>images/monsters/*/large/**</exclude>
-            <exclude>images/monsters/*/images/**</exclude>
-            <exclude>images/monsters/*/images2/**</exclude>
-            <exclude>images/monsters/*/images-*/**</exclude>
-            <exclude>images/monsters/*/scaled/**</exclude>
-            <exclude>images/monsters/*/junk/**</exclude>
-            <exclude>images/monsters/*/output/**</exclude>
-            <exclude>images/powers/large</exclude>
-            <exclude>images/powers/large/*</exclude>
-            <exclude>images/relics/large</exclude>
-            <exclude>images/relics/large/*</exclude>
+            <exclude>conspire/images/cards/large</exclude>
+            <exclude>conspire/images/cards/large/**</exclude>
+            <exclude>conspire/images/monsters/large</exclude>
+            <exclude>conspire/images/monsters/large/**</exclude>
+            <exclude>conspire/images/monsters/*/large/**</exclude>
+            <exclude>conspire/images/monsters/*/images/**</exclude>
+            <exclude>conspire/images/monsters/*/images2/**</exclude>
+            <exclude>conspire/images/monsters/*/images-*/**</exclude>
+            <exclude>conspire/images/monsters/*/scaled/**</exclude>
+            <exclude>conspire/images/monsters/*/junk/**</exclude>
+            <exclude>conspire/images/monsters/*/output/**</exclude>
+            <exclude>conspire/images/powers/large</exclude>
+            <exclude>conspire/images/powers/large/*</exclude>
+            <exclude>conspire/images/relics/large</exclude>
+            <exclude>conspire/images/relics/large/*</exclude>
           </excludes>
         </configuration>
       </plugin>
@@ -87,7 +87,7 @@
             <phase>package</phase>
             <configuration>
               <target>
-                <copy file="target/MoreMonsters.jar" tofile="../_ModTheSpire/mods/MoreMonsters.jar"/>
+                <copy file="target/Conspire.jar" tofile="../_ModTheSpire/mods/Conspire.jar"/>
               </target>
             </configuration>
             <goals>

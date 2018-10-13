@@ -1,0 +1,63 @@
+{
+  "conspire:CubeRune": {
+    "NAME": "Cubic Rune",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card, take #b"," damage. Damage at the start of your turn can be prevented with the previous turn's #yBlock.",
+      "At the end of your turn take #b"," damage for each card drawn.", " (Currently taking #b"," damage)"
+    ]
+  },
+  "conspire:DomeRune": {
+    "NAME": "Dome-shaped Rune",
+    "DESCRIPTIONS": [
+      "You can no longer see enemy intents."
+    ]
+  },
+  "conspire:DodecahedronRune": {
+    "NAME": "Dodecahedric Rune",
+    "DESCRIPTIONS": [
+      "After you spend #b"," energy, heals #b"," #yHP and gains #b"," #yStrength."
+    ]
+  },
+  "conspire:Ghostly": {
+    "NAME": "Ghostly",
+    "DESCRIPTIONS": [
+      "Reduce the first damage taken to #b1 each turn."
+    ]
+  },
+  "conspire:TemporaryConfusion": {
+    "NAME": "Temporary Confusion",
+    "DESCRIPTIONS": [
+      "For #b"," turns, whenever you draw a card, randomize its cost."
+    ]
+  },
+  "conspire:Capricious": {
+    "NAME": "Capricious",
+    "DESCRIPTIONS": [
+      "Changes its intent each time you play a card."
+    ]
+  },
+  "conspire:ReflectAttack": {
+    "NAME": "Mirrored Claws",
+    "DESCRIPTIONS": [
+      "When receiving damage, deals #b","% back next turn."," (Will deal #b"," damage)"
+    ]
+  },
+  "conspire:ReflectBlock": {
+    "NAME": "Mirrored Hide",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yBlock, gains #b","% Block next turn."," (Will gain #b"," #yBlock)"
+    ]
+  },
+  "conspire:DivineProtection": {
+    "NAME": "Divine Protection",
+    "DESCRIPTIONS": ["Prevent all damage taken and HP loss."]
+  },
+  "conspire:DrawnBlood": {
+    "NAME": "Drawn Blood",
+    "DESCRIPTIONS": ["On death, heals you for #b"," #yHP"]
+  },
+  "conspire:Shedding": {
+    "NAME": "Shedding",
+    "DESCRIPTIONS": ["On taking #yAttack damage, spawns a minion. (Once per turn)"]
+  }
+}

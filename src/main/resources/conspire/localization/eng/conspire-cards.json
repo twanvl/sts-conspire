@@ -1,0 +1,10 @@
+{
+  "conspire:PyramidRune": {
+    "NAME": "Pyramid Rune",
+    "DESCRIPTION": "Retain. NL Exhaust."
+  },
+  "conspire:InfernalBerry": {
+    "NAME": "Infernal Berry",
+    "DESCRIPTION": "Remove 1 Divine Protection. NL Exhaust."
+  }
+}
