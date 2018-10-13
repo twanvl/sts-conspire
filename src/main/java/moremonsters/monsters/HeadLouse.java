@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.actions.common.ChangeStateAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
-import com.megacrit.cardcrawl.actions.common.SpawnMonsterAction;
 import com.megacrit.cardcrawl.actions.common.SuicideAction;
 import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
@@ -38,10 +37,10 @@ public class HeadLouse extends AbstractMonster {
     public static final String[] MOVES = monsterStrings.MOVES;
     public static final String[] DIALOG = monsterStrings.DIALOG;
     // location
-    private static final float HB_X = 0.0f;
+    private static final float HB_X = -20.0f;
     private static final float HB_Y = 0.0f;
-    private static final float HB_W = 290.0f;
-    private static final float HB_H = 248.0f;
+    private static final float HB_W = 310.0f;
+    private static final float HB_H = 188.0f;
     // stats
     private static final int HP_MIN = 110;
     private static final int HP_MAX = 115;
@@ -80,7 +79,7 @@ public class HeadLouse extends AbstractMonster {
     private boolean isOpen = true;
 
     public HeadLouse() {
-        this(200.f,0.f);
+        this(220.f,0.f);
     }
 
     public HeadLouse(float x, float y) {
@@ -222,11 +221,11 @@ public class HeadLouse extends AbstractMonster {
     private AbstractMonster makeLouse(int slot) {
         float x,y;
         switch (slot) {
-            case 0:  x = -70.f;  y = -40.f; break;
-            case 2:  x = -370.f; y = -35.f; break;
-            case 4:  x = -670.f; y = -43.f; break;
-            case 1:  x = -235.f; y =  48.f; break;
-            case 3:  x = -535.f; y =  49.f; break;
+            case 0:  x = -65.f;  y = -35.f; break;
+            case 2:  x = -370.f; y = -30.f; break;
+            case 4:  x = -670.f; y = -35.f; break;
+            case 1:  x = -230.f; y =  53.f; break;
+            case 3:  x = -535.f; y =  54.f; break;
             default: x = -330.f; y =  0; break;
         }
         x += MathUtils.random(-5.0f, 5.0f);
