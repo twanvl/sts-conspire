@@ -1,111 +1,111 @@
 
 skeleton.png
-size: 1024,64
+size: 2048,128
 format: RGBA8888
 filter: Linear,Linear
 repeat: none
 images/antleft
   rotate: true
-  xy: 52, 13
-  size: 24, 45
-  orig: 24, 45
+  xy: 104, 26
+  size: 48, 90
+  orig: 48, 90
   offset: 0, 0
   index: -1
 images/antleftc
   rotate: false
-  xy: 571, 36
-  size: 35, 25
-  orig: 35, 25
+  xy: 1142, 72
+  size: 70, 50
+  orig: 70, 50
   offset: 0, 0
   index: -1
 images/antright
   rotate: true
-  xy: 518, 43
-  size: 18, 51
-  orig: 18, 51
+  xy: 1036, 86
+  size: 36, 102
+  orig: 36, 102
   offset: 0, 0
   index: -1
 images/antrightc
   rotate: true
-  xy: 608, 37
-  size: 24, 34
-  orig: 24, 34
+  xy: 1216, 74
+  size: 48, 68
+  orig: 48, 68
   offset: 0, 0
   index: -1
 images/seg1
   rotate: false
-  xy: 425, 17
-  size: 44, 44
-  orig: 44, 44
+  xy: 850, 34
+  size: 88, 88
+  orig: 88, 88
   offset: 0, 0
   index: -1
 images/seg1c
   rotate: false
-  xy: 2, 2
-  size: 48, 35
-  orig: 48, 35
+  xy: 4, 4
+  size: 96, 70
+  orig: 96, 70
   offset: 0, 0
   index: -1
 images/seg2
   rotate: false
-  xy: 208, 3
-  size: 59, 58
-  orig: 59, 58
+  xy: 416, 6
+  size: 118, 116
+  orig: 118, 116
   offset: 0, 0
   index: -1
 images/seg2c
   rotate: false
-  xy: 269, 5
-  size: 53, 56
-  orig: 53, 56
+  xy: 538, 10
+  size: 106, 112
+  orig: 106, 112
   offset: 0, 0
   index: -1
 images/seg3
   rotate: false
-  xy: 324, 11
-  size: 49, 50
-  orig: 49, 50
+  xy: 648, 22
+  size: 98, 100
+  orig: 98, 100
   offset: 0, 0
   index: -1
 images/seg3c
   rotate: false
-  xy: 144, 19
-  size: 62, 42
-  orig: 62, 42
+  xy: 288, 38
+  size: 124, 84
+  orig: 124, 84
   offset: 0, 0
   index: -1
 images/seg4
   rotate: false
-  xy: 375, 16
-  size: 48, 45
-  orig: 48, 45
+  xy: 750, 32
+  size: 96, 90
+  orig: 96, 90
   offset: 0, 0
   index: -1
 images/seg4c
   rotate: true
-  xy: 471, 24
-  size: 37, 45
-  orig: 37, 45
+  xy: 942, 48
+  size: 74, 90
+  orig: 74, 90
   offset: 0, 0
   index: -1
 images/seg5
   rotate: false
-  xy: 644, 35
-  size: 32, 26
-  orig: 32, 26
+  xy: 1288, 70
+  size: 64, 52
+  orig: 64, 52
   offset: 0, 0
   index: -1
 images/seg5c
   rotate: false
-  xy: 99, 8
-  size: 38, 29
-  orig: 38, 29
+  xy: 198, 16
+  size: 76, 58
+  orig: 76, 58
   offset: 0, 0
   index: -1
 images/shadow
   rotate: false
-  xy: 2, 39
-  size: 140, 22
-  orig: 140, 22
+  xy: 4, 78
+  size: 280, 44
+  orig: 280, 44
   offset: 0, 0
   index: -1
