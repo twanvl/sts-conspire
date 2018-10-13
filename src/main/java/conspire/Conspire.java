@@ -23,6 +23,7 @@ import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import conspire.cards.blue.SharedLibrary;
 import conspire.cards.green.DoublingDagger;
+import conspire.cards.green.PoisonWeapons;
 import conspire.cards.status.PyramidRune;
 import conspire.monsters.FuzzyDie;
 import conspire.monsters.HeadLouse;
@@ -92,6 +93,7 @@ public class Conspire implements
     public void receiveEditCards() {
         // green
         BaseMod.addCard(new DoublingDagger());
+        BaseMod.addCard(new PoisonWeapons());
         // blue
         BaseMod.addCard(new SharedLibrary());
         // status

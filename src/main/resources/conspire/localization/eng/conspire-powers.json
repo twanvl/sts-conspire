@@ -56,6 +56,12 @@
     "NAME": "Drawn Blood",
     "DESCRIPTIONS": ["On death, heals you for #b"," #yHP"]
   },
+  "conspire:PoisonWeapons": {
+    "NAME": "Poison Weapons",
+    "DESCRIPTIONS": [
+      "All unblocked attack damage is converted to Poison for #b"," turn."," turns."
+    ]
+  },
   "conspire:Shedding": {
     "NAME": "Shedding",
     "DESCRIPTIONS": ["On taking #yAttack damage, spawns a minion. (Once per turn)"]

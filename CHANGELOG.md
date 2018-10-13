@@ -1,5 +1,6 @@
 ### v1.2.0
 * Mod renamed to Conspire, to become more general than just monsters
+* Added cards: DoublingDagger, PoisonWeapons, SharedLibrary
 
 ### v1.1.0
 * Add Head Lice encounter

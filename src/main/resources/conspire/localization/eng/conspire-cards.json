@@ -12,6 +12,10 @@
     "DESCRIPTION": "Add !M! Shiv to your hand. NL Every time this card is played, increase its shiv count by 1 for this combat.",
     "UPGRADE_DESCRIPTION": "Add !M! Shivs to your hand. NL Every time this card is played, increase its shiv count by 1 for this combat."
   },
+  "conspire:PoisonWeapons": {
+    "NAME": "Poison Weapons",
+    "DESCRIPTION": "All unblocked attack damage is converted to Poison this turn. Exhaust."
+  },
   "conspire:SharedLibrary": {
     "NAME": "Shared Library",
     "DESCRIPTION": "Gain all powers an enemy has.",
