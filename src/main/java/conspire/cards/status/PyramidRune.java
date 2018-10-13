@@ -21,7 +21,7 @@ public class PyramidRune extends CustomCard {
     private static final int COST = 1;
 
     public PyramidRune() {
-        super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.SELF);
+        super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.NONE);
         this.exhaust = true;
         this.retain = true;
     }

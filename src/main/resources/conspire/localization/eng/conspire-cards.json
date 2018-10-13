@@ -6,5 +6,19 @@
   "conspire:InfernalBerry": {
     "NAME": "Infernal Berry",
     "DESCRIPTION": "Remove 1 Divine Protection. NL Exhaust."
+  },
+  "conspire:DoublingDagger": {
+    "NAME": "Doubling Dagger",
+    "DESCRIPTION": "Add !M! Shiv to your hand. NL Every time this card is played, increase its shiv count by 1 for this combat.",
+    "UPGRADE_DESCRIPTION": "Add !M! Shivs to your hand. NL Every time this card is played, increase its shiv count by 1 for this combat."
+  },
+  "conspire:SharedLibrary": {
+    "NAME": "Shared Library",
+    "DESCRIPTION": "Gain all powers an enemy has.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Only applies to powers that you can have)",
+      " NL (Gain no powers)",
+      " NL (Gain ",")"
+    ]
   }
 }

@@ -21,6 +21,8 @@ import basemod.BaseMod;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import conspire.cards.blue.SharedLibrary;
+import conspire.cards.green.DoublingDagger;
 import conspire.cards.status.PyramidRune;
 import conspire.monsters.FuzzyDie;
 import conspire.monsters.HeadLouse;
@@ -88,6 +90,11 @@ public class Conspire implements
 
     @Override
     public void receiveEditCards() {
+        // green
+        BaseMod.addCard(new DoublingDagger());
+        // blue
+        BaseMod.addCard(new SharedLibrary());
+        // status
         BaseMod.addCard(new PyramidRune());
     }
 
