@@ -4,8 +4,13 @@ import System.IO
 import System.Environment
 import System.Exit
 import System.Directory
+import Control.Monad
 import Data.List
 import Data.Char
+
+--------------------------------------------------------------------------------
+-- Alpha channel manipulation
+--------------------------------------------------------------------------------
 
 mulAlpha :: Image PixelRGBA8 -> Image PixelRGBA8
 mulAlpha = pixelMap go
@@ -42,35 +47,142 @@ cropImage (x,y) (w,h) rotate img = generateImage fun w h
     | rotate    = pixelAt img (x+dy) (y+dx)
     | otherwise = pixelAt img (x+dx) (y+dy)
 
-decodeAtlas :: FilePath -> IO ()
-decodeAtlas atlasFile = do
-  createDirectoryIfMissing False "images"
-  atlas <- readFile atlasFile
-  go blankImage "" (0,0) (0,0) False (lines atlas)
+--------------------------------------------------------------------------------
+-- Atlas unpacking
+--------------------------------------------------------------------------------
+
+type Atlas = [AtlasImage]
+data AtlasImage = AtlasImage 
+  { atlasImage :: FilePath
+  , atlasRegions :: [AtlasRegion]
+  , atlasSize :: (Int,Int)
+  , atlasProps :: [(String,String)]
+  }
+  deriving (Eq,Show)
+data AtlasRegion = AtlasRegion
+  { regionName :: String
+  , regionRotate :: Bool
+  , regionXY, regionSize, regionOrig, regionOffset :: (Int,Int)
+  , regionIndex :: Int
+  }
+  deriving (Eq,Show)
+
+mkAtlasImage :: FilePath -> AtlasImage
+mkAtlasImage file = AtlasImage file [] (-1,-1) []
+
+mkAtlasRegion :: FilePath -> AtlasRegion
+mkAtlasRegion name = AtlasRegion name False (0,0) (0,0) (0,0) (0,0) (-1)
+
+readAtlasFile :: FilePath -> IO Atlas
+readAtlasFile = fmap readAtlas . readFile
+
+readAtlas :: String -> Atlas
+readAtlas = readAtlas' . lines
+
+readAtlas' :: [String] -> Atlas
+readAtlas' [] = []
+readAtlas' (l:ls)
+  | ".png" `isSuffixOf` l =
+      let (regs, ls') = readAtlasRegions ls
+      in regs (mkAtlasImage l) : readAtlas' ls'
+  | null l = readAtlas' ls
+  | otherwise = error $ "Error parsing atlas: " ++ show l
+
+readAtlasRegions :: [String] -> (AtlasImage -> AtlasImage, [String])
+readAtlasRegions [] = (id, [])
+readAtlasRegions (l:ls)
+  | null l = readAtlasRegions ls
+  | ':' `elem` l = readAtlasProperty -- properties of image, ignored
+  | not (".png" `isSuffixOf` l) && ':' `notElem` l =
+      let (reg,  ls') = readAtlasRegionItems ls
+          (regs, ls'') = readAtlasRegions ls'
+      in ((\im -> im { atlasRegions = reg (mkAtlasRegion l) : atlasRegions im }) . regs, ls'')
+  | otherwise = error $ "Error parsing atlas regions: " ++ show l
   where
-  go im name xy size rot [] = save im name xy size rot
-  go im name xy size rot (l:ls)
-    | ".png" `isSuffixOf` l = do
-        im' <- tryReadImage l
-        let im'' = divAlpha im'
-        go im'' name xy size rot ls
-    | l' == "rotate: false"               = go im name xy size False ls
-    | l' == "rotate: true"                = go im name xy size True ls
-    | "size:" `isPrefixOf` l'             = go im name xy (read ("(" ++ drop 5 l' ++ ")")) rot ls
-    | "xy:"   `isPrefixOf` l'             = go im name (read ("(" ++ drop 3 l' ++ ")")) size rot ls
-    | "images/" `isPrefixOf` l            = save im name xy size rot >> go im (drop 7 l) (0,0) (0,0) False ls
-    | l' /= "" && not (":" `isInfixOf` l) = save im name xy size rot >> go im l (0,0) (0,0) False ls
-    | otherwise                           = go im name xy size rot ls
+  readAtlasProperty
+    | k == "size" = ((\im -> im { atlasSize = read $ "(" ++ v ++ ")" }) . reg', ls')
+    | otherwise   = ((\im -> im { atlasProps = (k,v) : atlasProps im }) . reg', ls')
     where
-    l' = dropWhile isSpace l
-  save im name xy size rot
-    | null name = return ()
-    | otherwise = do
-      putStrLn $ "Found: " ++ name ++ " at " ++ show xy ++ " size " ++ show size ++ " rotate? " ++ show rot
-      let outfile = "images/" ++ name ++ ".png"
-      savePngImage outfile $ ImageRGBA8 (cropImage xy size rot im)
-  
-  
+    (reg', ls') = readAtlasRegions ls
+    (k,v') = break (==':') l
+    v = dropWhile isSpace $ drop 1 v'
+
+readAtlasRegionItems :: [String] -> (AtlasRegion -> AtlasRegion, [String])
+readAtlasRegionItems [] = (id,[])
+readAtlasRegionItems (l:ls)
+  | null l          = readAtlasRegionItems ls
+  | ':' `notElem` l = (id,l:ls)
+  | k == "xy"       = ((\reg -> reg{ regionXY   = read $ "(" ++ v ++ ")" }) . reg', ls')
+  | k == "size"     = ((\reg -> reg{ regionSize = read $ "(" ++ v ++ ")" }) . reg', ls')
+  | k == "orig"     = ((\reg -> reg{ regionOrig = read $ "(" ++ v ++ ")" }) . reg', ls')
+  | k == "offset"   = ((\reg -> reg{ regionOrig = read $ "(" ++ v ++ ")" }) . reg', ls')
+  | k == "index"    = ((\reg -> reg{ regionIndex = read v }) . reg', ls')
+  | k == "rotate"   = ((\reg -> reg{ regionRotate = v `elem` ["true","True"] }) . reg', ls')
+  | otherwise       = readAtlasRegionItems ls
+  where
+  (reg', ls') = readAtlasRegionItems ls
+  l' = dropWhile isSpace l
+  (k,v') = break (==':') l'
+  v = dropWhile isSpace $ drop 1 v'
+
+writeAtlas :: Atlas -> String
+writeAtlas = unlines . concatMap writeAtlasImage
+
+writeAtlasImage :: AtlasImage -> [String]
+writeAtlasImage (AtlasImage imFile regions (sizex,sizey) props) =
+  [ ""
+  , imFile
+  , "size: " ++ show sizex ++ "," ++ show sizey
+  ]
+  ++ [ k ++ ": " ++ v | (k,v) <- props ]
+  ++ concatMap writeAtlasRegion regions
+
+writeAtlasRegion :: AtlasRegion -> [String]
+writeAtlasRegion (AtlasRegion name rot xy size orig off idx) =
+  [ name
+  , "  rotate: " ++ showBool rot
+  , "  xy: " ++ showTuple xy
+  , "  size: " ++ showTuple size
+  , "  orig: " ++ showTuple orig
+  , "  offset: " ++ showTuple off
+  , "  index: " ++ show idx
+  ]
+  where
+  showBool = map toLower . show
+  showTuple (a,b) = show a ++ ", " ++ show b
+
+extractAtlas :: Atlas -> IO ()
+extractAtlas atlas = do
+  createDirectoryIfMissing False "images"
+  mapM_ extractAtlasImage atlas
+
+extractAtlasImage :: AtlasImage -> IO ()
+extractAtlasImage (AtlasImage imFile regions _ _) = do
+  im <- tryReadImage imFile
+  let im' = divAlpha im
+  mapM_ (extractAtlasRegion im') regions
+
+extractAtlasRegion :: Image PixelRGBA8 -> AtlasRegion -> IO ()
+extractAtlasRegion im region@(AtlasRegion name rot xy size _orig _off _idx) = do
+  print region
+  let outfile
+       | "images/" `isPrefixOf` name = name ++ ".png"
+       | otherwise                   = "images/" ++ name ++ ".png"
+  savePngImage outfile $ ImageRGBA8 (cropImage xy size rot im)
+
+decodeAtlas :: FilePath -> IO ()
+decodeAtlas = extractAtlas <=< readAtlasFile
+
+doubleAtlasCoords :: Atlas -> Atlas
+doubleAtlasCoords = map doubleImg
+  where
+  doubleImg im = im { atlasSize = double (atlasSize im), atlasRegions = map doubleRegion (atlasRegions im) }
+  doubleRegion reg = reg { regionSize = double (regionSize reg), regionXY = double (regionXY reg), regionOrig = double (regionOrig reg), regionOffset = double (regionOffset reg) }
+  double (x,y) = (2*x, 2*y)
+
+--------------------------------------------------------------------------------
+-- Main function
+--------------------------------------------------------------------------------
 
 main :: IO ()
 main = do
