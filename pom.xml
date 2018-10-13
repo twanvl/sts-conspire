@@ -67,6 +67,7 @@
             <exclude>images/monsters/*/images/**</exclude>
             <exclude>images/monsters/*/images2/**</exclude>
             <exclude>images/monsters/*/images-*/**</exclude>
+            <exclude>images/monsters/*/scaled/**</exclude>
             <exclude>images/monsters/*/junk/**</exclude>
             <exclude>images/monsters/*/output/**</exclude>
             <exclude>images/powers/large</exclude>
