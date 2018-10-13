@@ -2,5 +2,9 @@
   "PyramidRune": {
     "NAME": "Pyramid Rune",
     "DESCRIPTION": "Retain. NL Exhaust."
+  },
+  "InfernalBerry": {
+    "NAME": "Infernal Berry",
+    "DESCRIPTION": "Remove 1 Divine Protection. NL Exhaust."
   }
 }
