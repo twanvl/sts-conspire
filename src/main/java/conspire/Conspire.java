@@ -21,6 +21,7 @@ import basemod.BaseMod;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import conspire.cards.status.PyramidRune;
 import conspire.monsters.FuzzyDie;
 import conspire.monsters.HeadLouse;
 import conspire.monsters.MysteriousRune;
@@ -87,7 +88,7 @@ public class Conspire implements
 
     @Override
     public void receiveEditCards() {
-
+        BaseMod.addCard(new PyramidRune());
     }
 
     public static String removeModId(String id) {

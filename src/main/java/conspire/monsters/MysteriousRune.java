@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.ArtifactPower;
 
-import conspire.cards.PyramidRune;
+import conspire.cards.status.PyramidRune;
 import conspire.helpers.AscensionHelper;
 import conspire.helpers.MovePicker;
 import conspire.powers.CubeRunePower;

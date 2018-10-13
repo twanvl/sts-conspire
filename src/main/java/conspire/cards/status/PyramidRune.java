@@ -1,4 +1,4 @@
-package conspire.cards;
+package conspire.cards.status;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
