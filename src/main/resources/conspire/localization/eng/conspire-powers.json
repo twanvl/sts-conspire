@@ -65,5 +65,12 @@
   "conspire:Shedding": {
     "NAME": "Shedding",
     "DESCRIPTIONS": ["On taking #yAttack damage, spawns a minion. (Once per turn)"]
+  },
+  "conspire:EchoDraught": {
+    "NAME": "Echo Draught",
+    "DESCRIPTIONS": [
+      "On this turn, play your next card twice.",
+      "On this turn, play your next "," cards twice."
+    ]
   }
 }

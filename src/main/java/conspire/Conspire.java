@@ -3,13 +3,16 @@ package conspire;
 import java.nio.charset.StandardCharsets;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
@@ -19,6 +22,7 @@ import org.apache.logging.log4j.Logger;
 
 import basemod.BaseMod;
 import basemod.interfaces.EditCardsSubscriber;
+import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import conspire.cards.blue.SharedLibrary;
@@ -30,11 +34,13 @@ import conspire.monsters.HeadLouse;
 import conspire.monsters.MysteriousRune;
 import conspire.monsters.RoseBush;
 import conspire.monsters.SneckoGhost;
+import conspire.potions.EchoDraught;
 
 @SpireInitializer
 public class Conspire implements
         PostInitializeSubscriber,
         EditCardsSubscriber,
+        EditRelicsSubscriber,
         EditStringsSubscriber {
     public static final String MODNAME = "Conspire";
     public static final String AUTHOR = "twanvl";
@@ -55,6 +61,7 @@ public class Conspire implements
         Texture badgeTexture = new Texture("conspire/images/ConspireBadge.png");
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, null);
         receiveEditMonsters();
+        receiveEditPotions();
     }
 
     public void receiveEditMonsters() {
@@ -81,12 +88,11 @@ public class Conspire implements
 
     @Override
     public void receiveEditStrings() {
-        BaseMod.loadCustomStrings(CardStrings.class, loadJson("conspire/localization/eng/conspire-cards.json"));
-        BaseMod.loadCustomStrings(MonsterStrings.class, loadJson("conspire/localization/eng/conspire-monsters.json"));
-        BaseMod.loadCustomStrings(PowerStrings.class, loadJson("conspire/localization/eng/conspire-powers.json"));
-    }
-    private static String loadJson(String jsonPath) {
-        return Gdx.files.internal(jsonPath).readString(String.valueOf(StandardCharsets.UTF_8));
+        BaseMod.loadCustomStringsFile(CardStrings.class, "conspire/localization/eng/conspire-cards.json");
+        BaseMod.loadCustomStringsFile(MonsterStrings.class, "conspire/localization/eng/conspire-monsters.json");
+        BaseMod.loadCustomStringsFile(PotionStrings.class, "conspire/localization/eng/conspire-potions.json");
+        BaseMod.loadCustomStringsFile(PowerStrings.class, "conspire/localization/eng/conspire-powers.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "conspire/localization/eng/conspire-relics.json");
     }
 
     @Override
@@ -98,6 +104,14 @@ public class Conspire implements
         BaseMod.addCard(new SharedLibrary());
         // status
         BaseMod.addCard(new PyramidRune());
+    }
+
+    @Override
+    public void receiveEditRelics() {
+    }
+
+    public void receiveEditPotions() {
+        BaseMod.addPotion(EchoDraught.class, new Color(1.0f,0.8f,0.0f,1.0f), null, new Color(1.0f,0.5f,0.0f,1.0f), EchoDraught.POTION_ID);
     }
 
     public static String removeModId(String id) {
@@ -115,5 +129,13 @@ public class Conspire implements
     public static String powerImage(String id) {
         return "conspire/images/powers/32/" + Conspire.removeModId(id) + ".png";
     }
+    public static String relicImage(String id) {
+        return "conspire/images/relics/" + Conspire.removeModId(id) + ".png";
+    }
+    public static String relicLargeImage(String id) {
+        return "conspire/images/relics/large/" + Conspire.removeModId(id) + ".png";
+    }
+    public static String relicOutlineImage(String id) {
+        return "conspire/images/relics/outline/" + Conspire.removeModId(id) + ".png";
+    }
 }
-
