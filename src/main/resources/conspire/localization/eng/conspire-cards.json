@@ -1,12 +1,17 @@
 {
-  "conspire:PyramidRune": {
-    "NAME": "Pyramid Rune",
-    "DESCRIPTION": "Retain. NL Exhaust."
+  "conspire:ExplosiveBarrier": {
+    "NAME": "Explosive Barrier",
+    "DESCRIPTION": "Gain !B! Block. NL If your Block is broken this turn, deal !M! damage to the attacker."
   },
-  "conspire:InfernalBerry": {
-    "NAME": "Infernal Berry",
-    "DESCRIPTION": "Remove 1 Divine Protection. NL Exhaust."
+  "conspire:HitWhereItHurts": {
+    "NAME": "Hit Where it Hurts",
+    "DESCRIPTION": "Deal !D! damage. NL Deals 25% more damage for each Vulnerability.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Deals 50% more damage for each Vulnerability.",
+    "EXTENDED_DESCRIPTION": [
+      "vulnerability", "The number of turns an enemy is #yVulnerable for."
+    ]
   },
+
   "conspire:DoublingDagger": {
     "NAME": "Doubling Dagger",
     "DESCRIPTION": "Add !M! Shiv to your hand. NL Every time this card is played, increase its shiv count by 1 for this combat.",
@@ -16,6 +21,7 @@
     "NAME": "Poison Weapons",
     "DESCRIPTION": "All unblocked attack damage is converted to Poison this turn. Exhaust."
   },
+
   "conspire:SharedLibrary": {
     "NAME": "Shared Library",
     "DESCRIPTION": "Gain all powers an enemy has.",
@@ -25,6 +31,7 @@
       " NL (Gain ",")"
     ]
   },
+
   "conspire:Banana": {
     "NAME": "Banana",
     "DESCRIPTION": "Gain !M! permanent Max HP. NL Exhaust."
@@ -41,5 +48,14 @@
     "NAME": "SpireCo Stock",
     "DESCRIPTION": "Gain !M! Gold. NL Value may change over time.",
     "EXTENDED_DESCRIPTION": ["Lose !M! Gold. NL Value may change over time."]
+  },
+
+  "conspire:PyramidRune": {
+    "NAME": "Pyramid Rune",
+    "DESCRIPTION": "Retain. NL Exhaust."
+  },
+  "conspire:InfernalBerry": {
+    "NAME": "Infernal Berry",
+    "DESCRIPTION": "Remove 1 #yDivine #yProtection. NL Exhaust."
   }
 }

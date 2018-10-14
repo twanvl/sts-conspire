@@ -72,5 +72,11 @@
       "On this turn, play your next card twice.",
       "On this turn, play your next "," cards twice."
     ]
+  },
+  "conspire:ExplosiveBarrier": {
+    "NAME": "Explosive Barrier",
+    "DESCRIPTIONS": [
+      "When your #yBlock is broken, deals #b"," damage to the attacker."
+    ]
   }
 }

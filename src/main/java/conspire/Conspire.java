@@ -21,6 +21,7 @@ import org.apache.logging.log4j.Logger;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
+import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
@@ -31,6 +32,8 @@ import conspire.cards.colorless.GhostlyStrike;
 import conspire.cards.colorless.SpireCoStock;
 import conspire.cards.green.DoublingDagger;
 import conspire.cards.green.PoisonWeapons;
+import conspire.cards.red.ExplosiveBarrier;
+import conspire.cards.red.HitWhereItHurts;
 import conspire.cards.status.PyramidRune;
 import conspire.events.Investor;
 import conspire.events.LoneGhost;
@@ -47,6 +50,7 @@ import conspire.relics.SlowCooker;
 public class Conspire implements
         PostInitializeSubscriber,
         EditCardsSubscriber,
+        EditKeywordsSubscriber,
         EditRelicsSubscriber,
         EditStringsSubscriber {
     public static final String MODNAME = "Conspire";
@@ -110,7 +114,15 @@ public class Conspire implements
     }
 
     @Override
+    public void receiveEditKeywords() {
+        BaseMod.addKeyword(HitWhereItHurts.KEYWORD_NAMES, HitWhereItHurts.KEYWORD_DESCRIPTION);
+    }
+
+    @Override
     public void receiveEditCards() {
+        // red
+        BaseMod.addCard(new ExplosiveBarrier());
+        BaseMod.addCard(new HitWhereItHurts());
         // green
         BaseMod.addCard(new DoublingDagger());
         BaseMod.addCard(new PoisonWeapons());
