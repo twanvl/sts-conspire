@@ -25,6 +25,10 @@
       " NL (Gain ",")"
     ]
   },
+  "conspire:Banana": {
+    "NAME": "Banana",
+    "DESCRIPTION": "Gain !M! permanent Max HP. NL Exhaust."
+  },
   "conspire:GhostlyDefend": {
     "NAME": "Defend",
     "DESCRIPTION": "Ethereal. NL Gain !B! Block."

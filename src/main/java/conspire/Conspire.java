@@ -25,6 +25,7 @@ import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import conspire.cards.blue.SharedLibrary;
+import conspire.cards.colorless.Banana;
 import conspire.cards.colorless.GhostlyDefend;
 import conspire.cards.colorless.GhostlyStrike;
 import conspire.cards.green.DoublingDagger;
@@ -113,6 +114,7 @@ public class Conspire implements
         // blue
         BaseMod.addCard(new SharedLibrary());
         // colorless
+        BaseMod.addCard(new Banana());
         BaseMod.addCard(new GhostlyDefend());
         BaseMod.addCard(new GhostlyStrike());
         // status
