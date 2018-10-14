@@ -22,7 +22,7 @@ public class GhostlyDefend extends CustomCard {
     private static final int BLOCK_AMT = 5;
 
     public GhostlyDefend() {
-        super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.BASIC, CardTarget.SELF);
+        super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.SELF);
         this.baseBlock = BLOCK_AMT;
         this.isEthereal = true;
         this.tags.add(BaseModCardTags.BASIC_DEFEND);

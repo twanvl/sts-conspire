@@ -25,7 +25,7 @@ public class GhostlyStrike extends CustomCard {
     private static final int ATTACK_DMG = 6;
 
     public GhostlyStrike() {
-        super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.BASIC, CardTarget.ENEMY);
+        super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
         this.baseDamage = ATTACK_DMG;
         this.isEthereal = true;
         this.tags.add(AbstractCard.CardTags.STRIKE);
