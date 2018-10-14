@@ -4,5 +4,11 @@
     "DESCRIPTIONS": [
       "This turn, your next card is played twice."
     ]
+  },
+  "conspire:TimeTravelPotion": {
+    "NAME": "Time Travel Potion",
+    "DESCRIPTIONS": [
+      "Set your HP to what it was at the end of your last turn."
+    ]
   }
 }
