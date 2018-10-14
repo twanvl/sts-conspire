@@ -16,6 +16,25 @@
     ]
   },
 
+  "conspire:Investor": {
+    "NAME": "Investor",
+    "DESCRIPTIONS": [
+      "\"Have you heared? This spire is going to be #y@HUGE!@ If you invest today, you are guaranteed to double your gold in no time*.\" NL NL *: Do not base investment decisions upon any statements made by SpireCo employees. The value of investments may change, past performance is not a guarantee of future performance.",
+      "\"Excelent! You have made a wise decision!\" NL NL As you hand over your gold, you begin to doubt the investment that you just made.",
+      "\"You will come to regret this choice, as your peers swim in wealth while you are forced to beg for scraps.\""
+    ],
+    "OPTIONS": [
+      "[Invest] #y",
+      " #yGold: Add #b",
+      " share of SpireCo Stock to your deck.",
+      " shares of SpireCo Stock to your deck.",
+      "[Decline]",
+      "[Decline] #rTake #r",
+      " #rDamage.",
+      "[Leave]"
+    ]
+  },
+
   "conspire:DuplicatorExtra": {
     "NAME": "DuplicatorExtra",
     "DESCRIPTIONS": [

@@ -36,5 +36,10 @@
   "conspire:GhostlyStrike": {
     "NAME": "Strike",
     "DESCRIPTION": "Ethereal. NL Deal !D! damage."
+  },
+  "conspire:SpireCoStock": {
+    "NAME": "SpireCo Stock",
+    "DESCRIPTION": "Gain !M! Gold. NL Value may change over time.",
+    "EXTENDED_DESCRIPTION": ["Lose !M! Gold. NL Value may change over time."]
   }
 }

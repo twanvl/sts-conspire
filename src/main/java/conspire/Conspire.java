@@ -28,9 +28,11 @@ import conspire.cards.blue.SharedLibrary;
 import conspire.cards.colorless.Banana;
 import conspire.cards.colorless.GhostlyDefend;
 import conspire.cards.colorless.GhostlyStrike;
+import conspire.cards.colorless.SpireCoStock;
 import conspire.cards.green.DoublingDagger;
 import conspire.cards.green.PoisonWeapons;
 import conspire.cards.status.PyramidRune;
+import conspire.events.Investor;
 import conspire.events.LoneGhost;
 import conspire.monsters.FuzzyDie;
 import conspire.monsters.HeadLouse;
@@ -94,6 +96,7 @@ public class Conspire implements
 
     public void receiveEditEvents() {
         BaseMod.addEvent(LoneGhost.ID, LoneGhost.class, Exordium.ID);
+        BaseMod.addEvent(Investor.ID, Investor.class);
     }
 
     @Override
@@ -117,6 +120,7 @@ public class Conspire implements
         BaseMod.addCard(new Banana());
         BaseMod.addCard(new GhostlyDefend());
         BaseMod.addCard(new GhostlyStrike());
+        BaseMod.addCard(new SpireCoStock());
         // status
         BaseMod.addCard(new PyramidRune());
     }
