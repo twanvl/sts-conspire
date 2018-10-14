@@ -72,8 +72,8 @@
             <exclude>conspire/images/monsters/*/output/**</exclude>
             <exclude>conspire/images/powers/large</exclude>
             <exclude>conspire/images/powers/large/*</exclude>
-            <exclude>conspire/images/relics/large</exclude>
-            <exclude>conspire/images/relics/large/*</exclude>
+            <exclude>conspire/images/relics/source</exclude>
+            <exclude>conspire/images/relics/source/*</exclude>
           </excludes>
         </configuration>
       </plugin>

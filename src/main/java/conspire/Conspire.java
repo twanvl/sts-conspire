@@ -1,8 +1,5 @@
 package conspire;
 
-import java.nio.charset.StandardCharsets;
-
-import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
@@ -21,6 +18,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import basemod.BaseMod;
+import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
@@ -35,6 +33,8 @@ import conspire.monsters.MysteriousRune;
 import conspire.monsters.RoseBush;
 import conspire.monsters.SneckoGhost;
 import conspire.potions.EchoDraught;
+import conspire.relics.RoyalGoblet;
+import conspire.relics.SlowCooker;
 
 @SpireInitializer
 public class Conspire implements
@@ -108,6 +108,8 @@ public class Conspire implements
 
     @Override
     public void receiveEditRelics() {
+        BaseMod.addRelic(new RoyalGoblet(), RelicType.SHARED);
+        BaseMod.addRelic(new SlowCooker(), RelicType.SHARED);
     }
 
     public void receiveEditPotions() {
