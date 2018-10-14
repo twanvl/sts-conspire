@@ -14,5 +14,15 @@
       "[Disagree] ",
       "[Leave]"
     ]
+  },
+
+  "conspire:DuplicatorExtra": {
+    "NAME": "DuplicatorExtra",
+    "DESCRIPTIONS": [
+      "You kneel respectfully and bow your head. A dozen mirror images appear from the shrine and collide into you."
+    ],
+    "OPTIONS": [
+      "[Pray Harder] #gDuplicate #gALL #gcards #gin #gyour #gdeck."
+    ]
   }
 }
