@@ -1,0 +1,18 @@
+{
+  "conspire:LoneGhost": {
+    "NAME": "Lone Ghost",
+    "DESCRIPTIONS": [
+      "Dark smoke covers the ground around you, as you spot a shimmer in front of you, which quickly coalesces into a masked face. It starts to speak. NL NL ~\"You~ ~may~ ~have~ ~heared~ ~of~ ~the~ #p~Council~ #p~of~ #p~Ghosts.~ ~I~ ~was~ ~once~ ~a~ ~member,~ ~you~ ~know.~ ~But~ ~now~ ~I~ ~have~ ~been~ ~sent~ ~down~ ~here~ ~to~ ~watch~ ~mortals~ ~struggle~ ~and~ ~fail~ ~for~ ~eternity...\"~ NL ~\"A~ ~rather~ ~pointless~ ~punisment,~ ~don't~ ~you~ ~agree?\"~",
+      "~\"So~ ~you~ ~see~ ~it~ ~too.~ ~Our~ ~existance~ ~in~ ~this~ ~world~ ~is~ ~fleeting~ ~and~ ~futile.\"~ NL NL The smoke starts to rise and get thicker the face is lost in the darkness. NL NL You feel empty and alone, but decide to carry on.",
+      "~\"Perhaps~ ~I~ ~can~ ~convince~ ~you~ ~of~ ~the~ ~truth~ ~in~ ~time.~ ~This~ ~will~ ~help~ ~you~ ~understand~ ~our~ ~existence.\"~ NL NL The form starts to approach, and you feel the ectoplasm touch you. It feels a bit slimy.",
+      "~\"I~ ~see~ ~you~ ~are~ ~already~ ~enthralled~ ~by~ ~the~ #p@Council.@ ~I~ ~do~ ~not~ ~wish~ ~to~ ~be~ ~involved~ ~with~ ~them~ ~anymore.\"~ NL NL The smoke quietly fades away, and the entity disappears with it."
+    ],
+    "OPTIONS": [
+      "[Agree] #gMake #gall #gStrikes #gand #gDefends #gEthereal.",
+      "[Argue] #gReceive #g1 Apparition. #rLose #y",
+      " #yGold.",
+      "[Disagree] ",
+      "[Leave]"
+    ]
+  }
+}

@@ -24,5 +24,13 @@
       " NL (Gain no powers)",
       " NL (Gain ",")"
     ]
+  },
+  "conspire:GhostlyDefend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Ethereal. NL Gain !B! Block."
+  },
+  "conspire:GhostlyStrike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage."
   }
 }

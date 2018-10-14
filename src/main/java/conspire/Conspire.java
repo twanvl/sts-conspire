@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.CardStrings;
+import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
@@ -24,9 +25,12 @@ import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import conspire.cards.blue.SharedLibrary;
+import conspire.cards.colorless.GhostlyDefend;
+import conspire.cards.colorless.GhostlyStrike;
 import conspire.cards.green.DoublingDagger;
 import conspire.cards.green.PoisonWeapons;
 import conspire.cards.status.PyramidRune;
+import conspire.events.LoneGhost;
 import conspire.monsters.FuzzyDie;
 import conspire.monsters.HeadLouse;
 import conspire.monsters.MysteriousRune;
@@ -61,6 +65,7 @@ public class Conspire implements
         Texture badgeTexture = new Texture("conspire/images/ConspireBadge.png");
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, null);
         receiveEditMonsters();
+        receiveEditEvents();
         receiveEditPotions();
     }
 
@@ -86,9 +91,14 @@ public class Conspire implements
         BaseMod.addBoss(TheCity.ID, MysteriousRune.ENCOUNTER_NAME, "conspire/images/monsters/MysteriousRune/boss.png", "conspire/images/monsters/MysteriousRune/boss-outline.png");
     }
 
+    public void receiveEditEvents() {
+        BaseMod.addEvent(LoneGhost.ID, LoneGhost.class, Exordium.ID);
+    }
+
     @Override
     public void receiveEditStrings() {
         BaseMod.loadCustomStringsFile(CardStrings.class, "conspire/localization/eng/conspire-cards.json");
+        BaseMod.loadCustomStringsFile(EventStrings.class, "conspire/localization/eng/conspire-events.json");
         BaseMod.loadCustomStringsFile(MonsterStrings.class, "conspire/localization/eng/conspire-monsters.json");
         BaseMod.loadCustomStringsFile(PotionStrings.class, "conspire/localization/eng/conspire-potions.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "conspire/localization/eng/conspire-powers.json");
@@ -102,6 +112,9 @@ public class Conspire implements
         BaseMod.addCard(new PoisonWeapons());
         // blue
         BaseMod.addCard(new SharedLibrary());
+        // colorless
+        BaseMod.addCard(new GhostlyDefend());
+        BaseMod.addCard(new GhostlyStrike());
         // status
         BaseMod.addCard(new PyramidRune());
     }
@@ -139,5 +152,8 @@ public class Conspire implements
     }
     public static String relicOutlineImage(String id) {
         return "conspire/images/relics/outline/" + Conspire.removeModId(id) + ".png";
+    }
+    public static String eventImage(String id) {
+        return "conspire/images/events/" + Conspire.removeModId(id) + ".jpg";
     }
 }

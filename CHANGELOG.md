@@ -3,6 +3,7 @@
 * Added cards: Doubling Dagger, Poison Weapons, Shared Library
 * Added potions: Echo Draught
 * Added relics: Royal Goblet, Slow Cooker
+* Added events: Lone Ghost
 
 ### v1.1.0
 * Add Head Lice encounter
