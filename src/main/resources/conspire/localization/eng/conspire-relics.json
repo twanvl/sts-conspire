@@ -1,4 +1,11 @@
 {
+  "conspire:Boomerang": {
+    "NAME": "Boomerang",
+    "FLAVOR": "Always comes back to you.",
+    "DESCRIPTIONS": [
+      "Place the first #yAttack card you play each turn on top of your draw pile."
+    ]
+  },
   "conspire:RoyalGoblet": {
     "NAME": "Royal Goblet",
     "FLAVOR": "Fit to serve a king. Or maybe made from cheap plastic.",

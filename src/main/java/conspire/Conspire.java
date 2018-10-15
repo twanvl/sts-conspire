@@ -44,6 +44,7 @@ import conspire.monsters.RoseBush;
 import conspire.monsters.SneckoGhost;
 import conspire.potions.EchoDraught;
 import conspire.potions.TimeTravelPotion;
+import conspire.relics.Boomerang;
 import conspire.relics.RoyalGoblet;
 import conspire.relics.SeveredTorchhead;
 import conspire.relics.SlowCooker;
@@ -141,6 +142,7 @@ public class Conspire implements
 
     @Override
     public void receiveEditRelics() {
+        BaseMod.addRelic(new Boomerang(), RelicType.SHARED);
         BaseMod.addRelic(new RoyalGoblet(), RelicType.SHARED);
         BaseMod.addRelic(new SeveredTorchhead(), RelicType.SHARED);
         BaseMod.addRelic(new SlowCooker(), RelicType.SHARED);
