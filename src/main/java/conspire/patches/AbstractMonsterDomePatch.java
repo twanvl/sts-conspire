@@ -18,7 +18,7 @@ public class AbstractMonsterDomePatch {
             public void edit(MethodCall m) throws CannotCompileException {
                 if (m.getMethodName().equals("hasRelic") && first) {
                     first = false;
-                    m.replace("{ $_ = ($proceed($$) || com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.hasPower(conspire.powers.DomeRunePower.POWER_ID)); }");
+                    m.replace("{ $_ = ($proceed($$) || com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.hasPower(conspire.powers.DomeRunePower.POWER_ID) || com.megacrit.cardcrawl.dungeons.AbstractDungeon.player.hasPower(conspire.powers.BlindnessPower.POWER_ID)); }");
                 }
             }
         };

@@ -12,6 +12,12 @@
       "You can no longer see enemy intents."
     ]
   },
+  "conspire:Blindness": {
+    "NAME": "Blindness",
+    "DESCRIPTIONS": [
+      "You can no longer see enemy intents."
+    ]
+  },
   "conspire:DodecahedronRune": {
     "NAME": "Dodecahedric Rune",
     "DESCRIPTIONS": [

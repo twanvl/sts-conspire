@@ -30,6 +30,7 @@ import conspire.cards.colorless.Banana;
 import conspire.cards.colorless.GhostlyDefend;
 import conspire.cards.colorless.GhostlyStrike;
 import conspire.cards.colorless.SpireCoStock;
+import conspire.cards.curse.Blindness;
 import conspire.cards.green.DoublingDagger;
 import conspire.cards.green.PoisonWeapons;
 import conspire.cards.red.ExplosiveBarrier;
@@ -138,6 +139,8 @@ public class Conspire implements
         BaseMod.addCard(new SpireCoStock());
         // status
         BaseMod.addCard(new PyramidRune());
+        // curse
+        BaseMod.addCard(new Blindness());
     }
 
     @Override
