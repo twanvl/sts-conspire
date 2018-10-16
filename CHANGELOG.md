@@ -4,6 +4,7 @@
 * Added potions: 2 potions
 * Added relics: 1 common, 2 uncommon, 2 rare, 3 boss
 * Added events: Lone Ghost, Investor, (changed) Duplicator shrine
+* Moved Infinite Journal from Mad Scientist
 
 ### v1.1.0
 * Add Head Lice encounter

@@ -53,6 +53,7 @@ import conspire.relics.RoyalGoblet;
 import conspire.relics.SeveredTorchhead;
 import conspire.relics.SlowCooker;
 import conspire.relics.TopHat;
+import conspire.relics.InfiniteJournal;
 
 @SpireInitializer
 public class Conspire implements
@@ -153,6 +154,7 @@ public class Conspire implements
         BaseMod.addRelic(new DecoderRing(), RelicType.SHARED);
         BaseMod.addRelic(new Flyswatter(), RelicType.SHARED);
         BaseMod.addRelic(new GlowingRock(), RelicType.SHARED);
+        BaseMod.addRelic(new InfiniteJournal(), RelicType.SHARED);
         BaseMod.addRelic(new RoyalGoblet(), RelicType.SHARED);
         BaseMod.addRelic(new SeveredTorchhead(), RelicType.SHARED);
         BaseMod.addRelic(new SlowCooker(), RelicType.SHARED);

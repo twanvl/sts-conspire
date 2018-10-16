@@ -35,6 +35,13 @@
       "At the end of your turn you may #yExhaust a card from your hand."
     ]
   },
+  "conspire:InfiniteJournal": {
+    "NAME": "Infinite Journal",
+    "FLAVOR": "It just goes on forever.",
+    "DESCRIPTIONS": [
+      "Cards can be upgraded any number of times."
+    ]
+  },
   "conspire:RoyalGoblet": {
     "NAME": "Royal Goblet",
     "FLAVOR": "Fit to serve a king. Or maybe made from cheap plastic.",
