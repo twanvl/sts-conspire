@@ -35,6 +35,7 @@ import conspire.cards.green.DoublingDagger;
 import conspire.cards.green.PoisonWeapons;
 import conspire.cards.red.ExplosiveBarrier;
 import conspire.cards.red.HitWhereItHurts;
+import conspire.cards.red.Purge;
 import conspire.cards.status.PyramidRune;
 import conspire.events.Investor;
 import conspire.events.LoneGhost;
@@ -132,6 +133,7 @@ public class Conspire implements
         // red
         BaseMod.addCard(new ExplosiveBarrier());
         BaseMod.addCard(new HitWhereItHurts());
+        BaseMod.addCard(new Purge());
         // green
         BaseMod.addCard(new DoublingDagger());
         BaseMod.addCard(new PoisonWeapons());
