@@ -3,9 +3,7 @@ package conspire.cards.blue;
 import java.util.ArrayList;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.colorless.Shiv;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -32,7 +30,6 @@ import org.apache.logging.log4j.Logger;
 
 import basemod.abstracts.CustomCard;
 import conspire.Conspire;
-import conspire.actions.ModifyMagicNumberAction;
 
 public class SharedLibrary extends CustomCard {
     public static final String ID = "conspire:SharedLibrary";
