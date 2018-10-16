@@ -21,6 +21,13 @@
       " NL (Play #b1 #ySkill card to trigger)"
     ]
   },
+  "conspire:GlowingRock": {
+    "NAME": "Glowing Rock",
+    "FLAVOR": "It is slightly warm to the touch.",
+    "DESCRIPTIONS": [
+      "At the end of your turn you may #yExhaust a card from your hand."
+    ]
+  },
   "conspire:RoyalGoblet": {
     "NAME": "Royal Goblet",
     "FLAVOR": "Fit to serve a king. Or maybe made from cheap plastic.",
@@ -40,6 +47,13 @@
     "FLAVOR": "Allows you to prepare a hearty spire-stew. Not for the impatient.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of each turn. NL On the first turn of combat lose 2 Energy instead."
+    ]
+  },
+  "conspire:TopHat": {
+    "NAME": "Top Hat",
+    "FLAVOR": "This stylish hat can also be used to store rabbits and excess cards.",
+    "DESCRIPTIONS": [
+      "If your hand is full when drawing a card, draw an extra card next turn instead."
     ]
   }
 }

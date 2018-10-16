@@ -47,9 +47,11 @@ import conspire.potions.EchoDraught;
 import conspire.potions.TimeTravelPotion;
 import conspire.relics.Boomerang;
 import conspire.relics.DecoderRing;
+import conspire.relics.GlowingRock;
 import conspire.relics.RoyalGoblet;
 import conspire.relics.SeveredTorchhead;
 import conspire.relics.SlowCooker;
+import conspire.relics.TopHat;
 
 @SpireInitializer
 public class Conspire implements
@@ -148,9 +150,11 @@ public class Conspire implements
     public void receiveEditRelics() {
         BaseMod.addRelic(new Boomerang(), RelicType.SHARED);
         BaseMod.addRelic(new DecoderRing(), RelicType.SHARED);
+        BaseMod.addRelic(new GlowingRock(), RelicType.SHARED);
         BaseMod.addRelic(new RoyalGoblet(), RelicType.SHARED);
         BaseMod.addRelic(new SeveredTorchhead(), RelicType.SHARED);
         BaseMod.addRelic(new SlowCooker(), RelicType.SHARED);
+        BaseMod.addRelic(new TopHat(), RelicType.SHARED);
     }
 
     public void receiveEditPotions() {
