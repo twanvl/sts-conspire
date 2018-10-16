@@ -23,7 +23,7 @@ outline/%.png: %.png outline
 large:
 	mkdir -p large
 
-large/%.png: %.png large
+large/%.png: source/%.png large
 	convert $< -resize 256x256 $@
 
 define WARN
