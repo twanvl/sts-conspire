@@ -47,6 +47,7 @@ import conspire.potions.EchoDraught;
 import conspire.potions.TimeTravelPotion;
 import conspire.relics.Boomerang;
 import conspire.relics.DecoderRing;
+import conspire.relics.Flyswatter;
 import conspire.relics.GlowingRock;
 import conspire.relics.RoyalGoblet;
 import conspire.relics.SeveredTorchhead;
@@ -150,6 +151,7 @@ public class Conspire implements
     public void receiveEditRelics() {
         BaseMod.addRelic(new Boomerang(), RelicType.SHARED);
         BaseMod.addRelic(new DecoderRing(), RelicType.SHARED);
+        BaseMod.addRelic(new Flyswatter(), RelicType.SHARED);
         BaseMod.addRelic(new GlowingRock(), RelicType.SHARED);
         BaseMod.addRelic(new RoyalGoblet(), RelicType.SHARED);
         BaseMod.addRelic(new SeveredTorchhead(), RelicType.SHARED);

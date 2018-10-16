@@ -21,6 +21,13 @@
       " NL (Play #b1 #ySkill card to trigger)"
     ]
   },
+  "conspire:Flyswatter": {
+    "NAME": "Flyswatter",
+    "FLAVOR": "There are insects all over inside the spire. This swatter only works for the small ones.",
+    "DESCRIPTIONS": [
+      "At future Card Reward screens you will no longer be offered cards that you have previously skipped."
+    ]
+  },
   "conspire:GlowingRock": {
     "NAME": "Glowing Rock",
     "FLAVOR": "It is slightly warm to the touch.",
