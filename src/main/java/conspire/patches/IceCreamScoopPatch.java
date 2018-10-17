@@ -102,10 +102,8 @@ public class IceCreamScoopPatch {
     }
 
     private static float softSnapSlotNum(float x) {
-        final float SNAP = 0.6f;
-        float r = Math.round(x);
-        float snapped = (x-r) * (x-r) * (x-r) * 4 + r;
-        return SNAP * snapped + (1.0f-SNAP) * x;
+        float f = (float)Math.floor(x);
+        return -0.5f * (float)Math.cos((x-f)*Math.PI) + 0.5f + f;
     }
 
     // like AbstractOrb.setSlot, but can take float slotNum
