@@ -51,7 +51,7 @@ public class IceCreamScoopPatch {
                 draggingOrb = null;
             } else {
                 moveOrbToSlot(slot, newSlot);
-                setOrbSlot(draggingOrb, position);
+                setOrbSlot(draggingOrb, softSnapSlotNum(position));
             }
         }
     }
@@ -99,6 +99,13 @@ public class IceCreamScoopPatch {
         float slotNum = (orbAngle - 90.f + totalAngle / 2.0f) / totalAngle * (maxOrbs - 1.0f);
         slotNum = Math.min(maxOrbs-1.f, Math.max(0.f, slotNum));
         return slotNum;
+    }
+
+    private static float softSnapSlotNum(float x) {
+        final float SNAP = 0.6f;
+        float r = Math.round(x);
+        float snapped = (x-r) * (x-r) * (x-r) * 4 + r;
+        return SNAP * snapped + (1.0f-SNAP) * x;
     }
 
     // like AbstractOrb.setSlot, but can take float slotNum
