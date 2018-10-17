@@ -2,7 +2,7 @@
 * Mod renamed to Conspire, to become more general than just monsters
 * Added cards: 3 red, 2 green, 1 blue, 1 colorless, 3 special, 1 curse
 * Added potions: 2 potions
-* Added relics: 1 common, 2 uncommon, 2 rare, 3 boss
+* Added relics: 1 common, 2 uncommon, 2 rare, 3 boss; 1 Defect
 * Added events: Lone Ghost, Investor, (changed) Duplicator shrine
 * Moved Infinite Journal from Mad Scientist
 

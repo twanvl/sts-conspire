@@ -50,6 +50,7 @@ import conspire.relics.Boomerang;
 import conspire.relics.DecoderRing;
 import conspire.relics.Flyswatter;
 import conspire.relics.GlowingRock;
+import conspire.relics.IceCreamScoop;
 import conspire.relics.RoyalGoblet;
 import conspire.relics.SeveredTorchhead;
 import conspire.relics.SlowCooker;
@@ -161,6 +162,8 @@ public class Conspire implements
         BaseMod.addRelic(new SeveredTorchhead(), RelicType.SHARED);
         BaseMod.addRelic(new SlowCooker(), RelicType.SHARED);
         BaseMod.addRelic(new TopHat(), RelicType.SHARED);
+        // blue
+        BaseMod.addRelic(new IceCreamScoop(), RelicType.BLUE);
     }
 
     public void receiveEditPotions() {

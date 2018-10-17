@@ -69,5 +69,13 @@
     "DESCRIPTIONS": [
       "If your hand is full when drawing a card, draw an extra card next turn instead."
     ]
+  },
+
+  "conspire:IceCreamScoop": {
+    "NAME": "IceCreamScoop",
+    "FLAVOR": "Makes nice spheres.",
+    "DESCRIPTIONS": [
+      "You can rearrange your orbs by dragging them."
+    ]
   }
 }
