@@ -1,3 +1,6 @@
+### v1.2.1
+* Fix compatability with Replaythespire
+
 ### v1.2.0
 * Mod renamed to Conspire, to become more general than just monsters
 * Added cards: 3 red, 2 green, 1 blue, 1 colorless, 3 special, 1 curse, 2 status

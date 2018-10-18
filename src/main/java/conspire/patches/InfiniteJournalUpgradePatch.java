@@ -61,7 +61,8 @@ import javassist.expr.MethodCall;
 @SpirePatch(cls="com.megacrit.cardcrawl.cards.red.Hemogenesis", method="tookDamage", optional=true)
 @SpirePatch(cls="com.megacrit.cardcrawl.ui.campfire.BonfireMultitaskOption", method="useOption", optional=true)
 @SpirePatch(cls="replayTheSpire.patches.ReplayCampFirePatch", method="Postfix", optional=true)
-@SpirePatch(cls="replayTheSpire.patches.MakeTempCardPatches", method="Prefix", optional=true)
+@SpirePatch(cls="replayTheSpire.patches.MakeTempCardPatches.ReplayMakeCardInDrawPilePatch", method="Prefix", optional=true)
+@SpirePatch(cls="replayTheSpire.patches.MakeTempCardPatches.ReplayMakeCardInDiscardPilePatch", method="Prefix", optional=true)
 
 // Hubris patches
 @SpirePatch(cls="com.evacipated.cardcrawl.mod.hubris.cards.DuctTapeCard", method="canUpgrade", optional=true)
