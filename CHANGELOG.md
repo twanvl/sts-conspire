@@ -1,5 +1,6 @@
 ### v1.2.1
 * Fix compatability with Replaythespire
+* Fix small gap in MysteriousRune, improved texture packing
 
 ### v1.2.0
 * Mod renamed to Conspire, to become more general than just monsters

@@ -7,27 +7,29 @@
     { "name": "Bo", "parent": "rune", "x": -10, "y": 0, "length": 10, "rotation": 180, "color": "55ffffff" },
     { "name": "A", "parent": "Ao", "x": 10, "y": 0, "length": 10, "rotation": 180, "color": "ff55ffff" },
     { "name": "B", "parent": "Bo", "x": -10, "y": 0, "length": 10, "rotation": 180, "color": "ff55ffff" },
-    { "name": "B1", "parent": "B", "x": 0, "y": 113.5 },
-    { "name": "B2", "parent": "B", "x": 0, "y": -114 },
+    { "name": "B1g", "parent": "B", "x": 0, "y": 114 },
+    { "name": "B1r", "parent": "B", "x": 0, "y": 101.5 },
+    { "name": "B2g", "parent": "B", "x": 0, "y": -113.5 },
+    { "name": "B2r", "parent": "B", "x": 0, "y": -103.5 },
     { "name": "shadow", "parent": "root", "x": 0, "y": -225, "scaleX": 0.85 }
   ],
   "slots": [
-    { "name": "glowB1", "bone": "B1", "attachment": "glowB1" },
-    { "name": "runeB1", "bone": "B1", "attachment": "runeB1" },
+    { "name": "glowB1", "bone": "B1g", "attachment": "glowB1" },
+    { "name": "runeB1", "bone": "B1r", "attachment": "runeB1" },
     { "name": "glowA",  "bone": "A",  "attachment": "glowA" },
     { "name": "runeA",  "bone": "A",  "attachment": "runeA" },
-    { "name": "glowB2", "bone": "B2", "attachment": "glowB2" },
-    { "name": "runeB2", "bone": "B2", "attachment": "runeB2" },
+    { "name": "glowB2", "bone": "B2g", "attachment": "glowB2" },
+    { "name": "runeB2", "bone": "B2r", "attachment": "runeB2" },
     { "name": "shadow", "bone": "shadow", "attachment": "shadow" }
   ],
   "skins": {
     "default": {
-      "runeB1": { "runeB1": { "x": 0, "y": 0, "width": 300, "height": 227 } },
       "glowB1": { "glowB1": { "x": 0, "y": 0, "width": 300, "height": 227 } },
+      "runeB1": { "runeB1": { "x": 0, "y": 0, "width": 256, "height": 204 } },
       "glowA":  { "glowA":  { "x": 0, "y": 0, "width": 300, "height": 455 } },
-      "runeA":  { "runeA":  { "x": 0, "y": 0, "width": 300, "height": 455 } },
+      "runeA":  { "runeA":  { "x": 0, "y": 0, "width": 256, "height": 411 } },
       "glowB2": { "glowB2": { "x": 0, "y": 0, "width": 300, "height": 228 } },
-      "runeB2": { "runeB2": { "x": 0, "y": 0, "width": 300, "height": 228 } },
+      "runeB2": { "runeB2": { "x": 0, "y": 0, "width": 256, "height": 208 } },
       "shadow": { "shadow": { "x": 0, "y": 0, "width": 240, "height": 33 } }
     }
   },
