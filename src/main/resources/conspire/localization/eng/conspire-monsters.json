@@ -23,5 +23,12 @@
     "NAME": "Head Louse",
     "MOVES": ["Shed","Defend","Grow"],
     "DIALOG": []
+  },
+  "conspire:MimicChest": {
+    "NAME": "Mimic",
+    "MOVES": [],
+    "DIALOG": [
+      "@RRrrohrrRGHhh!!@"
+    ]
   }
 }

@@ -43,5 +43,12 @@
     "OPTIONS": [
       "[Pray Harder] #gDuplicate #gALL #gcards #gin #gyour #gdeck."
     ]
+  },
+
+  "conspire:MimicChest": {
+    "NAME": "Mimic Chest",
+    "DESCRIPTIONS": [],
+    "OPTIONS": []
   }
+
 }

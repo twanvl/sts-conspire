@@ -39,8 +39,10 @@ import conspire.cards.red.Purge;
 import conspire.cards.status.PyramidRune;
 import conspire.events.Investor;
 import conspire.events.LoneGhost;
+import conspire.events.MimicChestEvent;
 import conspire.monsters.FuzzyDie;
 import conspire.monsters.HeadLouse;
+import conspire.monsters.MimicChest;
 import conspire.monsters.MysteriousRune;
 import conspire.monsters.RoseBush;
 import conspire.monsters.SneckoGhost;
@@ -107,11 +109,14 @@ public class Conspire implements
         // Mysterious Rune
         BaseMod.addMonster(MysteriousRune.ENCOUNTER_NAME, MysteriousRune.NAME, () -> new MysteriousRune(0.0f, 0.0f));
         BaseMod.addBoss(TheCity.ID, MysteriousRune.ENCOUNTER_NAME, "conspire/images/monsters/MysteriousRune/boss.png", "conspire/images/monsters/MysteriousRune/boss-outline.png");
+        // Mimic Chest
+        BaseMod.addMonster(MimicChest.ENCOUNTER_NAME, MimicChest.NAME, () -> new MimicChest());
     }
 
     public void receiveEditEvents() {
         BaseMod.addEvent(LoneGhost.ID, LoneGhost.class, Exordium.ID);
         BaseMod.addEvent(Investor.ID, Investor.class);
+        BaseMod.addEvent(MimicChestEvent.ID, MimicChestEvent.class);
     }
 
     @Override

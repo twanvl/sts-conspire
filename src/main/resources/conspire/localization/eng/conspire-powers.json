@@ -96,5 +96,11 @@
     "DESCRIPTIONS": [
       "At the end of your turn, gain #b"," #yDexterity."
     ]
+  },
+  "conspire:HoldsTreasure": {
+    "NAME": "Holds Treasure",
+    "DESCRIPTIONS": [
+      "Whenever this takes #yAttack damage, add a Treasure into your discard pile."
+    ]
   }
 }

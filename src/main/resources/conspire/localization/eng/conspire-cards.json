@@ -53,13 +53,17 @@
   },
   "conspire:SpireCoStock": {
     "NAME": "SpireCo Stock",
-    "DESCRIPTION": "Gain !M! Gold. NL Value may change over time.",
-    "EXTENDED_DESCRIPTION": ["Lose !M! Gold. NL Value may change over time."]
+    "DESCRIPTION": "Gain !M! Gold. NL Exhaust. NL Value may change over time.",
+    "EXTENDED_DESCRIPTION": ["Lose !M! Gold. NL Exhaust. NL Value may change over time."]
   },
 
   "conspire:PyramidRune": {
     "NAME": "Pyramid Rune",
     "DESCRIPTION": "Retain. NL Exhaust."
+  },
+  "conspire:Treasure": {
+    "NAME": "Treasure",
+    "DESCRIPTION": "Gain !M! Gold. NL Exhaust."
   },
   "conspire:InfernalBerry": {
     "NAME": "Infernal Berry",
