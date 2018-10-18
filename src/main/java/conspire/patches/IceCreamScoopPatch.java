@@ -43,7 +43,7 @@ public class IceCreamScoopPatch {
                 return;
             }
             float position = getMouseOrbSlot();
-            position = Math.min(position, nonEmptySlots()); // don't swap with empty slots
+            position = Math.min(position, nonEmptySlots() - 1.f); // don't swap with empty slots
             int newSlot = Math.round(position);
             if (InputHelper.justReleasedClickLeft) {
                 moveOrbToSlot(slot, newSlot);
@@ -65,15 +65,21 @@ public class IceCreamScoopPatch {
 
     private static int nonEmptySlots() {
         for (int i = 0; i < AbstractDungeon.player.orbs.size() && i < AbstractDungeon.player.maxOrbs; ++i) {
-            if (AbstractDungeon.player.orbs.get(i) instanceof EmptyOrbSlot) return i - 1;
+            if (AbstractDungeon.player.orbs.get(i) instanceof EmptyOrbSlot) return i;
         }
-        return AbstractDungeon.player.maxOrbs - 1;
+        return AbstractDungeon.player.maxOrbs;
     }
 
     private static void moveOrbToSlot(int from, int to) {
         if (from == to) return;
-        for (int i = Math.min(from,to); i < Math.max(from,to); ++i ) {
-            Collections.swap(AbstractDungeon.player.orbs, i, i + 1);
+        if (from < to) {
+            for (int i = from; i < to; ++i ) {
+                Collections.swap(AbstractDungeon.player.orbs, i, i + 1);
+            }
+        } else {
+            for (int i = from; i > to; --i ) {
+                Collections.swap(AbstractDungeon.player.orbs, i, i - 1);
+            }
         }
         for (int i = 0; i < AbstractDungeon.player.orbs.size(); ++i) {
             AbstractDungeon.player.orbs.get(i).setSlot(i, AbstractDungeon.player.maxOrbs);
@@ -94,6 +100,9 @@ public class IceCreamScoopPatch {
             y -= 100.0f * Settings.scale * ((float)(maxOrbs - 10) / ((float)HUBRIS_MAX_ORBS - 10));
         }
         float orbAngle = (float) Math.atan2(y, x) * MathUtils.radiansToDegrees;
+        if (orbAngle < -90.f) {
+            orbAngle += 360.f;
+        }
         float totalAngle = 100.0f + (float)maxOrbs * 12.0f;
         // from AbstractOrb.setSlot
         float slotNum = (orbAngle - 90.f + totalAngle / 2.0f) / totalAngle * (maxOrbs - 1.0f);
