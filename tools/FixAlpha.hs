@@ -52,7 +52,7 @@ cropImage (x,y) (w,h) rotate img = generateImage fun w h
 --------------------------------------------------------------------------------
 
 type Atlas = [AtlasImage]
-data AtlasImage = AtlasImage 
+data AtlasImage = AtlasImage
   { atlasImage :: FilePath
   , atlasRegions :: [AtlasRegion]
   , atlasSize :: (Int,Int)
@@ -93,7 +93,8 @@ readAtlasRegions [] = (id, [])
 readAtlasRegions (l:ls)
   | null l = readAtlasRegions ls
   | ':' `elem` l = readAtlasProperty -- properties of image, ignored
-  | not (".png" `isSuffixOf` l) && ':' `notElem` l =
+  | ".png" `isSuffixOf` l = (id,l:ls)
+  | ':' `notElem` l =
       let (reg,  ls') = readAtlasRegionItems ls
           (regs, ls'') = readAtlasRegions ls'
       in ((\im -> im { atlasRegions = reg (mkAtlasRegion l) : atlasRegions im }) . regs, ls'')
