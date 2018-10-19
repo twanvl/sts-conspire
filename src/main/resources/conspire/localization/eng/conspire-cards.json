@@ -33,6 +33,11 @@
     "DESCRIPTION": "All unblocked attack damage is converted to Poison this turn. Exhaust."
   },
 
+  "conspire:Rain": {
+    "NAME": "Rain",
+    "DESCRIPTION": "Channel 1 Water. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Channel 1 Water."
+  },
   "conspire:SharedLibrary": {
     "NAME": "Shared Library",
     "DESCRIPTION": "Gain all powers an enemy has.",

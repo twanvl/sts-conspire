@@ -1,6 +1,7 @@
 ### HEAD
-* Added cards: 1 red
+* Added cards: 1 red, 1 blue
 * Added relics: Dentures, Gift Box
+* Added orb: Water
 * Fixed another Infinite Journal bug, this time in the run history
 * Fix: Cube Rune power killing the player immediately
 

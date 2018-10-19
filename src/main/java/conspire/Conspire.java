@@ -1,15 +1,21 @@
 package conspire;
 
+import java.util.HashMap;
+
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.audio.Sfx;
+import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
+import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.localization.PotionStrings;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.localization.RelicStrings;
@@ -22,6 +28,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import basemod.BaseMod;
+import basemod.ReflectionHacks;
 import basemod.helpers.RelicType;
 import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
@@ -29,6 +36,7 @@ import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
 import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
+import conspire.cards.blue.Rain;
 import conspire.cards.blue.SharedLibrary;
 import conspire.cards.colorless.Banana;
 import conspire.cards.colorless.GhostlyDefend;
@@ -96,6 +104,7 @@ public class Conspire implements
         receiveEditMonsters();
         receiveEditEvents();
         receiveEditPotions();
+        receiveEditSounds();
     }
 
     public void receiveEditMonsters() {
@@ -133,6 +142,7 @@ public class Conspire implements
         BaseMod.loadCustomStringsFile(CardStrings.class, "conspire/localization/eng/conspire-cards.json");
         BaseMod.loadCustomStringsFile(EventStrings.class, "conspire/localization/eng/conspire-events.json");
         BaseMod.loadCustomStringsFile(MonsterStrings.class, "conspire/localization/eng/conspire-monsters.json");
+        BaseMod.loadCustomStringsFile(OrbStrings.class, "conspire/localization/eng/conspire-orbs.json");
         BaseMod.loadCustomStringsFile(PotionStrings.class, "conspire/localization/eng/conspire-potions.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "conspire/localization/eng/conspire-powers.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "conspire/localization/eng/conspire-relics.json");
@@ -154,6 +164,7 @@ public class Conspire implements
         BaseMod.addCard(new DoublingDagger());
         BaseMod.addCard(new PoisonWeapons());
         // blue
+        BaseMod.addCard(new Rain());
         BaseMod.addCard(new SharedLibrary());
         // colorless
         BaseMod.addCard(new Banana());
@@ -188,6 +199,18 @@ public class Conspire implements
         BaseMod.addPotion(TimeTravelPotion.class, Color.SKY.cpy(), Color.DARK_GRAY.cpy(), null, TimeTravelPotion.POTION_ID);
     }
 
+    public void receiveEditSounds() {
+        addSound("conspire:ORB_WATER_PASSIVE", "conspire/audio/sound/water1.ogg");
+        addSound("conspire:ORB_WATER_EVOKE", "conspire/audio/sound/water2.ogg");
+        addSound("conspire:ORB_WATER_CHANNEL", "conspire/audio/sound/water3.ogg");
+    }
+
+    private static void addSound(String id, String path) {
+        @SuppressWarnings("unchecked")
+        HashMap<String,Sfx> map = (HashMap<String,Sfx>) ReflectionHacks.getPrivate(CardCrawlGame.sound, SoundMaster.class, "map");
+        map.put(id, new Sfx(path, false));
+    }
+
     public static String removeModId(String id) {
         if (id.startsWith("conspire:")) {
             return id.substring(id.indexOf(':') + 1);
@@ -199,6 +222,9 @@ public class Conspire implements
 
     public static String cardImage(String id) {
         return "conspire/images/cards/" + Conspire.removeModId(id) + ".png";
+    }
+    public static String orbImage(String id) {
+        return "conspire/images/orbs/" + Conspire.removeModId(id) + ".png";
     }
     public static String powerImage(String id) {
         return "conspire/images/powers/32/" + Conspire.removeModId(id) + ".png";

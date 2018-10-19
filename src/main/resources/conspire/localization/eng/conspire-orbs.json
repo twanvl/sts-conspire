@@ -1,0 +1,9 @@
+{
+  "conspire:Water": {
+    "NAME": "Water",
+    "DESCRIPTION": [
+      "#yPassive: At the start of turn, draw #b1 card. NL #yEvoke: Draw #b",
+      " cards. NL Water is unaffected by #yFocus."
+    ]
+  }
+}

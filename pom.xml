@@ -59,6 +59,7 @@
             <exclude>**/Makefile</exclude>
             <exclude>**/.goutputstream*</exclude>
             <exclude>**/packer-config.json</exclude>
+            <exclude>conspire/audio/*/source/**</exclude>
             <exclude>conspire/images/cards/large</exclude>
             <exclude>conspire/images/cards/large/**</exclude>
             <exclude>conspire/images/monsters/large</exclude>
