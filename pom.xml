@@ -70,6 +70,7 @@
             <exclude>conspire/images/monsters/*/scaled/**</exclude>
             <exclude>conspire/images/monsters/*/junk/**</exclude>
             <exclude>conspire/images/monsters/*/output/**</exclude>
+            <exclude>conspire/images/monsters/*/source/**</exclude>
             <exclude>conspire/images/powers/large</exclude>
             <exclude>conspire/images/powers/large/*</exclude>
             <exclude>conspire/images/relics/source</exclude>
