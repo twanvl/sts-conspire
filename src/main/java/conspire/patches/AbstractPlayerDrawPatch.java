@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import basemod.interfaces.PostDrawSubscriber;
+import conspire.powers.CubeRunePower;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
@@ -26,11 +27,5 @@ public class AbstractPlayerDrawPatch {
                 }
             }
         };
-    }
-    @SpireInsertPatch(rloc=31, localvars={"c"})
-    public static void Insert(AbstractPlayer self, int num, AbstractCard c) {
-        for (AbstractPower p : self.powers) {
-            if (p instanceof PostDrawSubscriber) ((PostDrawSubscriber)p).receivePostDraw(c);
-        }
     }
 }

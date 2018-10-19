@@ -1,6 +1,8 @@
 ### HEAD
 * Added cards: 1 red
 * Added relics: Dentures, Gift Box
+* Fixed another Infinite Journal bug, this time in the run history
+* Fix: Cube Rune power killing the player immediately
 
 ### v1.2.2
 * Update for patch 46

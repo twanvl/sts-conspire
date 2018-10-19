@@ -3,6 +3,8 @@ package conspire;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.CardStrings;
@@ -14,6 +16,7 @@ import com.megacrit.cardcrawl.localization.RelicStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -24,6 +27,7 @@ import basemod.interfaces.EditCardsSubscriber;
 import basemod.interfaces.EditKeywordsSubscriber;
 import basemod.interfaces.EditRelicsSubscriber;
 import basemod.interfaces.EditStringsSubscriber;
+import basemod.interfaces.PostDrawSubscriber;
 import basemod.interfaces.PostInitializeSubscriber;
 import conspire.cards.blue.SharedLibrary;
 import conspire.cards.colorless.Banana;
@@ -49,6 +53,7 @@ import conspire.monsters.RoseBush;
 import conspire.monsters.SneckoGhost;
 import conspire.potions.EchoDraught;
 import conspire.potions.TimeTravelPotion;
+import conspire.powers.CubeRunePower;
 import conspire.relics.Boomerang;
 import conspire.relics.DecoderRing;
 import conspire.relics.Dentures;
@@ -56,11 +61,11 @@ import conspire.relics.Flyswatter;
 import conspire.relics.GiftBox;
 import conspire.relics.GlowingRock;
 import conspire.relics.IceCreamScoop;
+import conspire.relics.InfiniteJournal;
 import conspire.relics.RoyalGoblet;
 import conspire.relics.SeveredTorchhead;
 import conspire.relics.SlowCooker;
 import conspire.relics.TopHat;
-import conspire.relics.InfiniteJournal;
 
 @SpireInitializer
 public class Conspire implements
@@ -68,7 +73,8 @@ public class Conspire implements
         EditCardsSubscriber,
         EditKeywordsSubscriber,
         EditRelicsSubscriber,
-        EditStringsSubscriber {
+        EditStringsSubscriber,
+        PostDrawSubscriber {
     public static final String MODNAME = "Conspire";
     public static final String AUTHOR = "twanvl";
     public static final String DESCRIPTION = "Adds new monsters, elites, bosses, relics and cards.";
@@ -208,5 +214,13 @@ public class Conspire implements
     }
     public static String eventImage(String id) {
         return "conspire/images/events/" + Conspire.removeModId(id) + ".jpg";
+    }
+
+    // For specific relics
+    @Override
+    public void receivePostDraw(AbstractCard c) {
+        for (AbstractPower p : AbstractDungeon.player.powers) {
+            if (p instanceof CubeRunePower) ((CubeRunePower)p).receivePostDraw(c);
+        }
     }
 }
