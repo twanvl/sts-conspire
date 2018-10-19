@@ -3,7 +3,8 @@
 * Added relics: Dentures, Gift Box
 * Added orb: Water
 * Fixed another Infinite Journal bug, this time in the run history
-* Fix: Cube Rune power killing the player immediately
+* Fixed Cube Rune power killing the player immediately
+* Fixed Flyswatter potentially hanging the game, also optimized the code
 
 ### v1.2.2
 * Update for patch 46

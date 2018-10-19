@@ -26,8 +26,16 @@ public class FlyswatterPatch {
             return new ExprEditor() {
                 @Override
                 public void edit(MethodCall m) throws CannotCompileException {
+                    /*
+                    // TODO: this is an alternative patch, but it migth be a bit unfriendly towards other patches
+                    if (m.getClassName().equals("com.megacrit.cardcrawl.dungeons.AbstractDungeon") && m.getMethodName().equals("getCard")) {
+                        m.replace("{ $_ = conspire.relics.Flyswatter.getCard(rarity, false); }");
+                    } else if (m.getClassName().equals("com.megacrit.cardcrawl.helpers.CardLibrary") && m.getMethodName().equals("getAnyColorCard")) {
+                        m.replace("{ $_ = conspire.relics.Flyswatter.getCard(rarity, true); }");
+                    }*/
                     if (m.getMethodName().equals("contains")) {
-                        m.replace("{ $_ = $proceed($$) || (dupeCount < 3 && conspire.relics.Flyswatter.checkSkipped(card)); }");
+                        // Note: the base game code does *NOT* increment the dupeCount variable, so we do that ourselves here.
+                        m.replace("{ $_ = $proceed($$) || (dupeCount++ < 3 && conspire.relics.Flyswatter.checkSkippedStatic(card)); }");
                     }
                 }
             };
