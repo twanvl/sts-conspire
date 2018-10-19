@@ -58,8 +58,10 @@ public class InfiniteJournal extends AbstractConspireRelic {
             c.upgrade();
         } else if (canUpgradeCardAgain(c)) {
             // Note: allow upgradeCardAgain even when we don't have the relic, because when loading save files cards are loaded before relics.
-            AbstractRelic relic = AbstractDungeon.player.getRelic(ID);
-            if (relic != null) relic.flash();
+            if (AbstractDungeon.player != null) {
+                AbstractRelic relic = AbstractDungeon.player.getRelic(ID);
+                if (relic != null) relic.flash();
+            }
             upgradeCardAgain(c);
         }
     }
