@@ -1,8 +1,6 @@
 package conspire.powers;
 
-import com.megacrit.cardcrawl.actions.common.ModifyDamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
-import com.megacrit.cardcrawl.actions.defect.IncreaseMiscAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
@@ -42,7 +40,7 @@ public class EchoDraughtPower extends AbstractPower {
             if (action.target != null) {
                 m = (AbstractMonster)action.target;
             }
-            AbstractCard tmp = card.makeStatEquivalentCopy();
+            AbstractCard tmp = card.makeSameInstanceOf();
             AbstractDungeon.player.limbo.addToBottom(tmp);
             tmp.current_x = card.current_x;
             tmp.current_y = card.current_y;
@@ -54,11 +52,6 @@ public class EchoDraughtPower extends AbstractPower {
             }
             tmp.purgeOnUse = true;
             AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(tmp, m, card.energyOnUse));
-            if (tmp.cardID.equals("Rampage")) {
-                AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(card, tmp.magicNumber));
-            } else if (tmp.cardID.equals("Genetic Algorithm")) {
-                AbstractDungeon.actionManager.addToBottom(new IncreaseMiscAction(card.cardID, card.misc + card.magicNumber, card.magicNumber));
-            }
             --this.amount;
             if (this.amount == 0) {
                 AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));

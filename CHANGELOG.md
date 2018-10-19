@@ -1,4 +1,5 @@
-### HEAD
+### v1.2.2
+* Update for patch 46
 * Fix Infinite Journal: copied cards didn't inherit magicNumber of multiply upgraded cards
 
 ### v1.2.1

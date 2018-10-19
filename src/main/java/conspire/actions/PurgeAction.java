@@ -1,13 +1,13 @@
 package conspire.actions;
 
+import java.util.UUID;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 
 import conspire.cards.red.Purge;
@@ -75,8 +75,12 @@ public class PurgeAction extends AbstractGameAction {
     }
 
     public static boolean purgeCard(AbstractCard toPurge) {
+        return purgeCard(toPurge.uuid);
+    }
+
+    public static boolean purgeCard(UUID targetUUID) {
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
-            if (c.cardID.equals(toPurge.cardID) && c.timesUpgraded == toPurge.timesUpgraded && c.misc == toPurge.misc) {
+            if (c.uuid.equals(targetUUID)) {
                 AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(c, Settings.WIDTH / 2, Settings.HEIGHT / 2));
                 AbstractDungeon.player.masterDeck.removeCard(c);
                 return true;
