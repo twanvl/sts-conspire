@@ -8,9 +8,9 @@
     { "name": "A", "parent": "Ao", "x": 10, "y": 0, "length": 10, "rotation": 180, "color": "ff55ffff" },
     { "name": "B", "parent": "Bo", "x": -10, "y": 0, "length": 10, "rotation": 180, "color": "ff55ffff" },
     { "name": "B1g", "parent": "B", "x": 0, "y": 114 },
-    { "name": "B1r", "parent": "B", "x": 0, "y": 101.5 },
+    { "name": "B1r", "parent": "B", "x": 0, "y": 103.5 },
     { "name": "B2g", "parent": "B", "x": 0, "y": -113.5 },
-    { "name": "B2r", "parent": "B", "x": 0, "y": -103.5 },
+    { "name": "B2r", "parent": "B", "x": 0, "y": -101 },
     { "name": "shadow", "parent": "root", "x": 0, "y": -225, "scaleX": 0.85 }
   ],
   "slots": [
@@ -29,7 +29,7 @@
       "glowA":  { "glowA":  { "x": 0, "y": 0, "width": 300, "height": 455 } },
       "runeA":  { "runeA":  { "x": 0, "y": 0, "width": 256, "height": 411 } },
       "glowB2": { "glowB2": { "x": 0, "y": 0, "width": 300, "height": 228 } },
-      "runeB2": { "runeB2": { "x": 0, "y": 0, "width": 256, "height": 208 } },
+      "runeB2": { "runeB2": { "x": 0, "y": 0, "width": 256, "height": 209 } },
       "shadow": { "shadow": { "x": 0, "y": 0, "width": 240, "height": 33 } }
     }
   },
