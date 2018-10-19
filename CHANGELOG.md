@@ -1,3 +1,6 @@
+### HEAD
+* Fix Infinite Journal: copied cards didn't inherit magicNumber of multiply upgraded cards
+
 ### v1.2.1
 * Fix compatability with Replaythespire
 * Fix small gap in MysteriousRune, improved texture packing

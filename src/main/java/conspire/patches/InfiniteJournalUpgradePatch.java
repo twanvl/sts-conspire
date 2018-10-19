@@ -16,6 +16,7 @@ import javassist.expr.MethodCall;
 
 // Core logic
 @SpirePatch(clz=com.megacrit.cardcrawl.cards.AbstractCard.class, method="renderInLibrary")
+@SpirePatch(clz=com.megacrit.cardcrawl.cards.AbstractCard.class, method="makeStatEquivalentCopy")
 // Note: AbstractCard.renderCardTip only cares about rawDescription
 // Note: AbstractDungeon.getRewardCards() only upgrades fresh rewards
 @SpirePatch(clz=com.megacrit.cardcrawl.cards.CardGroup.class, method="getUpgradableCards")
@@ -27,7 +28,7 @@ import javassist.expr.MethodCall;
 @SpirePatch(clz=com.megacrit.cardcrawl.screens.select.HandCardSelectScreen.class, method="updateMessage")
 @SpirePatch(clz=com.megacrit.cardcrawl.screens.SingleCardViewPopup.class, method="render")
 @SpirePatch(clz=com.megacrit.cardcrawl.vfx.campfire.CampfireSmithEffect.class, method="update")
-// Note: AbstractCard.makeStatEquivalentCopy() already copies stats
+// Note: AbstractCard.makeStatEquivalentCopy() already copies stats, except for magicNumber
 
 // Events
 @SpirePatch(clz=com.megacrit.cardcrawl.events.shrines.AccursedBlacksmith.class, method="update")
