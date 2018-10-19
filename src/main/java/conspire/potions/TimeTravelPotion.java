@@ -16,7 +16,7 @@ public class TimeTravelPotion extends AbstractPotion {
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
     public TimeTravelPotion() {
-        super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.H, PotionColor.BLUE);
+        super(NAME, POTION_ID, PotionRarity.RARE, PotionSize.S, PotionColor.BLUE);
         this.potency = this.getPotency();
         this.description = DESCRIPTIONS[0];
         this.isThrown = false;
