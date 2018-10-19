@@ -14,7 +14,7 @@ public class GlowingRock extends AbstractConspireRelic {
     }
 
     public void onPlayerEndTurn() {
-        AbstractDungeon.actionManager.addToBottom(new FixedExhaustAction(AbstractDungeon.player, AbstractDungeon.player, 1, false, false, true, true));
+        AbstractDungeon.actionManager.addToBottom(new FixedExhaustAction(AbstractDungeon.player, AbstractDungeon.player, 1, false, false, UPTO, UPTO));
     }
 
     @Override
