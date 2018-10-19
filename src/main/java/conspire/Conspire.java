@@ -51,6 +51,7 @@ import conspire.potions.TimeTravelPotion;
 import conspire.relics.Boomerang;
 import conspire.relics.DecoderRing;
 import conspire.relics.Flyswatter;
+import conspire.relics.GiftBox;
 import conspire.relics.GlowingRock;
 import conspire.relics.IceCreamScoop;
 import conspire.relics.RoyalGoblet;
@@ -161,6 +162,7 @@ public class Conspire implements
         BaseMod.addRelic(new Boomerang(), RelicType.SHARED);
         BaseMod.addRelic(new DecoderRing(), RelicType.SHARED);
         BaseMod.addRelic(new Flyswatter(), RelicType.SHARED);
+        BaseMod.addRelic(new GiftBox(), RelicType.SHARED);
         BaseMod.addRelic(new GlowingRock(), RelicType.SHARED);
         BaseMod.addRelic(new InfiniteJournal(), RelicType.SHARED);
         BaseMod.addRelic(new RoyalGoblet(), RelicType.SHARED);

@@ -28,6 +28,14 @@
       "At future Card Reward screens you will no longer be offered cards that you have previously skipped."
     ]
   },
+  "conspire:GiftBox": {
+    "NAME": "Gift Box",
+    "FLAVOR": "It could be anything.",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose and add #b1 rare card to your deck.",
+      "Choose a Card"
+    ]
+  },
   "conspire:GlowingRock": {
     "NAME": "Glowing Rock",
     "FLAVOR": "It is slightly warm to the touch.",
