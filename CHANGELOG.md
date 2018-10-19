@@ -1,5 +1,6 @@
 ### HEAD
-* Added relics: Gift Box
+* Added cards: 1 red
+* Added relics: Dentures, Gift Box
 
 ### v1.2.2
 * Update for patch 46

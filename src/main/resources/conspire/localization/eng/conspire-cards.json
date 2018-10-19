@@ -1,4 +1,8 @@
 {
+  "conspire:Charge": {
+    "NAME": "Charge",
+    "DESCRIPTION": "Deal !D! damage. NL Deals an additional !M! damage for each turn of combat."
+  },
   "conspire:ExplosiveBarrier": {
     "NAME": "Explosive Barrier",
     "DESCRIPTION": "Gain !B! Block. NL If your Block is broken this turn, deal !M! damage to the attacker."

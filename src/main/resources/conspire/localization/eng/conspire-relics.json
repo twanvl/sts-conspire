@@ -21,6 +21,13 @@
       " NL (Play #b1 #ySkill card to trigger)"
     ]
   },
+  "conspire:Dentures": {
+    "NAME": "Dentures",
+    "FLAVOR": "You don't know what elderly monster these belonged to.",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yPower, add a copy of it to your discard pile #b50% of the time."
+    ]
+  },
   "conspire:Flyswatter": {
     "NAME": "Flyswatter",
     "FLAVOR": "There are insects all over inside the spire. This swatter only works for the small ones.",
