@@ -78,7 +78,7 @@
 
   "conspire:Blindness": {
     "NAME": "Blindness",
-    "DESCRIPTION": "Unplayable. NL At the end of your turn, you can become unable to see enemy intents for this combat."
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, you become unable to see enemy intents for this combat."
   },
   "conspire:NecroticWound": {
     "NAME": "Necrotic Wound",
