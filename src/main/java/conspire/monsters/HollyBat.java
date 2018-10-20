@@ -68,7 +68,7 @@ public class HollyBat extends AbstractMonster {
     private boolean isHoly = true;
 
     public HollyBat(float x, float y) {
-        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "conspire/images/monsters/HollyBat/HolyBat.png", x, y + 150.0f);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, null, x, y + 150.0f);
         this.loadAnimation("conspire/images/monsters/HollyBat/skeleton.atlas", "conspire/images/monsters/HollyBat/skeleton.json", 1.0f);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "IdleHoly", true);
         e.setTime(e.getEndTime() * MathUtils.random());
@@ -99,7 +99,6 @@ public class HollyBat extends AbstractMonster {
     public void onDecreaseHoly(int amount) {
         if (amount == 0) {
             this.name = NAME;
-            this.img = ImageMaster.loadImage("conspire/images/monsters/HollyBat/HollyBat.png");
             AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "UNHOLY"));
         }
     }
