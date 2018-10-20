@@ -9,11 +9,8 @@
   },
   "conspire:HitWhereItHurts": {
     "NAME": "Hit Where it Hurts",
-    "DESCRIPTION": "Deal !D! damage. NL Deals 25% more damage for each Vulnerability.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Deals 50% more damage for each Vulnerability.",
-    "EXTENDED_DESCRIPTION": [
-      "vulnerability", "The number of turns an enemy is #yVulnerable for."
-    ]
+    "DESCRIPTION": "Deal !D! damage. NL Deals 25% more damage for each Vulnerable.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Deals 50% more damage for each Vulnerable."
   },
   "conspire:Purge": {
     "NAME": "Purge",

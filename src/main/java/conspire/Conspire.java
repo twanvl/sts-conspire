@@ -1,10 +1,16 @@
 package conspire;
 
+import java.lang.reflect.Type;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
+import java.util.Map;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.megacrit.cardcrawl.audio.Sfx;
 import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -14,6 +20,7 @@ import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.localization.Keyword;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.localization.OrbStrings;
 import com.megacrit.cardcrawl.localization.PotionStrings;
@@ -150,7 +157,20 @@ public class Conspire implements
 
     @Override
     public void receiveEditKeywords() {
-        BaseMod.addKeyword(HitWhereItHurts.KEYWORD_NAMES, HitWhereItHurts.KEYWORD_DESCRIPTION);
+        loadCustomKeywordsStringsFile("conspire/localization/eng/conspire-keywords.json");
+    }
+
+    void loadCustomKeywordsStringsFile(String filepath) {
+        loadCustomKeywordsStrings(Gdx.files.internal(filepath).readString(String.valueOf(StandardCharsets.UTF_8)));
+    }
+    void loadCustomKeywordsStrings(String strings) {
+        Gson gson = new Gson();
+        Type typeToken = new TypeToken<Map<String, Keyword>>(){}.getType();
+        @SuppressWarnings("unchecked")
+        Map<String,Keyword> keywords = (Map<String,Keyword>)gson.fromJson(strings, typeToken);
+        for (Keyword kw : keywords.values()) {
+            BaseMod.addKeyword(kw.NAMES, kw.DESCRIPTION);
+        }
     }
 
     @Override
