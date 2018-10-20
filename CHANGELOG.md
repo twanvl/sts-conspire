@@ -1,4 +1,4 @@
-### HEAD
+### v1.3.0
 * Added cards: 1 red, 1 blue
 * Added relics: Dentures, Gift Box
 * Added orb: Water
