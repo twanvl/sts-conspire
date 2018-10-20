@@ -18,6 +18,8 @@ src/main/resources/conspire/images/monsters/HeadLouse/scaled
 src/main/resources/conspire/images/monsters/MysteriousRune/images
 src/main/resources/conspire/images/monsters/MysteriousRune/skeleton*.png
 src/main/resources/conspire/images/monsters/MysteriousRune/*.atlas
+src/main/resources/conspire/images/monsters/HollyBat/skeleton*.png
+src/main/resources/conspire/images/monsters/HollyBat/*.atlas
 src/main/resources/conspire/images/relics/*.png
 src/main/resources/conspire/images/relics/large
 src/main/resources/conspire/images/relics/outline

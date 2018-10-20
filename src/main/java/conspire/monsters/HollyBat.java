@@ -1,11 +1,14 @@
 package conspire.monsters;
 
+import com.badlogic.gdx.math.MathUtils;
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ChangeStateAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -32,9 +35,9 @@ public class HollyBat extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     // location
     private static final float HB_X = 0.0f;
-    private static final float HB_Y = 10.0f;
-    private static final float HB_W = 280.0f;
-    private static final float HB_H = 200.0f;
+    private static final float HB_Y = -15.0f;
+    private static final float HB_W = 320.0f;
+    private static final float HB_H = 240.0f;
     // stats
     private static final int HP_MIN = 100;
     private static final int HP_MAX = 105;
@@ -62,12 +65,13 @@ public class HollyBat extends AbstractMonster {
     private static final byte GLOW     = 6;
     private boolean donePelt = false;
     private boolean doneAngry = false;
+    private boolean isHoly = true;
 
     public HollyBat(float x, float y) {
         super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "conspire/images/monsters/HollyBat/HolyBat.png", x, y + 150.0f);
-        //this.loadAnimation("images/monsters/HollyBat/skeleton.atlas", "images/monsters/HollyBat/skeleton.json", 1.0f);
-        //AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
-        //e.setTime(e.getEndTime() * MathUtils.random());
+        this.loadAnimation("conspire/images/monsters/HollyBat/skeleton.atlas", "conspire/images/monsters/HollyBat/skeleton.json", 1.0f);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "IdleHoly", true);
+        e.setTime(e.getEndTime() * MathUtils.random());
         if (AscensionHelper.tougher(this.type)) {
             this.setHp(HP_MIN_A, HP_MAX_A);
         } else {
@@ -78,11 +82,13 @@ public class HollyBat extends AbstractMonster {
         this.attackDmg = AscensionHelper.deadlier(this.type) ? ATTACK_DMG_A : ATTACK_DMG;
         this.biteDmg = AscensionHelper.deadlier(this.type) ? BITE_DMG_A : BITE_DMG;
         this.angryDmg = AscensionHelper.deadlier(this.type) ? ANGRY_DMG_A : ANGRY_DMG;
+        this.woundAmt = AscensionHelper.deadlier(this.type) ? 2 : 1;
         this.damage.add(new DamageInfo(this, attackDmg));
         this.damage.add(new DamageInfo(this, biteDmg));
         this.damage.add(new DamageInfo(this, angryDmg));
         // called holy until no longer holy
         this.name = DIALOG[0];
+        this.isHoly = true;
     }
 
     @Override
@@ -94,7 +100,23 @@ public class HollyBat extends AbstractMonster {
         if (amount == 0) {
             this.name = NAME;
             this.img = ImageMaster.loadImage("conspire/images/monsters/HollyBat/HollyBat.png");
-            // TODO: animation
+            AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "UNHOLY"));
+        }
+    }
+
+    @Override
+    public void changeState(String stateName) {
+        switch (stateName) {
+            case "SWOOP": {
+                this.state.setAnimation(0, isHoly ? "SwoopHoly" : "Swoop", false);
+                this.state.addAnimation(0, isHoly ? "IdleHoly" : "Idle", true, 0.0f);
+                break;
+            }
+            case "UNHOLY": {
+                isHoly = false;
+                this.state.setAnimation(0, "IdleFromHoly", false);
+                this.state.addAnimation(0, "Idle", true, 0.0f);
+            }
         }
     }
 
@@ -110,7 +132,7 @@ public class HollyBat extends AbstractMonster {
             }
             case SWOOP: {
                 AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "SWOOP"));
-                AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(this));
+                AbstractDungeon.actionManager.addToBottom(new WaitAction(1.2f));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AttackEffect.BLUNT_LIGHT));
                 break;
             }
@@ -126,8 +148,8 @@ public class HollyBat extends AbstractMonster {
             }
             case ANGRY: {
                 doneAngry = true;
-                AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "ANGRY_SWOOP"));
-                AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(this));
+                AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "SWOOP"));
+                AbstractDungeon.actionManager.addToBottom(new WaitAction(1.2f));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AttackEffect.BLUNT_LIGHT));
                 break;
             }
