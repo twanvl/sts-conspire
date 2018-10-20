@@ -32,8 +32,8 @@ public class RoseBush extends AbstractMonster {
     // location
     private static final float HB_X = 0.0f;
     private static final float HB_Y = 0.0f;
-    private static final float HB_W = 290.0f;
-    private static final float HB_H = 248.0f;
+    private static final float HB_W = 270.0f;
+    private static final float HB_H = 226.0f;
     // stats
     private static final int HP_MIN = 30;
     private static final int HP_MAX = 35;

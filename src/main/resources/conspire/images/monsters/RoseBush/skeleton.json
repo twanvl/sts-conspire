@@ -1,7 +1,7 @@
 {
   "skeleton": { "hash": "", "spine": "3.4.02", "width": 300, "height": 248, "images": "./images/" },
   "bones": [
-    { "name": "root", "x": 0, "y": 0 },
+    { "name": "root", "x": 0, "y": 0, "scaleX": 0.8, "scaleY": 0.8 },
     { "name": "bush1", "parent": "root",  "x": 0,  "y": 0, "length": 40, "rotation": 90, "color": "00ff00ff" },
     { "name": "bush2", "parent": "bush1", "x": 40, "y": 0, "length": 40, "rotation": 0, "color": "00ff00ff" },
     { "name": "bush3", "parent": "bush2", "x": 40, "y": 0, "length": 40, "rotation": 0, "color": "00ff00ff" },
