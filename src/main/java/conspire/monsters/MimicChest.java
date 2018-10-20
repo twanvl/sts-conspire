@@ -42,8 +42,11 @@ public class MimicChest extends AbstractMonster {
     private static final int ATTACK_DMG = 13;
     private static final int ATTACK_DMG_A = 15;
     private static final float ATTACK_DMG_FLOOR = 0.25f;
+    private static final int NOMNOM_DMG = 5;
+    private static final int NOMNOM_DMG_A = 6;
     private int attackDmg;
     private int nomNomDmg;
+    private int nomNomTimes;
     private int strUp = 3;
     private int weakDur = 2;
     // moves
@@ -78,11 +81,17 @@ public class MimicChest extends AbstractMonster {
 
     public MimicChest(float x, float y) {
         super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "conspire/images/monsters/MimicChest/MimicChest.png", x, y);
-        int floorHP = AbstractDungeon.floorNum * (AscensionHelper.tougher(this.type) ? HP_FLOOR_A : HP_FLOOR);
+        this.type = EnemyType.ELITE;
+        int floor = AbstractDungeon.floorNum;
+        if (floor > 45) { // can happen in endless mode
+            floor = Math.max(20, (floor - 1) % 45 + 1);
+        }
+        int floorHP = (AscensionHelper.tougher(this.type) ? HP_FLOOR_A : HP_FLOOR) * floor;
         this.setHp(HP_MIN+ floorHP, HP_MAX + floorHP);
         // damage amounts
-        this.attackDmg = (AscensionHelper.harder(this.type) ? ATTACK_DMG_A : ATTACK_DMG) + Math.round(ATTACK_DMG_FLOOR * AbstractDungeon.floorNum);
-        this.nomNomDmg = 5;
+        this.attackDmg = (AscensionHelper.deadlier(this.type) ? ATTACK_DMG_A : ATTACK_DMG) + Math.round(ATTACK_DMG_FLOOR * floor);
+        this.nomNomDmg = AscensionHelper.deadlier(this.type) ? NOMNOM_DMG_A : NOMNOM_DMG;
+        this.nomNomTimes = (AbstractDungeon.actNum - 1) % 3 + 2;
         this.damage.add(new DamageInfo(this, attackDmg));
         this.damage.add(new DamageInfo(this, nomNomDmg));
     }
@@ -114,7 +123,7 @@ public class MimicChest extends AbstractMonster {
             }
             case NOMNOM: {
                 AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(this));
-                for (int i = 0 ; i < AbstractDungeon.actNum + 1 ; ++i) {
+                for (int i = 0 ; i < this.nomNomTimes ; ++i) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AttackEffect.BLUNT_LIGHT));
                 }
                 break;
@@ -131,8 +140,8 @@ public class MimicChest extends AbstractMonster {
         }
         MovePicker moves = new MovePicker();
         if (!this.lastMove(ROAR) && !this.lastMove(SCREAM)) moves.add(ROAR, Intent.BUFF, 1.0f);
-        if (!this.lastTwoMoves(CHOMP)) moves.add(CHOMP,  Intent.ATTACK, this.damage.get(0).base, 1.0f);
-        if (!this.lastMove(NOMNOM))    moves.add(NOMNOM, Intent.ATTACK, this.damage.get(1).base, AbstractDungeon.actNum + 1, true, 1.0f);
+        if (!this.lastMove(CHOMP)) moves.add(CHOMP,  Intent.ATTACK, this.damage.get(0).base, 1.0f);
+        if (!this.lastTwoMoves(NOMNOM))    moves.add(NOMNOM, Intent.ATTACK, this.damage.get(1).base, this.nomNomTimes, true, 1.0f);
         moves.pickRandomMove(this);
     }
 }
