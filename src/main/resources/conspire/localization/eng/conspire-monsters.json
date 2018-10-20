@@ -30,5 +30,10 @@
     "DIALOG": [
       "@RRrrohrrRGHhh!!@"
     ]
+  },
+  "conspire:HollyBat": {
+    "NAME": "Holly Bat",
+    "MOVES": ["Pelt","Swoop","Bite","Infect","Swoop","Glow"],
+    "DIALOG": ["Holy Bat"]
   }
 }

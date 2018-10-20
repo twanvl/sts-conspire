@@ -54,9 +54,9 @@
       "Whenever you gain #yBlock, gains #b","% Block next turn."," (Will gain #b"," #yBlock)"
     ]
   },
-  "conspire:DivineProtection": {
-    "NAME": "Divine Protection",
-    "DESCRIPTIONS": ["Prevent all damage taken and HP loss."]
+  "conspire:Holy": {
+    "NAME": "Holy",
+    "DESCRIPTIONS": ["Prevent all damage and HP loss."]
   },
   "conspire:DrawnBlood": {
     "NAME": "Drawn Blood",

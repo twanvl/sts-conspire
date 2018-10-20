@@ -63,6 +63,10 @@
     "EXTENDED_DESCRIPTION": ["Lose !M! Gold. NL Exhaust. NL Value may change over time."]
   },
 
+  "conspire:InfernalBerry": {
+    "NAME": "Infernal Berry",
+    "DESCRIPTION": "Remove 1 Holy. NL Exhaust."
+  },
   "conspire:PyramidRune": {
     "NAME": "Pyramid Rune",
     "DESCRIPTION": "Retain. NL Exhaust."
@@ -70,10 +74,6 @@
   "conspire:Treasure": {
     "NAME": "Treasure",
     "DESCRIPTION": "Gain !M! Gold. NL Exhaust."
-  },
-  "conspire:InfernalBerry": {
-    "NAME": "Infernal Berry",
-    "DESCRIPTION": "Remove 1 #yDivine #yProtection. NL Exhaust."
   },
 
   "conspire:Blindness": {

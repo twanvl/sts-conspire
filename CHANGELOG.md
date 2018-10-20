@@ -1,5 +1,6 @@
 ### HEAD
 * Added cards: 1 curse
+* Added monster: Hol(l)y Bat
 * Balance: Toned down mimic in endless mode
 
 ### v1.3.0
