@@ -10,15 +10,15 @@
     "NAME": "Decoder Ring",
     "FLAVOR": "Up, up, down, down, left, right, left, right, B, A.",
     "DESCRIPTIONS": [
-      "When you play #b3 #yAttack cards, then #b2 #ySkill cards, then #b2 #yAttacks cards, then #b1 #ySkill card, deal #b"," damage to all enemies.",
+      "When you play #b3 #yAttacks, then #b2 #ySkills, then #b2 #yAttackss, then #b1 #ySkill, deal #b"," damage to all enemies.",
       "",
-      " NL (Play #b2 #yAttack cards, then #b2 #ySkill cards, then #b2 #yAttack, then #b1 #ySkill card cards to trigger)",
-      " NL (Play #b1 #yAttack card, then #b2 #ySkill cards, then #b2 #yAttack, then #b1 #ySkill card cards to trigger)",
-      " NL (Play #b2 #ySkill cards, then #b2 #yAttack cards, then #b1 #ySkill card to trigger)",
-      " NL (Play #b1 #ySkill card, then #b2 #yAttack cards, then #b1 #ySkill card to trigger)",
-      " NL (Play #b2 #yAttack cards, then #b1 #ySkill card to trigger)",
-      " NL (Play #b1 #yAttack card, then #b1 #ySkill card to trigger)",
-      " NL (Play #b1 #ySkill card to trigger)"
+      " NL (Play #b2 #yAttacks, then #b2 #ySkills, then #b2 #yAttack, then #b1 #ySkills to trigger)",
+      " NL (Play #b1 #yAttack, then #b2 #ySkills, then #b2 #yAttack, then #b1 #ySkills to trigger)",
+      " NL (Play #b2 #ySkills, then #b2 #yAttacks, then #b1 #ySkill to trigger)",
+      " NL (Play #b1 #ySkill, then #b2 #yAttacks, then #b1 #ySkill to trigger)",
+      " NL (Play #b2 #yAttacks, then #b1 #ySkill to trigger)",
+      " NL (Play #b1 #yAttack, then #b1 #ySkill to trigger)",
+      " NL (Play #b1 #ySkill to trigger)"
     ]
   },
   "conspire:Dentures": {
