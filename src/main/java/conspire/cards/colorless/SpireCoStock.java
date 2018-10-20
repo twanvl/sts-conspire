@@ -30,7 +30,7 @@ public class SpireCoStock extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ObtainGoldAction(this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ObtainGoldAction(this.magicNumber, null, true));
     }
 
     @Override

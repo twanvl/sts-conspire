@@ -34,7 +34,8 @@ public class Treasure extends CustomCard {
         if (p.hasRelic("Medical Kit")) {
             this.useMedicalKit(p);
         } else {
-            AbstractDungeon.actionManager.addToBottom(new ObtainGoldAction(this.magicNumber));
+            AbstractMonster source = AbstractDungeon.getCurrRoom().monsters.getRandomMonster();
+            AbstractDungeon.actionManager.addToBottom(new ObtainGoldAction(this.magicNumber, source, false));
         }
     }
 
