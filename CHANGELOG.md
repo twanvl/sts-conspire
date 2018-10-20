@@ -1,4 +1,5 @@
 ### HEAD
+* Added cards: 1 curse
 * Balance: Toned down mimic in endless mode
 
 ### v1.3.0

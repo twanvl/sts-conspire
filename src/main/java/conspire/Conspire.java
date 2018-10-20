@@ -50,6 +50,7 @@ import conspire.cards.colorless.GhostlyDefend;
 import conspire.cards.colorless.GhostlyStrike;
 import conspire.cards.colorless.SpireCoStock;
 import conspire.cards.curse.Blindness;
+import conspire.cards.curse.NecroticWound;
 import conspire.cards.green.DoublingDagger;
 import conspire.cards.green.PoisonWeapons;
 import conspire.cards.red.Charge;
@@ -195,6 +196,7 @@ public class Conspire implements
         BaseMod.addCard(new PyramidRune());
         // curse
         BaseMod.addCard(new Blindness());
+        BaseMod.addCard(new NecroticWound());
     }
 
     @Override
