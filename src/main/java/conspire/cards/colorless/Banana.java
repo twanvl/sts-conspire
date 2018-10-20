@@ -21,7 +21,7 @@ public class Banana extends CustomCard {
     private static final int UPGRADE_MAX_HP = 1;
 
     public Banana() {
-        super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.RARE, CardTarget.SELF);
+        super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.UNCOMMON, CardTarget.SELF);
         this.magicNumber = this.baseMagicNumber = MAX_HP;
         this.exhaust = true;
         this.tags.add(CardTags.HEALING);
