@@ -118,6 +118,9 @@ public class MysteriousRune extends AbstractMonster {
 
     @Override
     public void usePreBattleAction() {
+        CardCrawlGame.music.unsilenceBGM();
+        AbstractDungeon.scene.fadeOutAmbiance();
+        AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_CITY");
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new ArtifactPower(this, ARTIFACT_AMT)));
     }
 
