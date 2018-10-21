@@ -1,4 +1,4 @@
-### HEAD
+### v1.4.0
 * Added cards: 1 curse
 * Added monster: Hol(l)y Bat
 * Added boss: Ornate Mirror
