@@ -2,8 +2,8 @@
   "conspire:LoneGhost": {
     "NAME": "Lone Ghost",
     "DESCRIPTIONS": [
-      "Dark smoke covers the ground around you, as you spot a shimmer in front of you, which quickly coalesces into a masked face. It starts to speak. NL NL ~\"You~ ~may~ ~have~ ~heared~ ~of~ ~the~ #p~Council~ #p~of~ #p~Ghosts.~ ~I~ ~was~ ~once~ ~a~ ~member,~ ~you~ ~know.~ ~But~ ~now~ ~I~ ~have~ ~been~ ~sent~ ~down~ ~here~ ~to~ ~watch~ ~mortals~ ~struggle~ ~and~ ~fail~ ~for~ ~eternity...\"~ NL ~\"A~ ~rather~ ~pointless~ ~punisment,~ ~don't~ ~you~ ~agree?\"~",
-      "~\"So~ ~you~ ~see~ ~it~ ~too.~ ~Our~ ~existance~ ~in~ ~this~ ~world~ ~is~ ~fleeting~ ~and~ ~futile.\"~ NL NL The smoke starts to rise and get thicker the face is lost in the darkness. NL NL You feel empty and alone, but decide to carry on.",
+      "Dark smoke covers the ground around you, as you spot a shimmer in front of you, which quickly coalesces into a masked face. It starts to speak. NL NL ~\"You~ ~may~ ~have~ ~heard~ ~of~ ~the~ #p~Council~ #p~of~ #p~Ghosts.~ ~I~ ~was~ ~once~ ~a~ ~member,~ ~you~ ~know.~ ~But~ ~now~ ~I~ ~have~ ~been~ ~sent~ ~down~ ~here~ ~to~ ~watch~ ~mortals~ ~struggle~ ~and~ ~fail~ ~for~ ~eternity...\"~ NL ~\"A~ ~rather~ ~pointless~ ~punishment,~ ~don't~ ~you~ ~agree?\"~",
+      "~\"So~ ~you~ ~see~ ~it~ ~too.~ ~Our~ ~existence~ ~in~ ~this~ ~world~ ~is~ ~fleeting~ ~and~ ~futile.\"~ NL NL The smoke starts to rise and get thicker the face is lost in the darkness. NL NL You feel empty and alone, but decide to carry on.",
       "~\"Perhaps~ ~I~ ~can~ ~convince~ ~you~ ~of~ ~the~ ~truth~ ~in~ ~time.~ ~This~ ~will~ ~help~ ~you~ ~understand~ ~our~ ~existence.\"~ NL NL The form starts to approach, and you feel the ectoplasm touch you. It feels a bit slimy.",
       "~\"I~ ~see~ ~you~ ~are~ ~already~ ~enthralled~ ~by~ ~the~ #p@Council.@ ~I~ ~do~ ~not~ ~wish~ ~to~ ~be~ ~involved~ ~with~ ~them~ ~anymore.\"~ NL NL The smoke quietly fades away, and the entity disappears with it."
     ],
@@ -19,8 +19,8 @@
   "conspire:Investor": {
     "NAME": "Investor",
     "DESCRIPTIONS": [
-      "\"Have you heared? This spire is going to be #y@HUGE!@ If you invest today, you are guaranteed to double your gold in no time*.\" NL NL *: Do not base investment decisions upon any statements made by SpireCo employees. The value of investments may change, past performance is not a guarantee of future performance.",
-      "\"Excelent! You have made a wise decision!\" NL NL As you hand over your gold, you begin to doubt the investment that you just made.",
+      "\"Have you heard? This spire is going to be #y@HUGE!@ If you invest today, you are guaranteed to double your gold in no time*.\" NL NL *: Do not base investment decisions upon any statements made by SpireCo employees. The value of investments may change, past performance is not a guarantee of future performance.",
+      "\"Excellent! You have made a wise decision!\" NL NL As you hand over your gold, you begin to doubt the investment that you just made.",
       "\"You will come to regret this choice, as your peers swim in wealth while you are forced to beg for scraps.\""
     ],
     "OPTIONS": [
