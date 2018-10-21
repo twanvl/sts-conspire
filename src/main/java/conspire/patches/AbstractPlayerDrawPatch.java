@@ -1,14 +1,9 @@
 // Make TemporaryConfusion work like confusion
 package conspire.patches;
 
-import com.evacipated.cardcrawl.modthespire.lib.SpireInsertPatch;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
-import basemod.interfaces.PostDrawSubscriber;
-import conspire.powers.CubeRunePower;
 import javassist.CannotCompileException;
 import javassist.expr.ExprEditor;
 import javassist.expr.MethodCall;
