@@ -26,6 +26,8 @@ src/main/resources/conspire/images/relics/outline
 src/main/resources/conspire/images/powers/32
 src/main/resources/conspire/images/powers/64
 src/main/resources/conspire/images/powers/large/old
+src/main/resources/conspire/images/powers/images
+src/main/resources/conspire/images/powers/skeleton.*
 *.o
 *.hi
 *.class

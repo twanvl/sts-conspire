@@ -74,6 +74,8 @@
             <exclude>conspire/images/monsters/*/source/**</exclude>
             <exclude>conspire/images/powers/large</exclude>
             <exclude>conspire/images/powers/large/*</exclude>
+            <exclude>conspire/images/powers/images/**</exclude>
+            <exclude>conspire/images/powers/32/**</exclude>
             <exclude>conspire/images/relics/source</exclude>
             <exclude>conspire/images/relics/source/*</exclude>
           </excludes>

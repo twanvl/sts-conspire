@@ -4,6 +4,7 @@ import System.IO
 import System.Environment
 import System.Exit
 import System.Directory
+import System.FilePath
 import Control.Monad
 import Data.List
 import Data.Char
@@ -152,27 +153,27 @@ writeAtlasRegion (AtlasRegion name rot xy size orig off idx) =
   showBool = map toLower . show
   showTuple (a,b) = show a ++ ", " ++ show b
 
-extractAtlas :: Atlas -> IO ()
-extractAtlas atlas = do
-  createDirectoryIfMissing False "images"
-  mapM_ extractAtlasImage atlas
+extractAtlas :: (Image PixelRGBA8 -> Image PixelRGBA8) -> Atlas -> IO ()
+extractAtlas imFun atlas = do
+  mapM_ (extractAtlasImage imFun) atlas
 
-extractAtlasImage :: AtlasImage -> IO ()
-extractAtlasImage (AtlasImage imFile regions _ _) = do
+extractAtlasImage :: (Image PixelRGBA8 -> Image PixelRGBA8) -> AtlasImage -> IO ()
+extractAtlasImage imFun (AtlasImage imFile regions _ _) = do
   im <- tryReadImage imFile
-  let im' = divAlpha im
+  let im' = imFun im
   mapM_ (extractAtlasRegion im') regions
 
 extractAtlasRegion :: Image PixelRGBA8 -> AtlasRegion -> IO ()
 extractAtlasRegion im region@(AtlasRegion name rot xy size _orig _off _idx) = do
   print region
   let outfile
-       | "images/" `isPrefixOf` name = name ++ ".png"
-       | otherwise                   = "images/" ++ name ++ ".png"
+       | '/' `elem` name = name ++ ".png"
+       | otherwise       = "images/" ++ name ++ ".png"
+  createDirectoryIfMissing True (takeDirectory outfile)
   savePngImage outfile $ ImageRGBA8 (cropImage xy size rot im)
 
-decodeAtlas :: FilePath -> IO ()
-decodeAtlas = extractAtlas <=< readAtlasFile
+decodeAtlas :: (Image PixelRGBA8 -> Image PixelRGBA8) -> FilePath -> IO ()
+decodeAtlas imFun = extractAtlas imFun <=< readAtlasFile
 
 doubleAtlasCoords :: Atlas -> Atlas
 doubleAtlasCoords = map doubleImg
@@ -191,7 +192,9 @@ main = do
   case args of
     ["mul",infile,outfile] -> mapPng mulAlpha infile outfile
     ["div",infile,outfile] -> mapPng divAlpha infile outfile
-    ["atlas",infile] -> decodeAtlas infile
+    ["atlas",infile] -> decodeAtlas divAlpha infile
+    ["atlas-div",infile] -> decodeAtlas divAlpha infile
+    ["atlas-nodiv",infile] -> decodeAtlas id infile
     _ -> do
       prog <- getProgName
       hPutStrLn stderr $ "Usage: " ++ prog ++ " mul <INFILE> <OUTFILE>"

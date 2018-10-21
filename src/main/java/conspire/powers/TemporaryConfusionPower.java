@@ -6,9 +6,8 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class TemporaryConfusionPower extends AbstractPower {
+public class TemporaryConfusionPower extends AbstractConspirePower {
     public static final String POWER_ID = "conspire:TemporaryConfusion";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -16,14 +15,11 @@ public class TemporaryConfusionPower extends AbstractPower {
     private boolean justApplied = false;
 
     public TemporaryConfusionPower(AbstractCreature owner, int amount, boolean isSourceMonster) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.owner = owner;
+        super(POWER_ID, NAME, owner);
         this.amount = amount;
         this.justApplied = isSourceMonster;
         this.updateDescription();
-        this.loadRegion("confusion");
-        this.type = AbstractPower.PowerType.DEBUFF;
+        this.type = PowerType.DEBUFF;
         this.isTurnBased = true;
     }
 

@@ -256,9 +256,6 @@ public class Conspire implements
     public static String orbImage(String id) {
         return "conspire/images/orbs/" + Conspire.removeModId(id) + ".png";
     }
-    public static String powerImage(String id) {
-        return "conspire/images/powers/32/" + Conspire.removeModId(id) + ".png";
-    }
     public static String relicImage(String id) {
         return "conspire/images/relics/" + Conspire.removeModId(id) + ".png";
     }

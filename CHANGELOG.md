@@ -2,6 +2,7 @@
 * Added cards: 1 curse
 * Added monster: Hol(l)y Bat
 * Balance: Toned down mimic in endless mode
+* Added higher resolution power images
 
 ### v1.3.0
 * Added cards: 1 red, 1 blue

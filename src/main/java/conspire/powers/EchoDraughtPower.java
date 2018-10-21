@@ -10,21 +10,17 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class EchoDraughtPower extends AbstractPower {
+public class EchoDraughtPower extends AbstractConspirePower {
     public static final String POWER_ID = "conspire:EchoDraught";
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public EchoDraughtPower(AbstractCreature owner, int amount) {
-        this.name = NAME;
-        this.ID = POWER_ID;
-        this.owner = owner;
+        super(POWER_ID, NAME, owner);
         this.amount = amount;
         this.updateDescription();
-        this.loadRegion("echo");
     }
 
     @Override
