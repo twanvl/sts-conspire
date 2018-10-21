@@ -67,6 +67,7 @@ import conspire.monsters.FuzzyDie;
 import conspire.monsters.HeadLouse;
 import conspire.monsters.HollyBat;
 import conspire.monsters.MimicChest;
+import conspire.monsters.MirrorImage;
 import conspire.monsters.MysteriousRune;
 import conspire.monsters.RoseBush;
 import conspire.monsters.SneckoGhost;
@@ -143,6 +144,8 @@ public class Conspire implements
         BaseMod.addBoss(TheCity.ID, MysteriousRune.ENCOUNTER_NAME, "conspire/images/monsters/MysteriousRune/boss.png", "conspire/images/monsters/MysteriousRune/boss-outline.png");
         // Mimic Chest
         BaseMod.addMonster(MimicChest.ENCOUNTER_NAME, MimicChest.NAME, () -> new MimicChest());
+        // Reflected Adventurer (for testing)
+        BaseMod.addMonster(MirrorImage.ENCOUNTER_NAME, MirrorImage.NAME, () -> new MirrorImage(0.0f, 0.0f));
     }
 
     public void receiveEditEvents() {

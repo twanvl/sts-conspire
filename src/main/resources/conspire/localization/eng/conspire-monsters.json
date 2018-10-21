@@ -35,5 +35,10 @@
     "NAME": "Holly Bat",
     "MOVES": ["Pelt","Swoop","Bite","Infect","Swoop","Glow"],
     "DIALOG": ["Holy Bat"]
+  },
+  "conspire:MirrorImage": {
+    "NAME": "Mirror Image",
+    "MOVES": [],
+    "DIALOG": ["Defend, Defend, Defend", "Defend, Defend, Strike", "Defend, Strike, Strike", "Strike, Strike, Strike"]
   }
 }
