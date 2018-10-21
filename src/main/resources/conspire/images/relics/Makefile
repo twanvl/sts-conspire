@@ -1,7 +1,13 @@
 # Resize relic images
+
+# Notes:
+#  Relics should be 128*128 padded to 256*256
+#  The source relics can have arbitrary size with the same size padding
+
+ROOT=../../../../../..
 IMAGES:=$(notdir $(wildcard source/*.png))
 NOT_RELICS:=AbstractConspireRelic
-RELICS:=$(basename $(notdir $(wildcard ../../../../java/conspire/relics/*.java)))
+RELICS:=$(basename $(notdir $(wildcard $(ROOT)/src/main/java/conspire/relics/*.java)))
 MISSING_IMAGES:=$(filter-out $(NOT_RELICS) $(basename $(IMAGES)), $(RELICS))
 EXTRA_IMAGES:=$(filter-out $(RELICS),$(basename $(IMAGES)))
 OUTLINE_IMAGES:=$(addprefix outline/,$(IMAGES))
@@ -17,13 +23,13 @@ all: $(IMAGES) $(OUTLINE_IMAGES) $(LARGE_IMAGES) verify
 outline:
 	mkdir -p outline
 
-outline/%.png: %.png outline
+outline/%.png: %.png | outline
 	convert $< -evaluate set 0 -negate  -blur 12x1.5  -channel A -level 0%,5% +channel $@
 
 large:
 	mkdir -p large
 
-large/%.png: source/%.png large
+large/%.png: source/%.png | large
 	convert $< -resize 256x256 $@
 
 define WARN
@@ -36,7 +42,5 @@ verify:
 
 clean:
 	rm -f *.png
-	rm -f outline/*.png
-	rm -f large/*.png
-	rmdir outline
-	rmdir large
+	rm -rf outline large
+
