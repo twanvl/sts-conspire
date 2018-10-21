@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
 import com.megacrit.cardcrawl.actions.animations.ShoutAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -44,17 +45,22 @@ public class MimicChest extends AbstractMonster {
     private static final float ATTACK_DMG_FLOOR = 0.25f;
     private static final int NOMNOM_DMG = 5;
     private static final int NOMNOM_DMG_A = 6;
+    private static final int BLOCK_AMT = 6;
+    private static final int BLOCK_AMT_A = 9;
+    private static final float BLOCK_FLOOR = 0.25f;
     private int attackDmg;
     private int nomNomDmg;
     private int nomNomTimes;
     private int strUp = 3;
     private int weakDur = 2;
+    private int defendBlock = 2;
     // moves
     private boolean screamed = false;
     private static final byte SCREAM = 1;
     private static final byte ROAR   = 2;
     private static final byte CHOMP  = 3;
     private static final byte NOMNOM = 4;
+    private static final byte DEFEND = 5;
 
     /*
     Note: 512*512 chest image is placed at
@@ -92,8 +98,10 @@ public class MimicChest extends AbstractMonster {
         this.attackDmg = (AscensionHelper.deadlier(this.type) ? ATTACK_DMG_A : ATTACK_DMG) + Math.round(ATTACK_DMG_FLOOR * floor);
         this.nomNomDmg = AscensionHelper.deadlier(this.type) ? NOMNOM_DMG_A : NOMNOM_DMG;
         this.nomNomTimes = (AbstractDungeon.actNum - 1) % 3 + 2;
+        this.defendBlock = (AscensionHelper.harder(this.type) ? BLOCK_AMT_A : BLOCK_AMT) + Math.round(BLOCK_FLOOR * floor);
         this.damage.add(new DamageInfo(this, attackDmg));
         this.damage.add(new DamageInfo(this, nomNomDmg));
+        this.damage.add(new DamageInfo(this, attackDmg / 2));
     }
 
     @Override
@@ -128,6 +136,12 @@ public class MimicChest extends AbstractMonster {
                 }
                 break;
             }
+            case DEFEND: {
+                AbstractDungeon.actionManager.addToBottom(new AnimateSlowAttackAction(this));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AttackEffect.BLUNT_LIGHT));
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, this.defendBlock));
+                break;
+            }
         }
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
     }
@@ -139,9 +153,10 @@ public class MimicChest extends AbstractMonster {
             return;
         }
         MovePicker moves = new MovePicker();
-        if (!this.lastMove(ROAR) && !this.lastMove(SCREAM)) moves.add(ROAR, Intent.BUFF, 1.0f);
-        if (!this.lastMove(CHOMP)) moves.add(CHOMP,  Intent.ATTACK, this.damage.get(0).base, 1.0f);
-        if (!this.lastTwoMoves(NOMNOM))    moves.add(NOMNOM, Intent.ATTACK, this.damage.get(1).base, this.nomNomTimes, true, 1.0f);
+        if (!this.lastMove(ROAR) && !this.lastMove(SCREAM) && !this.lastMove(DEFEND)) moves.add(ROAR, Intent.BUFF, 1.0f);
+        if (!this.lastMove(CHOMP)) moves.add(CHOMP, Intent.ATTACK, this.damage.get(0).base, 1.0f);
+        if (!this.lastTwoMoves(NOMNOM)) moves.add(NOMNOM, Intent.ATTACK, this.damage.get(1).base, this.nomNomTimes, true, 1.0f);
+        if (!this.lastMove(DEFEND) && !this.lastMove(SCREAM)) moves.add(DEFEND, Intent.ATTACK_DEFEND, this.damage.get(2).base, 1.0f);
         moves.pickRandomMove(this);
     }
 }
