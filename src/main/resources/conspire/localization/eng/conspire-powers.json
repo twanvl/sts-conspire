@@ -43,15 +43,17 @@
     ]
   },
   "conspire:ReflectAttack": {
-    "NAME": "Mirrored Claws",
+    "NAME": "Reflect Attacks",
     "DESCRIPTIONS": [
-      "When receiving damage, deals #b","% back next turn."," (Will deal #b"," damage)"
+      "When taking unblocked damage, deals #b","% back next turn."," (Will deal #b"," damage)",
+      "Reflect "," damage"
     ]
   },
   "conspire:ReflectBlock": {
-    "NAME": "Mirrored Hide",
+    "NAME": "Reflect Defense",
     "DESCRIPTIONS": [
-      "Whenever you gain #yBlock, gains #b","% Block next turn."," (Will gain #b"," #yBlock)"
+      "Whenever you gain #yBlock, gains #b","% Block next turn."," (Will gain #b"," #yBlock)",
+      "Reflect "," Block"
     ]
   },
   "conspire:Holy": {

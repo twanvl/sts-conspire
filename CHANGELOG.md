@@ -1,6 +1,7 @@
 ### HEAD
 * Added cards: 1 curse
 * Added monster: Hol(l)y Bat
+* Added boss: Ornate Mirror
 * Balance: Made mimic more defensive, and toned it down in endless mode
 * Added higher resolution power images
 

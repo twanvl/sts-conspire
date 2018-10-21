@@ -36,6 +36,11 @@
     "MOVES": ["Pelt","Swoop","Bite","Infect","Swoop","Glow"],
     "DIALOG": ["Holy Bat"]
   },
+  "conspire:OrnateMirror": {
+    "NAME": "Ornate Mirror",
+    "MOVES": ["Reflect","Mirror Moves"],
+    "DIALOG": []
+  },
   "conspire:MirrorImage": {
     "NAME": "Mirror Image",
     "MOVES": [],

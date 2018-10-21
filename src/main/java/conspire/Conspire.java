@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.localization.EventStrings;
@@ -69,6 +70,7 @@ import conspire.monsters.HollyBat;
 import conspire.monsters.MimicChest;
 import conspire.monsters.MirrorImage;
 import conspire.monsters.MysteriousRune;
+import conspire.monsters.OrnateMirror;
 import conspire.monsters.RoseBush;
 import conspire.monsters.SneckoGhost;
 import conspire.potions.EchoDraught;
@@ -142,6 +144,9 @@ public class Conspire implements
         // Mysterious Rune
         BaseMod.addMonster(MysteriousRune.ENCOUNTER_NAME, MysteriousRune.NAME, () -> new MysteriousRune(0.0f, 0.0f));
         BaseMod.addBoss(TheCity.ID, MysteriousRune.ENCOUNTER_NAME, "conspire/images/monsters/MysteriousRune/boss.png", "conspire/images/monsters/MysteriousRune/boss-outline.png");
+        // Ornate Mirror
+        BaseMod.addMonster(OrnateMirror.ENCOUNTER_NAME, OrnateMirror.NAME, () -> new OrnateMirror());
+        BaseMod.addBoss(TheBeyond.ID, OrnateMirror.ENCOUNTER_NAME, "conspire/images/monsters/OrnateMirror/boss.png", "conspire/images/monsters/OrnateMirror/boss-outline.png");
         // Mimic Chest
         BaseMod.addMonster(MimicChest.ENCOUNTER_NAME, MimicChest.NAME, () -> new MimicChest());
         // Reflected Adventurer (for testing)

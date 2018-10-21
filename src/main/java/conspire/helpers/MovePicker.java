@@ -56,8 +56,9 @@ public class MovePicker {
         return moves.get(0);
     }
 
-    public void pickRandomMove(AbstractMonster self) {
+    public MoveOption pickRandomMove(AbstractMonster self) {
         MoveOption pick = this.getRandomMove();
         self.setMove(pick.moveName, pick.nextMove, pick.intent, pick.baseDamage, pick.multiplier, pick.isMultiDamage);
+        return pick;
     }
 }

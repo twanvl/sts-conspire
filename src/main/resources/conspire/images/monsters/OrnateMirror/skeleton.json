@@ -1,0 +1,45 @@
+{
+  "skeleton": { "hash": "", "spine": "3.4.02", "width": 438, "height": 462, "images": "./images/" },
+  "bones": [
+    { "name": "root", "x": 0, "y": 10 },
+    { "name": "mirror", "parent": "root", "x": 0, "y": 0, "scaleX": 0.75, "scaleY": 0.75 },
+    { "name": "frame", "parent": "mirror", "x": 0, "y": 0 },
+    { "name": "glass", "parent": "mirror", "x": 0, "y": 0 },
+    { "name": "shadow", "parent": "root", "x": 0, "y": -20 }
+  ],
+  "slots": [
+    { "name": "shadow", "bone": "shadow", "attachment": "shadow" },
+    { "name": "glass", "bone": "glass", "attachment": "glass" },
+    { "name": "frame", "bone": "frame", "attachment": "frame" }
+  ],
+  "skins": {
+    "default": {
+      "shadow": { "shadow": { "x": 0, "y": 0, "width": 320, "height": 41 } },
+      "glass": { "glass": { "x": 0, "y": 219, "width": 438, "height": 462 } },
+      "frame": { "frame": { "x": 0, "y": 219, "width": 438, "height": 462 } }
+    }
+  },
+  "animations": {
+    "Idle": {
+      "slots": {
+        "glass": {
+          "color": [
+            { "time": 0, "color":"ffffff99", "curve": [0.0,0, 0.5,1] },
+            { "time": 1, "color":"ffffffaa", "curve": [0.5,0, 0.5,1] },
+            { "time": 3, "color":"ffffff88", "curve": [0.5,0, 1,1] },
+            { "time": 4, "color":"ffffff99" }
+          ]
+        }
+      },
+      "bones": {
+        "mirror": {
+          "translate": [
+            { "time": 0, "y": 0, "curve": [0.5,0, 0.5,1] },
+            { "time": 2, "y": 10, "curve": [0.5,0, 0.5,1] },
+            { "time": 4, "y": 0 }
+          ]
+        }
+      }
+    }
+  }
+}
