@@ -23,6 +23,7 @@ public class Purge extends CustomCard {
     public Purge() {
         super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.SKILL, CardColor.RED, CardRarity.RARE, CardTarget.NONE);
         this.exhaust = true;
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override
