@@ -64,8 +64,8 @@ public class RoseBush extends AbstractMonster {
         RED, WHITE, YELLOW
     }
 
-    public RoseBush(float x, float y) {
-        this(x,y,randomColor());
+    public RoseBush(float x, float y, boolean canApplyVulnerable) {
+        this(x,y,randomColor(canApplyVulnerable));
     }
 
     public RoseBush(float x, float y, RoseColor color) {
@@ -89,11 +89,11 @@ public class RoseBush extends AbstractMonster {
         this.damage.add(new DamageInfo(this, prickDmg));
     }
 
-    private static RoseColor randomColor() {
-        int i = AbstractDungeon.monsterHpRng.random(2);
+    private static RoseColor randomColor(boolean canApplyVulnerable) {
+        int i = AbstractDungeon.monsterHpRng.random(canApplyVulnerable ? 2 : 1);
         if (i == 0)      return RoseColor.RED;
-        else if (i == 1) return RoseColor.WHITE;
-        else             return RoseColor.YELLOW;
+        else if (i == 1) return RoseColor.YELLOW;
+        else             return RoseColor.WHITE;
     }
 
     private static String atlasFile(RoseColor c) {

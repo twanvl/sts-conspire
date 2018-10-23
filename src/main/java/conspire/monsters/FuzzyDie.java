@@ -74,6 +74,7 @@ public class FuzzyDie extends AbstractMonster {
     private int attackDebuffDmg = 1;
     private int debuffAmt = 2;
     private int woundAmt = 2;
+    private boolean canApplyVulnerable;
     // moves
     private static final byte ATTACK_1      = 1;
     private static final byte ATTACK_2      = 2;
@@ -88,7 +89,7 @@ public class FuzzyDie extends AbstractMonster {
     private static final byte BIG_DEBUFF    = 11;
     private static final byte WOUND         = 12;
 
-    public FuzzyDie(float x, float y) {
+    public FuzzyDie(float x, float y, boolean canApplyVulnerable) {
         super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, null, x, y);
         this.loadAnimation("conspire/images/monsters/FuzzyDie/skeleton.atlas", "conspire/images/monsters/FuzzyDie/skeleton.json", 1.0f);
         AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
@@ -109,6 +110,7 @@ public class FuzzyDie extends AbstractMonster {
         this.blockAmt         = AscensionHelper.harder(this.type) ? BLOCK_AMT_A : BLOCK_AMT;
         this.attackBlockAmt   = AscensionHelper.harder(this.type) ? ATTACK_BLOCK_AMT_A : ATTACK_BLOCK_AMT;
         this.buffStrength     = AscensionHelper.harder(this.type) ? BUFF_STRENGTH_A : BUFF_STRENGTH;
+        this.canApplyVulnerable = canApplyVulnerable;
         this.damage.add(new DamageInfo(this, attackDmgMin));
         this.damage.add(new DamageInfo(this, (attackDmgMin+attackDmgMax)/2));
         this.damage.add(new DamageInfo(this, attackDmgMax));
@@ -169,11 +171,19 @@ public class FuzzyDie extends AbstractMonster {
             }
             case ATTACK_DEBUFF: {
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(6), AttackEffect.BLUNT_HEAVY));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, this.attackDebuffAmt, true), attackDebuffAmt));
+                if (this.canApplyVulnerable) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, this.attackDebuffAmt, true), attackDebuffAmt));
+                } else {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.attackDebuffAmt, true), attackDebuffAmt));
+                }
                 break;
             }
             case DEBUFF: {
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, this.debuffAmt, true), debuffAmt));
+                if (this.canApplyVulnerable) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new VulnerablePower(AbstractDungeon.player, this.debuffAmt, true), debuffAmt));
+                } else {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.debuffAmt, true), debuffAmt));
+                }
                 break;
             }
             case BIG_DEBUFF: {
@@ -201,7 +211,8 @@ public class FuzzyDie extends AbstractMonster {
         if (!this.lastMove(DEFEND))        moves.add(DEFEND,        Intent.DEFEND,                                 1.0f);
         if (!this.lastMove(BUFF))          moves.add(BUFF,          Intent.BUFF,                                   1.0f);
         if (!this.lastMove(ATTACK_DEBUFF)) moves.add(ATTACK_DEBUFF, Intent.ATTACK_DEBUFF, this.damage.get(6).base, 1.0f);
-        if (!this.lastMove(DEBUFF))        moves.add(DEBUFF,        Intent.DEBUFF,                                 1.0f);
+        if (!this.lastMove(DEBUFF) && canApplyVulnerable)
+                                           moves.add(DEBUFF,        Intent.DEBUFF,                                 1.0f);
         if (!this.lastMove(BIG_DEBUFF))    moves.add(BIG_DEBUFF,    Intent.STRONG_DEBUFF,                          1.0f);
         if (!this.lastMove(WOUND))         moves.add(MOVES[0], WOUND, Intent.DEBUFF,                               1.0f);
         moves.pickRandomMove(this);

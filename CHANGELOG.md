@@ -1,3 +1,6 @@
+### v1.4.1
+* In multi monster fights, the left monsters don't apply vulnerable.
+
 ### v1.4.0
 * Added cards: 1 curse
 * Added monster: Hol(l)y Bat

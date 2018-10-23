@@ -123,14 +123,14 @@ public class Conspire implements
 
     public void receiveEditMonsters() {
         // Rose Bush
-        BaseMod.addMonster(RoseBush.ENCOUNTER_NAME, RoseBush.NAME, () -> new RoseBush(0.0f, 0.0f));
+        BaseMod.addMonster(RoseBush.ENCOUNTER_NAME, RoseBush.NAME, () -> new RoseBush(0.0f, 0.0f, true));
         BaseMod.addMonster(RoseBush.DOUBLE_ENCOUNTER_NAME, RoseBush.DOUBLE_ENCOUNTER_NAME, () -> new MonsterGroup(
-                new AbstractMonster[] { new RoseBush(-280.0f, 10.0f), new RoseBush(80.0f, 30.0f) }));
+                new AbstractMonster[] { new RoseBush(-280.0f, 10.0f, false), new RoseBush(80.0f, 30.0f, true) }));
         BaseMod.addMonsterEncounter(Exordium.ID, new MonsterInfo(RoseBush.ENCOUNTER_NAME, 2.0f));
         BaseMod.addStrongMonsterEncounter(Exordium.ID, new MonsterInfo(RoseBush.DOUBLE_ENCOUNTER_NAME, 1.5f));
         // Fuzzy Dice
         BaseMod.addMonster(FuzzyDie.ENCOUNTER_NAME, FuzzyDie.ENCOUNTER_NAME, () -> new MonsterGroup(
-                new AbstractMonster[] { new FuzzyDie(-280.0f, 10.0f), new FuzzyDie(80.0f, 30.0f) }));
+                new AbstractMonster[] { new FuzzyDie(-280.0f, 10.0f, false), new FuzzyDie(80.0f, 30.0f, true) }));
         BaseMod.addMonsterEncounter(TheCity.ID, new MonsterInfo(FuzzyDie.ENCOUNTER_NAME, 2.0f));
         // Holly Bat
         BaseMod.addMonster(HollyBat.ENCOUNTER_NAME, HollyBat.NAME, () -> new HollyBat(0.0f, 0.0f));
