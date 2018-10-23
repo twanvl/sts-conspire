@@ -115,7 +115,7 @@ public class MirrorImage extends AbstractMonster {
 
     private void applyFlipToSkeleton() {
         // For some reason the world transform gets updated *after* setting the flip values. So we fix that here
-        if (ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractCreature.class, "atlas") != null) {
+        if (ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractCreature.class, "skeleton") != null) {
             Skeleton skeleton = (Skeleton)ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractCreature.class, "skeleton");
             boolean flipVertical = (boolean)ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractCreature.class, "flipVertical");
             skeleton.setFlip(AbstractDungeon.player.flipHorizontal, flipVertical);

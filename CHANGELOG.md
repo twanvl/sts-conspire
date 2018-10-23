@@ -1,6 +1,7 @@
 ### v1.4.1
 * In multi monster fights, the left monsters don't apply vulnerable.
-* Fix: Dentures copies echo form duplicate cards
+* Fix: Dentures no longer copies echo form duplicate cards
+* Fix crash of Mirror Image monster when playing as the construct
 
 ### v1.4.0
 * Added cards: 1 curse
