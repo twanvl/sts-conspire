@@ -15,7 +15,7 @@ public class Dentures extends AbstractConspireRelic {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction act) {
-        if (card.type == AbstractCard.CardType.POWER && AbstractDungeon.cardRandomRng.randomBoolean()) {
+        if (card.type == AbstractCard.CardType.POWER && !card.purgeOnUse && AbstractDungeon.cardRandomRng.randomBoolean()) {
             AbstractDungeon.player.getRelic(ID).flash();
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(card, 1));
         }
