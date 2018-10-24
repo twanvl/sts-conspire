@@ -6,6 +6,7 @@
 * Fix: large relic images have to be in images/largeRelics
 * Fix: Poison Weapons did not exhaust (#3)
 * Changed Infinite Journal to be rare
+* Changed Infernal Berry to be a skill
 
 ### v1.4.0
 * Added cards: 1 curse

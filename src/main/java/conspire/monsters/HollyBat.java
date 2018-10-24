@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 
-import conspire.cards.status.InfernalBerry;
+import conspire.cards.colorless.InfernalBerry;
 import conspire.helpers.AscensionHelper;
 import conspire.helpers.MovePicker;
 import conspire.powers.HolyPower;

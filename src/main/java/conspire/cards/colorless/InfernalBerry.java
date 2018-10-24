@@ -1,4 +1,4 @@
-package conspire.cards.status;
+package conspire.cards.colorless;
 
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -22,35 +22,13 @@ public class InfernalBerry extends CustomCard {
     private static final int COST = 1;
 
     public InfernalBerry() {
-        super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.STATUS, CardColor.COLORLESS, CardRarity.COMMON, CardTarget.ENEMY);
+        super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
         this.exhaust = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (p.hasRelic("Medical Kit")) {
-            this.useMedicalKit(p);
-        }
         AbstractDungeon.actionManager.addToBottom(new ReduceHolyAction(m, 1));
-    }
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        if (AbstractDungeon.player.hasRelic("Medical Kit")) {
-            return true;
-        }
-        if (this.cardPlayable(m) && this.hasEnoughEnergy()) {
-            return true;
-        }
-        return false;
-    }
-
-    @Override
-    public void triggerWhenDrawn() {
-        if (AbstractDungeon.player.hasPower(EvolvePower.POWER_ID) && !AbstractDungeon.player.hasPower(NoDrawPower.POWER_ID)) {
-            AbstractDungeon.player.getPower(EvolvePower.POWER_ID).flash();
-            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, AbstractDungeon.player.getPower(EvolvePower.POWER_ID).amount));
-        }
     }
 
     @Override
