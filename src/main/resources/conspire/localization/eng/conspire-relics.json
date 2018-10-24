@@ -6,6 +6,15 @@
       "Place the first #yAttack card you play each turn on top of your draw pile."
     ]
   },
+  "conspire:BottledYoYo": {
+    "NAME": "Bottled Yo-Yo",
+    "FLAVOR": "Yo, yo.",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose a card. When it is put into your discard pile, shuffle it into your draw pile.",
+      "Choose a card for ",
+      "When "," is put into your discard pile, shuffle it into your draw pile."
+    ]
+  },
   "conspire:DecoderRing": {
     "NAME": "Decoder Ring",
     "FLAVOR": "Up, up, down, down, left, right, left, right, B, A.",

@@ -1,7 +1,6 @@
 ### HEAD
-* Added relic: Spicy Sausage
+* Added relics: Spicy Sausage, Treasure Map, Bottled Yo-Yo
 * Fix: Water orb shouldn't be affected by focus
-* Added relics: Treasure Map
 
 ### v1.4.1
 * In multi monster fights, the left monsters don't apply vulnerable.

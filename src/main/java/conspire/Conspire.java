@@ -77,6 +77,7 @@ import conspire.potions.EchoDraught;
 import conspire.potions.TimeTravelPotion;
 import conspire.powers.CubeRunePower;
 import conspire.relics.Boomerang;
+import conspire.relics.BottledYoYo;
 import conspire.relics.DecoderRing;
 import conspire.relics.Dentures;
 import conspire.relics.Flyswatter;
@@ -221,6 +222,7 @@ public class Conspire implements
     @Override
     public void receiveEditRelics() {
         BaseMod.addRelic(new Boomerang(), RelicType.SHARED);
+        BaseMod.addRelic(new BottledYoYo(), RelicType.SHARED);
         BaseMod.addRelic(new DecoderRing(), RelicType.SHARED);
         BaseMod.addRelic(new Dentures(), RelicType.SHARED);
         BaseMod.addRelic(new Flyswatter(), RelicType.SHARED);
