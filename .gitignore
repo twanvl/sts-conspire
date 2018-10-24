@@ -27,7 +27,7 @@ src/main/resources/conspire/images/powers/32
 src/main/resources/conspire/images/powers/64
 src/main/resources/conspire/images/powers/large/old
 src/main/resources/conspire/images/powers/images
-src/main/resources/conspire/images/powers/skeleton.*
+src/main/resources/conspire/images/powers/powers.*
 src/main/resources/images
 *.o
 *.hi
