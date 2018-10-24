@@ -205,9 +205,9 @@ public class Conspire implements
         BaseMod.addCard(new Banana());
         BaseMod.addCard(new GhostlyDefend());
         BaseMod.addCard(new GhostlyStrike());
+        BaseMod.addCard(new InfernalBerry());
         BaseMod.addCard(new SpireCoStock());
         // status
-        BaseMod.addCard(new InfernalBerry());
         BaseMod.addCard(new PyramidRune());
         BaseMod.addCard(new Treasure());
         // curse
