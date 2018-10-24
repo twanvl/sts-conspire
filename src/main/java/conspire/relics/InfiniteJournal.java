@@ -14,7 +14,7 @@ public class InfiniteJournal extends AbstractConspireRelic {
     public static final Logger logger = LogManager.getLogger(InfiniteJournal.class.getName());
 
     public InfiniteJournal() {
-        super(ID, RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, RelicTier.RARE, LandingSound.FLAT);
     }
 
     @Override

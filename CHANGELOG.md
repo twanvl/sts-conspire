@@ -3,6 +3,7 @@
 * Fix: Dentures no longer copies echo form duplicate cards
 * Fix crash of Mirror Image monster when playing as the construct
 * Fix crash of OrnateMirror.onApplyPower
+* Changed Infinite Journal to be rare
 
 ### v1.4.0
 * Added cards: 1 curse
