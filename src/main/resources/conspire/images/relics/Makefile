@@ -11,7 +11,8 @@ RELICS:=$(basename $(notdir $(wildcard $(ROOT)/src/main/java/conspire/relics/*.j
 MISSING_IMAGES:=$(filter-out $(NOT_RELICS) $(basename $(IMAGES)), $(RELICS))
 EXTRA_IMAGES:=$(filter-out $(RELICS),$(basename $(IMAGES)))
 OUTLINE_IMAGES:=$(addprefix outline/,$(IMAGES))
-LARGE_IMAGES:=$(addprefix large/,$(IMAGES))
+LARGE_DIR=../../../images/largeRelics/conspire
+LARGE_IMAGES:=$(addprefix $(LARGE_DIR)/,$(IMAGES))
 
 all: $(IMAGES) $(OUTLINE_IMAGES) $(LARGE_IMAGES) verify
 
@@ -21,15 +22,15 @@ all: $(IMAGES) $(OUTLINE_IMAGES) $(LARGE_IMAGES) verify
 	convert $^ -resize 128x128 $@
 
 outline:
-	mkdir -p outline
+	mkdir -p $@
 
 outline/%.png: %.png | outline
 	convert $< -evaluate set 0 -negate  -blur 12x1.5  -channel A -level 0%,5% +channel $@
 
-large:
-	mkdir -p large
+$(LARGE_DIR):
+	mkdir -p $@
 
-large/%.png: source/%.png | large
+$(LARGE_DIR)/%.png: source/%.png | $(LARGE_DIR)
 	convert $< -resize 256x256 $@
 
 define WARN

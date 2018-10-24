@@ -3,6 +3,7 @@
 * Fix: Dentures no longer copies echo form duplicate cards
 * Fix crash of Mirror Image monster when playing as the construct
 * Fix crash of OrnateMirror.onApplyPower
+* Fix: large relic images have to be in images/largeRelics
 * Changed Infinite Journal to be rare
 
 ### v1.4.0

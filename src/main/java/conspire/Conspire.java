@@ -267,8 +267,8 @@ public class Conspire implements
     public static String relicImage(String id) {
         return "conspire/images/relics/" + Conspire.removeModId(id) + ".png";
     }
-    public static String relicLargeImage(String id) {
-        return "conspire/images/relics/large/" + Conspire.removeModId(id) + ".png";
+    public static String relicImgUrl(String id) {
+        return "conspire/" + Conspire.removeModId(id) + ".png";
     }
     public static String relicOutlineImage(String id) {
         return "conspire/images/relics/outline/" + Conspire.removeModId(id) + ".png";
