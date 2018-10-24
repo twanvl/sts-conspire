@@ -21,6 +21,7 @@ public class PoisonWeapons extends CustomCard {
 
     public PoisonWeapons() {
         super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.SELF);
+        this.exhaust = true;
     }
 
     @Override
