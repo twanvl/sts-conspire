@@ -1,3 +1,6 @@
+### HEAD
+* Added relic: Spicy Sausage
+
 ### v1.4.1
 * In multi monster fights, the left monsters don't apply vulnerable.
 * Fix: Dentures no longer copies echo form duplicate cards

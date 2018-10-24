@@ -78,6 +78,15 @@
       "Gain [E] at the start of each turn. NL On the first turn of combat lose 2 Energy instead."
     ]
   },
+  "conspire:SpicySausage": {
+    "NAME": "Spicy Sausage",
+    "FLAVOR": "Found lying around the spire. Should be safe to eat.",
+    "DESCRIPTIONS": [
+      "Start each combat with #b",
+      " #yStrength and ",
+      " #yDexterity."
+    ]
+  },
   "conspire:TopHat": {
     "NAME": "Top Hat",
     "FLAVOR": "This stylish hat can also be used to store rabbits and excess cards.",
