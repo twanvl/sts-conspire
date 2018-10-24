@@ -45,14 +45,14 @@
   "conspire:ReflectAttack": {
     "NAME": "Reflect Attacks",
     "DESCRIPTIONS": [
-      "When taking unblocked damage, deals #b","% back next turn."," (Will deal #b"," damage)",
+      "When taking unblocked damage, deals #b","% back on its turn."," (Will deal #b"," damage)",
       "Reflect "," damage"
     ]
   },
   "conspire:ReflectBlock": {
     "NAME": "Reflect Defense",
     "DESCRIPTIONS": [
-      "Whenever you gain #yBlock, gains #b","% Block next turn."," (Will gain #b"," #yBlock)",
+      "Whenever you gain #yBlock, gains #b","% Block on its turn."," (Will gain #b"," #yBlock)",
       "Reflect "," Block"
     ]
   },
