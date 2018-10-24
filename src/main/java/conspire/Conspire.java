@@ -90,6 +90,7 @@ import conspire.relics.SeveredTorchhead;
 import conspire.relics.SlowCooker;
 import conspire.relics.SpicySausage;
 import conspire.relics.TopHat;
+import conspire.relics.TreasureMap;
 
 @SpireInitializer
 public class Conspire implements
@@ -232,6 +233,8 @@ public class Conspire implements
         BaseMod.addRelic(new SlowCooker(), RelicType.SHARED);
         BaseMod.addRelic(new SpicySausage(), RelicType.SHARED);
         BaseMod.addRelic(new TopHat(), RelicType.SHARED);
+        BaseMod.addRelic(new TreasureMap(), RelicType.SHARED);
+        BaseMod.addSaveField("conspire:TreasureMap",new TreasureMap.TreasureMapDataSaver());
         // blue
         BaseMod.addRelic(new IceCreamScoop(), RelicType.BLUE);
     }

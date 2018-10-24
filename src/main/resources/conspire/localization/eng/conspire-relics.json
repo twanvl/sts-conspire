@@ -104,6 +104,14 @@
       "If your hand is full when drawing a card, draw an extra card next turn instead."
     ]
   },
+  "conspire:TreasureMap": {
+    "NAME": "Treasure Map",
+    "FLAVOR": "X marks the spot.",
+    "DESCRIPTIONS": [
+      "The map now shows what relics can be found in treasure and elite rooms.",
+      "Can be found in this room."
+    ]
+  },
 
   "conspire:IceCreamScoop": {
     "NAME": "Ice Cream Scoop",
