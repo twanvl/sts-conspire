@@ -8,8 +8,10 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.ChangeStateAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -124,7 +126,7 @@ public class HollyBat extends AbstractMonster {
                 donePelt = true;
                 AbstractDungeon.actionManager.addToBottom(new ChangeStateAction(this, "PELT"));
                 AbstractDungeon.actionManager.addToBottom(new WaitAction(1.2f));
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDiscardAction(new InfernalBerry(), this.holyAmt));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new InfernalBerry(), this.holyAmt, true, false));
                 break;
             }
             case SWOOP: {
@@ -158,10 +160,31 @@ public class HollyBat extends AbstractMonster {
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
     }
 
+    private static int countBerries() {
+        int count = 0;
+        for (AbstractCard c : AbstractDungeon.player.hand.group) {
+            if (c instanceof InfernalBerry) ++count;
+        }
+        for (AbstractCard c : AbstractDungeon.player.drawPile.group) {
+            if (c instanceof InfernalBerry) ++count;
+        }
+        for (AbstractCard c : AbstractDungeon.player.discardPile.group) {
+            if (c instanceof InfernalBerry) ++count;
+        }
+        return count;
+    }
+
+    private boolean deckHasEnoughBerries() {
+        if (!this.hasPower(HolyPower.POWER_ID)) return true;
+        int needed = this.getPower(HolyPower.POWER_ID).amount;
+        int have = countBerries();
+        return have >= needed;
+    }
+
     @Override
     protected void getMove(int num) {
         MovePicker moves = new MovePicker();
-        if (!this.donePelt) {
+        if (!this.donePelt || !deckHasEnoughBerries()) {
             this.setMove(MOVES[0], PELT, AbstractMonster.Intent.DEBUFF);
             return;
         }

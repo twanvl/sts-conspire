@@ -6,7 +6,7 @@
 * Fix: large relic images have to be in images/largeRelics
 * Fix: Poison Weapons did not exhaust (#3)
 * Changed Infinite Journal to be rare
-* Changed Infernal Berry to be a skill
+* Changed Infernal Berry to be a skill, Holy Bat now shuffles berries into your draw pile, and adds more if there are somehow not enough.
 
 ### v1.4.0
 * Added cards: 1 curse
