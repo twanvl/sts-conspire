@@ -154,7 +154,7 @@ public class OrnateMirror extends AbstractMonster {
 
     // Called by patch
     public void onApplyPower(AbstractPower powerToApply, AbstractCreature target, AbstractCreature source) {
-        if (!source.isPlayer) return;
+        if (source == null || !source.isPlayer) return;
         if (target == this && powerToApply instanceof StrengthPower && powerToApply.amount < 0) copy_negstr += -powerToApply.amount;
         if (target == this && powerToApply instanceof WeakPower && powerToApply.amount > 0) copy_weak += powerToApply.amount;
         if (target == this && powerToApply instanceof VulnerablePower && powerToApply.amount > 0) copy_vuln += powerToApply.amount;
