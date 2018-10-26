@@ -37,6 +37,7 @@ public class SeveredTorchhead extends AbstractConspireRelic {
         --AbstractDungeon.player.energy.energyMaster;
     }
 
+    @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         AbstractPlayer player = AbstractDungeon.player;
         if (c.type == AbstractCard.CardType.ATTACK) {
