@@ -85,6 +85,7 @@ import conspire.relics.GlowingRock;
 import conspire.relics.IceCreamScoop;
 import conspire.relics.InfiniteJournal;
 import conspire.relics.RoyalGoblet;
+import conspire.relics.RunicOctahedron;
 import conspire.relics.SeveredTorchhead;
 import conspire.relics.SlowCooker;
 import conspire.relics.SpicySausage;
@@ -226,6 +227,7 @@ public class Conspire implements
         BaseMod.addRelic(new GlowingRock(), RelicType.SHARED);
         BaseMod.addRelic(new InfiniteJournal(), RelicType.SHARED);
         BaseMod.addRelic(new RoyalGoblet(), RelicType.SHARED);
+        BaseMod.addRelic(new RunicOctahedron(), RelicType.SHARED);
         BaseMod.addRelic(new SeveredTorchhead(), RelicType.SHARED);
         BaseMod.addRelic(new SlowCooker(), RelicType.SHARED);
         BaseMod.addRelic(new SpicySausage(), RelicType.SHARED);

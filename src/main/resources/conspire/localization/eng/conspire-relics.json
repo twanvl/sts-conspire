@@ -64,6 +64,13 @@
       "Gain [E] at the start of each turn. NL Draw #b1 fewer card each turn."
     ]
   },
+  "conspire:RunicOctahedron": {
+    "NAME": "Runic Octahedron",
+    "FLAVOR": "The runes are indecipherable.",
+    "DESCRIPTIONS": [
+      "Draw #b"," fewer cards each turn. Whenever you play a card, draw a card."
+    ]
+  },
   "conspire:SeveredTorchhead": {
     "NAME": "Severed Torchhead",
     "FLAVOR": "The flame has died, so the owner will not miss it.",
@@ -99,7 +106,7 @@
   },
 
   "conspire:IceCreamScoop": {
-    "NAME": "IceCreamScoop",
+    "NAME": "Ice Cream Scoop",
     "FLAVOR": "Makes nice spheres.",
     "DESCRIPTIONS": [
       "You can rearrange your Orbs by dragging them."
