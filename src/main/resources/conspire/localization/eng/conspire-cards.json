@@ -83,5 +83,18 @@
   "conspire:NecroticWound": {
     "NAME": "Necrotic Wound",
     "DESCRIPTION": "Unplayable. NL When this card is drawn, shuffle a Wound into your draw pile."
+  },
+
+  "conspire:SpicySausageOptionStrength": {
+    "NAME": "Strength",
+    "DESCRIPTION": "Start each combat with !M! Strength."
+  },
+  "conspire:SpicySausageOptionDexterity": {
+    "NAME": "Dexterity",
+    "DESCRIPTION": "Start each combat with !M! Dexterity."
+  },
+  "conspire:SpicySausageOptionFocus": {
+    "NAME": "Focus",
+    "DESCRIPTION": "Start each combat with !M! Focus."
   }
 }

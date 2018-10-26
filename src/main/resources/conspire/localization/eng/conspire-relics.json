@@ -82,9 +82,12 @@
     "NAME": "Spicy Sausage",
     "FLAVOR": "Found lying around the spire. Should be safe to eat.",
     "DESCRIPTIONS": [
-      "Start each combat with #b",
-      " #yStrength and ",
-      " #yDexterity."
+      "Upon pickup, choose to start each combat with #b",
+      " #yStrength, #b",
+      " #yDexterity, or #b",
+      " #yFocus.",
+      "Choose a Sausage",
+      "Start each combat with #b"," #yStrength."," #yDexterity."," #yFocus."
     ]
   },
   "conspire:TopHat": {
