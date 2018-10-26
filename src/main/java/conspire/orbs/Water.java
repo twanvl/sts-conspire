@@ -53,6 +53,12 @@ public class Water extends AbstractOrb {
     }
 
     @Override
+    public void applyFocus() {
+        this.passiveAmount = this.basePassiveAmount;
+        this.evokeAmount = this.baseEvokeAmount;
+    }
+
+    @Override
     public void onStartOfTurn() {
         OrbFlareEffect flareEffect = new OrbFlareEffect(this, OrbFlareEffect.OrbFlareColor.FROST);
         ReflectionHacks.setPrivate(flareEffect, OrbFlareEffect.class, "color", Settings.BLUE_TEXT_COLOR.cpy());

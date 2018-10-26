@@ -1,5 +1,6 @@
 ### HEAD
 * Added relic: Spicy Sausage
+* Fix: Water orb shouldn't be affected by focus
 
 ### v1.4.1
 * In multi monster fights, the left monsters don't apply vulnerable.
