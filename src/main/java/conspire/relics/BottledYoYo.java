@@ -11,10 +11,10 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 import basemod.abstracts.CustomBottleRelic;
-import basemod.abstracts.CustomSaveable;
+import basemod.abstracts.CustomSavable;
 import conspire.patches.BottledYoYoField;
 
-public class BottledYoYo extends AbstractConspireRelic implements CustomBottleRelic, CustomSaveable<Integer> {
+public class BottledYoYo extends AbstractConspireRelic implements CustomBottleRelic, CustomSavable<Integer> {
     public static final String ID = "conspire:BottledYoYo";
     private boolean cardSelected = true;
     public AbstractCard card;

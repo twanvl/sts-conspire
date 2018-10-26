@@ -19,7 +19,7 @@ import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import basemod.abstracts.CustomSaveable;
+import basemod.abstracts.CustomSavable;
 
 public class TreasureMap extends AbstractConspireRelic {
     public static final String ID = "conspire:TreasureMap";
@@ -204,7 +204,7 @@ public class TreasureMap extends AbstractConspireRelic {
         }
     }
 
-    public static class TreasureMapDataSaver implements CustomSaveable<TreasureMapData> {
+    public static class TreasureMapDataSaver implements CustomSavable<TreasureMapData> {
         @Override
         public Class<TreasureMapData> savedType() {
             return TreasureMapData.class;
