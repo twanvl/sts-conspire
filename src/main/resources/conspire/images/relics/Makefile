@@ -25,7 +25,7 @@ outline:
 	mkdir -p $@
 
 outline/%.png: %.png | outline
-	convert $< -evaluate set 0 -negate  -blur 12x1.5  -channel A -level 0%,5% +channel $@
+	convert $< -evaluate set 0 -negate  -blur 12x1.5  -channel A -level 0%,2.5% +channel $@
 
 $(LARGE_DIR):
 	mkdir -p $@

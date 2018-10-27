@@ -30,6 +30,14 @@
       " NL (Play #b1 #ySkill to trigger)"
     ]
   },
+  "conspire:DeflatedDodgeball": {
+    "NAME": "Deflated Dodgeball",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "You have a #b10% chance to dodge attacks.",
+      "Dodged"
+    ]
+  },
   "conspire:Dentures": {
     "NAME": "Dentures",
     "FLAVOR": "You don't know what elderly monster these belonged to.",

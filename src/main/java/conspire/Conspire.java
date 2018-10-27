@@ -79,6 +79,7 @@ import conspire.powers.CubeRunePower;
 import conspire.relics.Boomerang;
 import conspire.relics.BottledYoYo;
 import conspire.relics.DecoderRing;
+import conspire.relics.DeflatedDodgeball;
 import conspire.relics.Dentures;
 import conspire.relics.Flyswatter;
 import conspire.relics.GiftBox;
@@ -224,6 +225,7 @@ public class Conspire implements
         BaseMod.addRelic(new Boomerang(), RelicType.SHARED);
         BaseMod.addRelic(new BottledYoYo(), RelicType.SHARED);
         BaseMod.addRelic(new DecoderRing(), RelicType.SHARED);
+        BaseMod.addRelic(new DeflatedDodgeball(), RelicType.SHARED);
         BaseMod.addRelic(new Dentures(), RelicType.SHARED);
         BaseMod.addRelic(new Flyswatter(), RelicType.SHARED);
         BaseMod.addRelic(new GiftBox(), RelicType.SHARED);
