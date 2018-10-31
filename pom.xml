@@ -24,6 +24,13 @@
       <systemPath>${basedir}/../_ModTheSpire/mods/BaseMod.jar</systemPath>
     </dependency>
     <dependency>
+      <groupId>stslib</groupId>
+      <artifactId>StsLib</artifactId>
+      <version>0.0.0</version>
+      <scope>system</scope>
+      <systemPath>${basedir}/../_ModTheSpire/mods/StsLib.jar</systemPath>
+    </dependency>
+    <dependency>
       <groupId>modthespire</groupId>
       <artifactId>ModTheSpire</artifactId>
       <version>3.0.0</version>

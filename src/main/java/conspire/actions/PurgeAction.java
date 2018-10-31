@@ -4,12 +4,17 @@ import java.util.UUID;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.curses.AscendersBane;
+import com.megacrit.cardcrawl.cards.curses.Necronomicurse;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 
+import com.evacipated.cardcrawl.mod.stslib.fields.cards.AbstractCard.SoulboundField;
+
+import conspire.Conspire;
 import conspire.cards.red.Purge;
 
 public class PurgeAction extends AbstractGameAction {
@@ -74,11 +79,18 @@ public class PurgeAction extends AbstractGameAction {
         this.tickDuration();
     }
 
+    public static boolean canPurge(AbstractCard c) {
+        if (c.cardID.equals(Necronomicurse.ID) || c.cardID.equals(AscendersBane.ID)) return false;
+        if (Conspire.hasStsLib && SoulboundField.soulbound.get(c)) return false;
+        return true;
+    }
+
     public static boolean purgeCard(AbstractCard toPurge) {
+        if (!canPurge(toPurge)) return false;
         return purgeCard(toPurge.uuid);
     }
 
-    public static boolean purgeCard(UUID targetUUID) {
+    private static boolean purgeCard(UUID targetUUID) {
         for (AbstractCard c : AbstractDungeon.player.masterDeck.group) {
             if (c.uuid.equals(targetUUID)) {
                 AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(c, Settings.WIDTH / 2, Settings.HEIGHT / 2));

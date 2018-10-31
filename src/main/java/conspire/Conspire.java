@@ -8,6 +8,7 @@ import java.util.Map;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -287,6 +288,9 @@ public class Conspire implements
     public static String eventImage(String id) {
         return "conspire/images/events/" + Conspire.removeModId(id) + ".jpg";
     }
+
+    // Other mods
+    public static boolean hasStsLib = Loader.isModLoaded("stslib");
 
     // For specific relics
     @Override
