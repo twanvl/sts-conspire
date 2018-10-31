@@ -40,12 +40,6 @@ public class NecroticWound extends CustomCard {
     }
 
     @Override
-    public void triggerOnEndOfTurnForPlayingCard() {
-        this.dontTriggerOnUseCard = true;
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(this, true));
-    }
-
-    @Override
     public AbstractCard makeCopy() {
         return new NecroticWound();
     }

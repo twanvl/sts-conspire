@@ -1,6 +1,7 @@
 ### HEAD
 * Added relics: Spicy Sausage, Treasure Map, Bottled Yo-Yo
 * Fix: Water orb shouldn't be affected by focus
+* Fix: Necrotic Wound should not play at end of turn when you have Runic Pyramid
 
 ### v1.4.1
 * In multi monster fights, the left monsters don't apply vulnerable.
