@@ -1,4 +1,4 @@
-### HEAD
+### v1.5.0
 * Added relics: Spicy Sausage, Treasure Map, Bottled Yo-Yo
 * Fix: Water orb shouldn't be affected by focus
 * Fix: Necrotic Wound should not play at end of turn when you have Runic Pyramid
