@@ -1,5 +1,5 @@
 ### v1.5.0
-* Added relics: Spicy Sausage, Treasure Map, Bottled Yo-Yo
+* Added relics: Spicy Sausage, Treasure Map, Bottled Yo-Yo, Runic Octahedron
 * Fix: Water orb shouldn't be affected by focus
 * Fix: Necrotic Wound should not play at end of turn when you have Runic Pyramid
 * Fix: Purge shouldn't remove Necronomicurse, Ascender's Bane, and other souldbound cards (interacts with StsLib)

@@ -8,15 +8,21 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 public class RunicOctahedron extends AbstractConspireRelic {
     public static final String ID = "conspire:RunicOctahedron";
-    public static final int DRAW_LOSS = 2;
+    public static final int DRAW_LOSS = 1;
+    public static final int NUM_CARDS = 2;
 
     public RunicOctahedron() {
-        super(ID, AbstractRelic.RelicTier.SPECIAL, AbstractRelic.LandingSound.CLINK);
+        super(ID, AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.CLINK);
     }
 
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + DRAW_LOSS + DESCRIPTIONS[1];
+        return DESCRIPTIONS[0] + DRAW_LOSS + DESCRIPTIONS[1] + NUM_CARDS + DESCRIPTIONS[2];
+    }
+
+    @Override
+    public void atTurnStart() {
+        this.counter = 0;
     }
 
     @Override
@@ -31,8 +37,12 @@ public class RunicOctahedron extends AbstractConspireRelic {
 
     @Override
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
-        this.flash();
+        ++this.counter;
+        if (this.counter % NUM_CARDS == 0) {
+            this.counter = 0;
+            AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 1));
+            this.flash();
+        }
     }
 
     @Override

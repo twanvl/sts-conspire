@@ -85,7 +85,7 @@
     "NAME": "Runic Octahedron",
     "FLAVOR": "The runes are indecipherable.",
     "DESCRIPTIONS": [
-      "Draw #b"," fewer cards each turn. Whenever you play a card, draw a card."
+      "Draw #b"," fewer card each turn. Every time you play #b"," cards in a single turn, draw a card."
     ]
   },
   "conspire:SeveredTorchhead": {
