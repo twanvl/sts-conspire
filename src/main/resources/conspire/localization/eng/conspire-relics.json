@@ -102,8 +102,8 @@
       "Gain [E] at the start of each turn. NL On the first turn of combat lose 2 Energy instead."
     ]
   },
-  "conspire:SpicySausage": {
-    "NAME": "Spicy Sausage",
+  "conspire:SpecialSausage": {
+    "NAME": "Special Sausage",
     "FLAVOR": "Found lying around the spire. Should be safe to eat.",
     "DESCRIPTIONS": [
       "Upon pickup, choose to start each combat with #b",
@@ -111,7 +111,8 @@
       " #yDexterity, or #b",
       " #yFocus.",
       "Choose a Sausage",
-      "Start each combat with #b"," #yStrength."," #yDexterity."," #yFocus."
+      "Start each combat with #b"," #yStrength."," #yDexterity."," #yFocus.",
+      "Spicy Sausage", "Seasoned Sausage", "Smokey Sausage"
     ]
   },
   "conspire:TopHat": {

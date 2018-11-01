@@ -85,16 +85,16 @@
     "DESCRIPTION": "Unplayable. NL When this card is drawn, shuffle a Wound into your draw pile."
   },
 
-  "conspire:SpicySausageOptionStrength": {
-    "NAME": "Strength",
+  "conspire:SausageOptionStrength": {
+    "NAME": "Spicy Sausage",
     "DESCRIPTION": "Start each combat with !M! Strength."
   },
-  "conspire:SpicySausageOptionDexterity": {
-    "NAME": "Dexterity",
+  "conspire:SausageOptionDexterity": {
+    "NAME": "Seasoned Sausage",
     "DESCRIPTION": "Start each combat with !M! Dexterity."
   },
-  "conspire:SpicySausageOptionFocus": {
-    "NAME": "Focus",
+  "conspire:SausageOptionFocus": {
+    "NAME": "Smokey Sausage",
     "DESCRIPTION": "Start each combat with !M! Focus."
   }
 }

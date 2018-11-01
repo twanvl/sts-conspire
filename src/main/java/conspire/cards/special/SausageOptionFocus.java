@@ -7,31 +7,31 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.powers.FocusPower;
 
 import basemod.abstracts.CustomCard;
 import conspire.Conspire;
 
-public class SpicySausageOptionStrength extends CustomCard {
-    public static final String ID = "conspire:SpicySausageOptionStrength";
+public class SausageOptionFocus extends CustomCard {
+    public static final String ID = "conspire:SausageOptionFocus";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = -2;
 
-    public SpicySausageOptionStrength(int amount) {
+    public SausageOptionFocus(int amount) {
         super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = amount;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FocusPower(p, this.magicNumber), this.magicNumber));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new SpicySausageOptionStrength(this.baseMagicNumber);
+        return new SausageOptionFocus(this.baseMagicNumber);
     }
 
     @Override

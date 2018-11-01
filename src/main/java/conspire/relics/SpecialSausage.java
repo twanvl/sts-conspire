@@ -21,12 +21,12 @@ import com.megacrit.cardcrawl.ui.buttons.SkipCardButton;
 import basemod.ReflectionHacks;
 import basemod.abstracts.CustomSavable;
 import conspire.Conspire;
-import conspire.cards.special.SpicySausageOptionDexterity;
-import conspire.cards.special.SpicySausageOptionFocus;
-import conspire.cards.special.SpicySausageOptionStrength;
+import conspire.cards.special.SausageOptionDexterity;
+import conspire.cards.special.SausageOptionFocus;
+import conspire.cards.special.SausageOptionStrength;
 
-public class SpicySausage extends AbstractConspireRelic implements CustomSavable<SpicySausage.Buff> {
-    public static final String ID = "conspire:SpicySausage";
+public class SpecialSausage extends AbstractConspireRelic implements CustomSavable<SpecialSausage.Buff> {
+    public static final String ID = "conspire:SpecialSausage";
     private static final int STR_AMT = 2;
     private static final int DEX_AMT = 2;
     private static final int FOCUS_AMT = 2;
@@ -35,7 +35,7 @@ public class SpicySausage extends AbstractConspireRelic implements CustomSavable
     }
     private Buff buff;
 
-    public SpicySausage() {
+    public SpecialSausage() {
         super(ID, AbstractRelic.RelicTier.BOSS, AbstractRelic.LandingSound.FLAT);
     }
 
@@ -69,9 +69,9 @@ public class SpicySausage extends AbstractConspireRelic implements CustomSavable
         // Show a screen to select a buff
         buff = null;
         ArrayList<AbstractCard> choices = new ArrayList<>();
-        choices.add(new SpicySausageOptionStrength(STR_AMT));
-        choices.add(new SpicySausageOptionDexterity(DEX_AMT));
-        choices.add(new SpicySausageOptionFocus(FOCUS_AMT));
+        choices.add(new SausageOptionStrength(STR_AMT));
+        choices.add(new SausageOptionDexterity(DEX_AMT));
+        choices.add(new SausageOptionFocus(FOCUS_AMT));
         openCardRewardsScreen(choices);
     }
 
@@ -79,9 +79,9 @@ public class SpicySausage extends AbstractConspireRelic implements CustomSavable
     public void update() {
         super.update();
         if (buff == null && AbstractDungeon.cardRewardScreen.discoveryCard != null) {
-            if (AbstractDungeon.cardRewardScreen.discoveryCard instanceof SpicySausageOptionStrength) {
+            if (AbstractDungeon.cardRewardScreen.discoveryCard instanceof SausageOptionStrength) {
                 buff = Buff.STRENGTH;
-            } else if (AbstractDungeon.cardRewardScreen.discoveryCard instanceof SpicySausageOptionStrength) {
+            } else if (AbstractDungeon.cardRewardScreen.discoveryCard instanceof SausageOptionDexterity) {
                 buff = Buff.DEXTERITY;
             } else {
                 buff = Buff.FOCUS;
@@ -105,6 +105,15 @@ public class SpicySausage extends AbstractConspireRelic implements CustomSavable
 
     public void setDescriptionAfterLoading() {
         this.description = getUpdatedDescription();
+        // TODO: figure out how to change relic name
+        /*
+        if (buff != null) {
+            switch (buff) {
+                case STRENGTH:  this.name = DESCRIPTIONS[9];
+                case DEXTERITY: this.name = DESCRIPTIONS[10];
+                case FOCUS:     this.name = DESCRIPTIONS[11];
+            }
+        }*/
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
         this.initializeTips();
@@ -112,7 +121,7 @@ public class SpicySausage extends AbstractConspireRelic implements CustomSavable
 
     @Override
     public AbstractRelic makeCopy() {
-        return new SpicySausage();
+        return new SpecialSausage();
     }
 
     @Override

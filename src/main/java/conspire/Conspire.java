@@ -89,9 +89,9 @@ import conspire.relics.IceCreamScoop;
 import conspire.relics.InfiniteJournal;
 import conspire.relics.RoyalGoblet;
 import conspire.relics.RunicOctahedron;
+import conspire.relics.SpecialSausage;
 import conspire.relics.SeveredTorchhead;
 import conspire.relics.SlowCooker;
-import conspire.relics.SpicySausage;
 import conspire.relics.TopHat;
 import conspire.relics.TreasureMap;
 
@@ -236,7 +236,7 @@ public class Conspire implements
         BaseMod.addRelic(new RunicOctahedron(), RelicType.SHARED);
         BaseMod.addRelic(new SeveredTorchhead(), RelicType.SHARED);
         BaseMod.addRelic(new SlowCooker(), RelicType.SHARED);
-        BaseMod.addRelic(new SpicySausage(), RelicType.SHARED);
+        BaseMod.addRelic(new SpecialSausage(), RelicType.SHARED);
         BaseMod.addRelic(new TopHat(), RelicType.SHARED);
         BaseMod.addRelic(new TreasureMap(), RelicType.SHARED);
         BaseMod.addSaveField("conspire:TreasureMap",new TreasureMap.TreasureMapDataSaver());
