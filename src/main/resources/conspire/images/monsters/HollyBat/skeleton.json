@@ -16,6 +16,7 @@
     { "name": "shadow", "parent": "root", "x": 0, "y": -20 }
   ],
   "slots": [
+    { "name": "shadow", "bone": "shadow", "attachment": "shadow" },
     { "name": "wingL", "bone": "wingL", "attachment": "wingL", "color": "008c2fff" },
     { "name": "wingR", "bone": "wingR", "attachment": "wingR", "color": "008c2fff" },
     { "name": "earL", "bone": "earL", "attachment": "earL", "color": "225533ff" },
@@ -24,8 +25,7 @@
     { "name": "eyeL", "bone": "eyeL", "attachment": "eyeL", "color": "dd0000ff" },
     { "name": "eyeR", "bone": "eyeR", "attachment": "eyeR", "color": "dd0000ff" },
     { "name": "pupilL", "bone": "pupilL", "attachment": "pupilL", "color": "ffffffbb" },
-    { "name": "pupilR", "bone": "pupilR", "attachment": "pupilR", "color": "ffffffbb" },
-    { "name": "shadow", "bone": "shadow", "attachment": "shadow" }
+    { "name": "pupilR", "bone": "pupilR", "attachment": "pupilR", "color": "ffffffbb" }
   ],
   "skins": {
     "default": {
