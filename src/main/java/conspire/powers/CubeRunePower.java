@@ -1,5 +1,6 @@
 package conspire.powers;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -30,6 +31,21 @@ public class CubeRunePower extends AbstractConspirePower {
         if (!this.justApplied) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new DamageAction(this.owner, new DamageInfo(this.source, this.amount, DamageInfo.DamageType.THORNS)));
+        }
+    }
+
+    @Override
+    public void atStartOfTurnPostDraw() {
+        if (this.justApplied) {
+            // set justApplied to false after cards have been drawn
+            CubeRunePower power = this;
+            AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+                @Override
+                public void update() {
+                    power.justApplied = false;
+                    this.isDone = true;
+                }
+            });
         }
     }
 

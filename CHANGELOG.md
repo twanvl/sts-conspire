@@ -1,3 +1,6 @@
+### v1.5.1
+* Fix: Cube Rune power now works
+
 ### v1.5.0
 * Added relics: Special Sausage, Treasure Map, Bottled Yo-Yo, Runic Octahedron
 * Fix: Water orb shouldn't be affected by focus
