@@ -1,5 +1,6 @@
 ### v1.5.1
 * Fix: Cube Rune power now works
+* Added animation to mimic
 
 ### v1.5.0
 * Added relics: Special Sausage, Treasure Map, Bottled Yo-Yo, Runic Octahedron

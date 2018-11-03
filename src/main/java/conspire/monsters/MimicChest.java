@@ -1,5 +1,6 @@
 package conspire.monsters;
 
+import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.AnimateSlowAttackAction;
 import com.megacrit.cardcrawl.actions.animations.ShoutAction;
@@ -86,7 +87,10 @@ public class MimicChest extends AbstractMonster {
     }
 
     public MimicChest(float x, float y) {
-        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, "conspire/images/monsters/MimicChest/MimicChest.png", x, y);
+        super(NAME, ID, HP_MAX, HB_X, HB_Y, HB_W, HB_H, null, x, y);
+        this.loadAnimation("conspire/images/monsters/MimicChest/skeleton.atlas", "conspire/images/monsters/MimicChest/skeleton.json", 1.0f);
+        AnimationState.TrackEntry e = this.state.setAnimation(0, "Idle", true);
+        e.setTime(e.getEndTime() * 0.4f);
         this.type = EnemyType.ELITE;
         int floor = AbstractDungeon.floorNum;
         if (floor > 45) { // can happen in endless mode

@@ -6,6 +6,7 @@ all:
 	make -C MysteriousRune
 	make -C HollyBat
 	make -C OrnateMirror
+	make -C MimicChest
 
 clean:
 	make clean -C RoseBush
@@ -13,3 +14,4 @@ clean:
 	make clean -C MysteriousRune
 	make clean -C HollyBat
 	make clean -C OrnateMirror
+	make clean -C MimicChest
