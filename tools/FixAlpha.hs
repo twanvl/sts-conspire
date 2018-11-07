@@ -45,7 +45,7 @@ cropImage :: Pixel px => (Int,Int) -> (Int,Int) -> Bool -> Image px -> Image px
 cropImage (x,y) (w,h) rotate img = generateImage fun w h
   where
   fun dx dy
-    | rotate    = pixelAt img (x+dy) (y+dx)
+    | rotate    = pixelAt img (x+dy) (y+w-1-dx)
     | otherwise = pixelAt img (x+dx) (y+dy)
 
 --------------------------------------------------------------------------------
