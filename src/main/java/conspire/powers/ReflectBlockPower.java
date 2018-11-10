@@ -36,8 +36,9 @@ public class ReflectBlockPower extends AbstractConspirePower {
         }
     }
 
-    @Override
-    public void atStartOfTurn() {
+    // Note: don't use duringTurn(), see OrnateMirror
+
+    public void doReflectDuringTurn() {
         if (this.amount > 0) {
             this.flash();
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.owner.hb.cX, this.owner.hb.cY, AbstractGameAction.AttackEffect.SHIELD));

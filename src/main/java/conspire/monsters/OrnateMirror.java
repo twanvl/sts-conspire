@@ -49,15 +49,15 @@ public class OrnateMirror extends AbstractMonster {
     // stats
     private static final int HP = 450;
     private static final int HP_A = 465;
-    private static final int ATTACK_DMG = 20;
-    private static final int ATTACK_DMG_A = 23;
+    private static final int ATTACK_DMG = 18;
+    private static final int ATTACK_DMG_A = 21;
     private static final int ATTACK_2_DMG = 10;
     private static final int ATTACK_2_DMG_A = 12;
     private static final int ATTACK_2_TIMES = 2;
     private static final int BLOCK_AMT = 3;
     private static final int BLOCK_AMT_A = 4;
-    private static final float REFLECT_AMT = 0.5f;
-    private static final float REFLECT_AMT_A = 0.6f;
+    private static final float REFLECT_AMT = 0.4f;
+    private static final float REFLECT_AMT_A = 0.5f;
     private static final int COPY_THRESHOLD = 2;
     private static final int MAX_STR = 4;
     private int attackDmg, attackDmg2;
@@ -110,6 +110,7 @@ public class OrnateMirror extends AbstractMonster {
 
     @Override
     public void takeTurn() {
+        reflectPowersDuringTurn();
         switch (this.nextMove) {
             case REFLECT: {
                 doneReflect = true;
@@ -152,8 +153,22 @@ public class OrnateMirror extends AbstractMonster {
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
     }
 
+    private void reflectPowersDuringTurn() {
+        // Call power.duringTurn() for ReflectAttackPower and ReflectBlockPower
+        // Otherwise they happen after the attack, and are affected by thorns.
+        for (AbstractPower p : this.powers) {
+            if (p instanceof ReflectAttackPower) {
+                // Note that p.duringTurn() resets the amount, so we don't have to worry about it being called twice.
+                ((ReflectAttackPower)p).doReflectDuringTurn();
+            } else if (p instanceof ReflectBlockPower) {
+                ((ReflectBlockPower)p).doReflectDuringTurn();
+            }
+        }
+    }
+
     // Called by patch
     public void onApplyPower(AbstractPower powerToApply, AbstractCreature target, AbstractCreature source) {
+        // For reflecting powers
         if (source == null || !source.isPlayer) return;
         if (target == this && powerToApply instanceof StrengthPower && powerToApply.amount < 0) copy_negstr += -powerToApply.amount;
         if (target == this && powerToApply instanceof WeakPower && powerToApply.amount > 0) copy_weak += powerToApply.amount;
@@ -162,6 +177,14 @@ public class OrnateMirror extends AbstractMonster {
         if (target.isPlayer && powerToApply instanceof LoseStrengthPower && powerToApply.amount > 0) copy_str -= powerToApply.amount;
         if (target.isPlayer && powerToApply instanceof DexterityPower && powerToApply.amount > 0) copy_dex += powerToApply.amount;
         if (target.isPlayer && powerToApply instanceof LoseDexterityPower && powerToApply.amount > 0) copy_dex -= powerToApply.amount;
+    }
+
+    @Override
+    public void applyPowers() {
+        // For registering poison in ReflectAttackPower
+        for (AbstractPower p : this.powers) {
+            if (p instanceof ReflectAttackPower) ((ReflectAttackPower)p).applyPowers();
+        }
     }
 
     public void calculateCopyPowers() {

@@ -1,3 +1,7 @@
+### v1.5.2
+* Fix: Reflect Attack and Reflect Block happen during the Ornate Mirror's turn, not at start of turn. This means the power is applied after Poison, so the description now takes the amount of poison into account.
+* Balance: Ornate Mirror: reduced Reflect powers to 40% (50% in ascension), and reduce attack damage
+
 ### v1.5.1
 * Fix: Cube Rune power now works
 * Added animation to mimic
