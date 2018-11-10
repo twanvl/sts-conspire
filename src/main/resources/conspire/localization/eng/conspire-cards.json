@@ -14,7 +14,7 @@
   },
   "conspire:Purge": {
     "NAME": "Purge",
-    "DESCRIPTION": "Exhaust a card in your hand and permanently remove it from your deck. NL Exhaust.",
+    "DESCRIPTION": "Lose 5 HP. NL Exhaust a card in your hand and permanently remove it from your deck. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Exhaust and remove from your deck"
     ]
