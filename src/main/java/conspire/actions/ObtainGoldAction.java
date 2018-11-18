@@ -25,7 +25,6 @@ public class ObtainGoldAction extends AbstractGameAction {
         if (this.duration == Settings.ACTION_DUR_XFAST) {
             if (amount >= 0) {
                 CardCrawlGame.sound.play("GOLD_JINGLE");
-                AbstractDungeon.player.gainGold(amount);
                 if (rain) {
                     for (int i = 0; i < amount; ++i) {
                         AbstractDungeon.effectList.add(new GainPennyEffect(target, target.hb.cX, Settings.HEIGHT, target.hb.cX, target.hb.cY, false));

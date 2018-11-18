@@ -1,5 +1,6 @@
 ### v1.5.3
 * Fix: Ornate Mirror now correctly applies powers to calculate damage.
+* Fix: No longer obtain double the gold from Treasure and SpireCo Stock
 
 ### v1.5.2
 * Fix: Reflect Attack and Reflect Block happen during the Ornate Mirror's turn, not at start of turn. This means the power is applied after Poison, so the description now takes the amount of poison into account.
