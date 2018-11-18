@@ -181,6 +181,7 @@ public class OrnateMirror extends AbstractMonster {
 
     @Override
     public void applyPowers() {
+        super.applyPowers();
         // For registering poison in ReflectAttackPower
         for (AbstractPower p : this.powers) {
             if (p instanceof ReflectAttackPower) ((ReflectAttackPower)p).applyPowers();
