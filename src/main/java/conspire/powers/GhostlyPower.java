@@ -27,20 +27,11 @@ public class GhostlyPower extends AbstractConspirePower {
     }
 
     @Override
-    public float atDamageReceive(float damage, DamageInfo.DamageType type) {
-        if (this.amount > 0) {
-            if (damage > 1.0f) {
-                damage = 1.0f;
-            }
-        }
-        return damage;
-    }
-
-    @Override
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (damageAmount > 0 && this.amount > 0) {
             this.flash();
             this.amount -= 1; // Don't use ReducePowerAction, we want to keep the power
+            damageAmount = 1;
         }
         return damageAmount;
     }
