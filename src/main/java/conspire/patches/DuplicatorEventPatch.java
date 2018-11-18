@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
+import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -31,18 +32,20 @@ public class DuplicatorEventPatch {
 
     @SpirePatch(clz = Duplicator.class, method = "buttonEffect")
     public static class ButtonEffect {
-        public static void Prefix(Duplicator self, @ByRef int[] buttonPressed) {
+        public static SpireReturn Prefix(Duplicator self, @ByRef int[] buttonPressed) {
             if ((int)ReflectionHacks.getPrivate(self, Duplicator.class, "screenNum") == 0) {
                 if (buttonPressed[0] == 1) {
                     self.imageEventText.updateBodyText(DESCRIPTIONS[0]);
                     self.imageEventText.updateDialogOption(0, Duplicator.OPTIONS[1]);
                     self.imageEventText.clearRemainingOptions();
                     duplicateAll();
-                    ReflectionHacks.setPrivate(self, Duplicator.class, "screenNum", 1); // screenNum will be set to 2 in case it was 1, without further effect
+                    ReflectionHacks.setPrivate(self, Duplicator.class, "screenNum", 2);
+                    return SpireReturn.Return(null);
                 } else if (buttonPressed[0] == 2) {
                     buttonPressed[0] = 1; // original choice 1
                 }
             }
+            return SpireReturn.Continue();
         }
 
         private static void duplicateAll() {
