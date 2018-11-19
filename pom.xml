@@ -3,7 +3,7 @@
 
   <groupId>conspire</groupId>
   <artifactId>Conspire</artifactId>
-  <version>1.5.2</version>
+  <version>1.5.3</version>
 
   <name>Conspire</name>
   <description>Adds new monsters, elites, bosses, relics, cards, potions and events.</description>
