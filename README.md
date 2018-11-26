@@ -9,7 +9,7 @@ The mod adds new monsters, elites and bosses to the game, as well as new cards f
 
 ## Requirements ##
 * Slay the Spire
-* ModTheSpire v4.0.0 or newer (https://github.com/t-larson/ModTheSpire/releases)
+* ModTheSpire v4.0.0 or newer (https://github.com/kiooeht/ModTheSpire/releases)
 * BaseMod v3.2.0 or newer (https://github.com/daviscook477/BaseMod/releases)
 * Java 8
 
