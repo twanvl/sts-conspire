@@ -69,12 +69,18 @@ public class TreasureMap extends AbstractConspireRelic {
 
         private RoomInfo getRoomInfo(MapRoomNode node) {
             if (rooms == null || node == null) return null;
-            return rooms.get(node.y).get(node.x);
+            if (node.y < 0 || node.y >= rooms.size()) return null;
+            ArrayList<RoomInfo> row = rooms.get(node.y);
+            if (node.x < 0 || node.x >= row.size()) return null;
+            return row.get(node.x);
         }
 
         private void clearRoomInfo(MapRoomNode node) {
             if (rooms == null || node == null) return;
-            rooms.get(node.y).set(node.x, null);
+            if (node.y < 0 || node.y >= rooms.size()) return;
+            ArrayList<RoomInfo> row = rooms.get(node.y);
+            if (node.x < 0 || node.x >= row.size()) return;
+            row.set(node.x, null);
         }
 
         public void initialize() {

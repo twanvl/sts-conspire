@@ -1,3 +1,6 @@
+### v1.5.4
+* Fix crash with Treasure Map and Replay the Spire's portal rooms
+
 ### v1.5.3
 * Fix: Ornate Mirror now correctly applies powers to calculate damage.
 * Fix: No longer obtain double the gold from Treasure and SpireCo Stock
