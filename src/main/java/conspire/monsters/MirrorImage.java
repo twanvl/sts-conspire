@@ -5,6 +5,8 @@ import com.badlogic.gdx.backends.lwjgl.LwjglGraphics;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.brashmonkey.spriter.Player;
+import com.brashmonkey.spriter.Point;
 import com.esotericsoftware.spine.Skeleton;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.ShoutAction;
@@ -22,6 +24,9 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.TintEffect;
 
 import basemod.ReflectionHacks;
+import basemod.abstracts.CustomPlayer;
+import basemod.animations.AbstractAnimation;
+import basemod.animations.SpriterAnimation;
 import conspire.helpers.AscensionHelper;
 import conspire.helpers.MovePicker;
 
@@ -80,6 +85,7 @@ public class MirrorImage extends AbstractMonster {
             TintEffect playerTint = AbstractDungeon.player.tint;
             boolean playerFlipHorizontal = AbstractDungeon.player.flipHorizontal;
             float deltaTime = Gdx.graphics.getDeltaTime();
+            int spriterSpeed = setSpriterAnimationSpeed(0);
             // ... set our values
             setDeltaTime(0);
             AbstractDungeon.player.drawX = this.drawX;
@@ -89,6 +95,7 @@ public class MirrorImage extends AbstractMonster {
             AbstractDungeon.player.tint = this.tint;
             AbstractDungeon.player.flipHorizontal = !this.flipHorizontal;
             applyFlipToSkeleton();
+            updateSpriterAnimationPosition();
             // ... draw
             AbstractDungeon.player.renderPlayerImage(sb);
             // ... restore player's values
@@ -99,7 +106,9 @@ public class MirrorImage extends AbstractMonster {
             AbstractDungeon.player.tint = playerTint;
             AbstractDungeon.player.flipHorizontal = playerFlipHorizontal;
             applyFlipToSkeleton();
+            updateSpriterAnimationPosition();
             setDeltaTime(deltaTime);
+            setSpriterAnimationSpeed(spriterSpeed);
         }
         super.render(sb);
     }
@@ -120,6 +129,36 @@ public class MirrorImage extends AbstractMonster {
             boolean flipVertical = (boolean)ReflectionHacks.getPrivate(AbstractDungeon.player, AbstractCreature.class, "flipVertical");
             skeleton.setFlip(AbstractDungeon.player.flipHorizontal, flipVertical);
         }
+    }
+
+    private void updateSpriterAnimationPosition() {
+        // Just like the spine skeletons, the SpriterAnimation does update before setting position
+        if (AbstractDungeon.player instanceof CustomPlayer) {
+            CustomPlayer p = (CustomPlayer)AbstractDungeon.player;
+            AbstractAnimation anim = (AbstractAnimation)ReflectionHacks.getPrivate(p, CustomPlayer.class, "animation");
+            if (anim instanceof SpriterAnimation) {
+                Player myPlayer = (Player)ReflectionHacks.getPrivate(anim, SpriterAnimation.class, "myPlayer");
+                Point pos = new Point();
+                pos.x = p.drawX + p.animX;
+                pos.y = p.drawY + p.animY + AbstractDungeon.sceneOffsetY;
+                myPlayer.setPosition(pos);
+            }
+        }
+    }
+
+    private int setSpriterAnimationSpeed(int speed) {
+        // Spriter animations don't use Gdx.deltaTime, rather they have a hardcoded speed
+        if (AbstractDungeon.player instanceof CustomPlayer) {
+            CustomPlayer p = (CustomPlayer)AbstractDungeon.player;
+            AbstractAnimation anim = (AbstractAnimation)ReflectionHacks.getPrivate(p, CustomPlayer.class, "animation");
+            if (anim instanceof SpriterAnimation) {
+                Player myPlayer = (Player)ReflectionHacks.getPrivate(anim, SpriterAnimation.class, "myPlayer");
+                int oldSpeed = myPlayer.speed;
+                myPlayer.speed = speed;
+                return oldSpeed;
+            }
+        }
+        return 0;
     }
 
     void renderImage() {
