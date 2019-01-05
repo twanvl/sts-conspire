@@ -1,7 +1,10 @@
 package conspire.actions;
 
+import java.util.ArrayList;
+
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -18,7 +21,7 @@ public class FixedExhaustAction extends AbstractGameAction {
     private boolean canPickZero;
     private boolean upTo;
     public static int numExhausted;
-
+    private ArrayList<CardQueueItem> cardQueueBackup;
 
     public FixedExhaustAction(AbstractCreature target, AbstractCreature source, int amount, boolean isRandom, boolean anyNumber, boolean canPickZero, boolean upTo) {
         this.anyNumber = anyNumber;
@@ -47,6 +50,7 @@ public class FixedExhaustAction extends AbstractGameAction {
                     this.p.hand.moveToExhaustPile(c);
                 }
                 CardCrawlGame.dungeon.checkForPactAchievement();
+                this.isDone = true;
                 return;
             }
             if (this.isRandom) {
@@ -54,8 +58,14 @@ public class FixedExhaustAction extends AbstractGameAction {
                     this.p.hand.moveToExhaustPile(this.p.hand.getRandomCard(true));
                 }
                 CardCrawlGame.dungeon.checkForPactAchievement();
+                this.isDone = true;
+                return;
             } else {
                 numExhausted = this.amount;
+                // Note: handCardSelectScreen.open clears the card queue, which will break auto-play-at-end-of-turn cards
+                // so back it up now
+                cardQueueBackup = AbstractDungeon.actionManager.cardQueue;
+                AbstractDungeon.actionManager.cardQueue = new ArrayList<>();
                 AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, this.anyNumber, this.canPickZero, false, false, this.upTo);
                 this.tickDuration();
                 return;
@@ -67,6 +77,8 @@ public class FixedExhaustAction extends AbstractGameAction {
             }
             CardCrawlGame.dungeon.checkForPactAchievement();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
+            // restore card queue backup
+            AbstractDungeon.actionManager.cardQueue = cardQueueBackup;
         }
         this.tickDuration();
     }
