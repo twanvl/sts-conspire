@@ -1,5 +1,6 @@
 ### v1.5.5
 * Fix: Glowing Rock end of turn status card interaction
+* Fix: Make Echo Draught stack correctly
 
 ### v1.5.4
 * Fix crash with Treasure Map and Replay the Spire's portal rooms

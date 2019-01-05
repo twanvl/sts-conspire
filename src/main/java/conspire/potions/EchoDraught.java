@@ -26,7 +26,7 @@ public class EchoDraught extends AbstractPotion {
 
     @Override
     public void use(AbstractCreature target) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EchoDraughtPower(AbstractDungeon.player, this.potency)));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new EchoDraughtPower(AbstractDungeon.player, this.potency), this.potency));
     }
 
     @Override
