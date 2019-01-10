@@ -1,6 +1,7 @@
 ### v1.5.5
 * Fix: Glowing Rock end of turn status card interaction
 * Fix: Make Echo Draught stack correctly
+* Fix: Ornate Mirror no longer applies permanent negative strength if you use Dark Shackles
 
 ### v1.5.4
 * Fix crash with Treasure Map and Replay the Spire's portal rooms

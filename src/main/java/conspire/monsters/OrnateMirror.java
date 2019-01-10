@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.EnemyMoveInfo;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
@@ -71,9 +72,9 @@ public class OrnateMirror extends AbstractMonster {
     // moves done
     private boolean doneReflect;
     // buffs/debuffs to copy
-    private int copy_str = 0, copy_dex = 0, copy_weak = 0, copy_vuln = 0, copy_negstr = 0;
+    private int copy_str = 0, copy_dex = 0, copy_weak = 0, copy_vuln = 0, copy_negstr = 0, copy_gainstr = 0;
     // buffs/debuffs to apply
-    private int apply_str = 0, apply_dex = 0, apply_weak = 0, apply_vuln = 0, apply_negstr = 0;
+    private int apply_str = 0, apply_dex = 0, apply_weak = 0, apply_vuln = 0, apply_negstr = 0, apply_gainstr = 0;
 
     public OrnateMirror() {
         this(-210.f,0.f);
@@ -146,6 +147,9 @@ public class OrnateMirror extends AbstractMonster {
                 if (apply_negstr > 0) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new StrengthPower(AbstractDungeon.player, -apply_negstr), -apply_negstr));
                 }
+                if (apply_gainstr > 0) {
+                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new GainStrengthPower(AbstractDungeon.player, apply_gainstr), apply_gainstr));
+                }
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, this.blockAmt));
                 break;
             }
@@ -171,6 +175,7 @@ public class OrnateMirror extends AbstractMonster {
         // For reflecting powers
         if (source == null || !source.isPlayer) return;
         if (target == this && powerToApply instanceof StrengthPower && powerToApply.amount < 0) copy_negstr += -powerToApply.amount;
+        if (target == this && powerToApply instanceof GainStrengthPower && powerToApply.amount > 0) copy_gainstr += powerToApply.amount;
         if (target == this && powerToApply instanceof WeakPower && powerToApply.amount > 0) copy_weak += powerToApply.amount;
         if (target == this && powerToApply instanceof VulnerablePower && powerToApply.amount > 0) copy_vuln += powerToApply.amount;
         if (target.isPlayer && powerToApply instanceof StrengthPower && powerToApply.amount > 0) copy_str += powerToApply.amount;
@@ -192,6 +197,7 @@ public class OrnateMirror extends AbstractMonster {
         apply_weak = copy_weak * 2 / 3;
         apply_vuln = copy_vuln * 2 / 3;
         apply_negstr = copy_negstr * 2 / 3;
+        apply_gainstr = Math.min(apply_negstr, copy_gainstr * 2 / 3);
         apply_str = Math.max(0, Math.min(MAX_STR, copy_str * 2 / 3));
         apply_dex = Math.max(0, Math.min(MAX_STR, copy_dex * 2 / 3));
     }
@@ -218,7 +224,7 @@ public class OrnateMirror extends AbstractMonster {
         }
         EnemyMoveInfo move = moves.pickRandomMove(this);
         if (move.nextMove == COPY_POWER) {
-            copy_str = copy_dex = copy_weak = copy_vuln = copy_negstr = 0;
+            copy_str = copy_dex = copy_weak = copy_vuln = copy_negstr = copy_gainstr = 0;
         }
     }
 
