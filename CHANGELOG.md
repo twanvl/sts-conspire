@@ -1,3 +1,6 @@
+### v1.5.6
+* Fix: Deflated Dodgeball now only triggers during combat
+
 ### v1.5.5
 * Fix: Glowing Rock end of turn status card interaction
 * Fix: Make Echo Draught stack correctly

@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.combat.BlockedWordEffect;
 
@@ -18,7 +19,7 @@ public class DeflatedDodgeballPatch {
     private static final String[] TEXT = CardCrawlGame.languagePack.getRelicStrings(DeflatedDodgeball.ID).DESCRIPTIONS;
 
     public static SpireReturn Prefix(AbstractPlayer self, DamageInfo info) {
-        if (info.type == DamageType.NORMAL && info.output > 0 && self.hasRelic(DeflatedDodgeball.ID) && AbstractDungeon.cardRandomRng.random(99) < 10) {
+        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && info.type == DamageType.NORMAL && info.output > 0 && self.hasRelic(DeflatedDodgeball.ID) && AbstractDungeon.cardRandomRng.random(99) < 10) {
             self.getRelic(DeflatedDodgeball.ID).flash();
             int damageAmount = 0;
             if (info.owner == self) {
