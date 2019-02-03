@@ -21,7 +21,7 @@ public class Rain extends CustomCard {
     private static final int COST = 1;
 
     public Rain() {
-        super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.RARE, CardTarget.SELF);
+        super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.SKILL, CardColor.BLUE, CardRarity.UNCOMMON, CardTarget.SELF);
         this.exhaust = true;
     }
 
