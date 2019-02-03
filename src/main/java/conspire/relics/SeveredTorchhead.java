@@ -43,13 +43,13 @@ public class SeveredTorchhead extends AbstractConspireRelic {
         if (c.type == AbstractCard.CardType.ATTACK) {
             this.flash();
             if (removeArtifact()) return;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, -1), -1));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RegainStrengthPower(player, 1), 1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DexterityPower(player, -1), -1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RegainDexterityPower(player, 1), 1));
         } else if (c.type == AbstractCard.CardType.SKILL) {
             this.flash();
             if (removeArtifact()) return;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new DexterityPower(player, -1), -1));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RegainDexterityPower(player, 1), 1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new StrengthPower(player, -1), -1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(player, player, new RegainStrengthPower(player, 1), 1));
         }
     }
 

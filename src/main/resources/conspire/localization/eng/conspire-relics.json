@@ -92,7 +92,7 @@
     "NAME": "Severed Torchhead",
     "FLAVOR": "The flame has died, so the owner will not miss it.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of each turn. NL Whenever you play an #yAttack card, lose #b1 #yStrength for the turn. NL Whenever you play a #ySkill card lose #b1 #yDexterity for the turn."
+      "Gain [E] at the start of each turn. NL Whenever you play an #yAttack, lose #b1 #yDexterity for the turn. NL Whenever you play a #ySkill, lose #b1 #yStrength for the turn."
     ]
   },
   "conspire:SlowCooker": {
