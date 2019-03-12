@@ -1,6 +1,7 @@
 package conspire.actions;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -63,7 +64,8 @@ public class FixedExhaustAction extends AbstractGameAction {
             } else {
                 numExhausted = this.amount;
                 // Note: handCardSelectScreen.open clears the card queue, which will break auto-play-at-end-of-turn cards
-                // so back it up now
+                // so back it up before opening, and then restore it when we are done.
+                // Note: the cardQueue does need to be empty for the hand rendering to work correctly.
                 cardQueueBackup = AbstractDungeon.actionManager.cardQueue;
                 AbstractDungeon.actionManager.cardQueue = new ArrayList<>();
                 AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, this.anyNumber, this.canPickZero, false, false, this.upTo);
@@ -77,8 +79,15 @@ public class FixedExhaustAction extends AbstractGameAction {
             }
             CardCrawlGame.dungeon.checkForPactAchievement();
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
-            // restore card queue backup
+            // restore cardQueue
             AbstractDungeon.actionManager.cardQueue = cardQueueBackup;
+            // remove exhausted cards from card queue
+            for (Iterator<CardQueueItem> it = AbstractDungeon.actionManager.cardQueue.iterator(); it.hasNext(); ) {
+                CardQueueItem item = it.next();
+                if (AbstractDungeon.handCardSelectScreen.selectedCards.group.contains(item.card)) {
+                    it.remove();
+                }
+            }
         }
         this.tickDuration();
     }

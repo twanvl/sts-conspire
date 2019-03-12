@@ -1,6 +1,7 @@
 ### v1.6.0
 * Balance: Rain is now uncommon instead of rare
 * Reworked Severed Torchhead
+* Fix: Glowing Rock can now exhaust end of turn cards like Burn and Regret.
 
 ### v1.5.6
 * Fix: Deflated Dodgeball now only triggers during combat
