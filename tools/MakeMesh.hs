@@ -232,6 +232,11 @@ meshDeltaVertices (deformX $ degToRad (-8e-2)) leaf
 meshDeltaVertices (deformX $ degToRad (8e-2)) leaf
 -}
 
+vine :: Mesh
+vine = Mesh 88 474 1 10 (0.5,1)
+{-
+meshDeltaVertices (deformY $ degToRad (4e-2)) vine
+-}
 -------------------------------------------------------------------------------
 -- JSON input/output
 -------------------------------------------------------------------------------

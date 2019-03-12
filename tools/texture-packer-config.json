@@ -1,5 +1,5 @@
 {
-  "pot": false,
+  "pot": true,
   "rotation": true,
   "filterMin": "Linear",
   "filterMag": "Linear",
