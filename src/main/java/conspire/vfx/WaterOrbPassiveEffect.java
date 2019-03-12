@@ -30,9 +30,7 @@ public class WaterOrbPassiveEffect extends AbstractGameEffect {
         this.sY = this.y;
         this.tX = this.x + MathUtils.random(-2.0f, 2.0f) * Settings.scale;
         this.tY = y0 + 32.0f * Settings.scale;
-        //int tmp = MathUtils.random(2);
         this.color = Color.WHITE.cpy();
-        //tmp == 0 ? Settings.LIGHT_YELLOW_COLOR.cpy() : (tmp == 1 ? Color.CYAN.cpy() : Color.SALMON.cpy());
         this.scale = MathUtils.random(0.1f, 0.2f) * Settings.scale;
         this.renderBehind = true;
     }
@@ -54,5 +52,8 @@ public class WaterOrbPassiveEffect extends AbstractGameEffect {
         sb.draw(this.img, this.x - (float)this.img.getWidth() / 2.0f, this.y - (float)this.img.getWidth() / 2.0f, (float)this.img.getWidth() / 2.0f, (float)this.img.getHeight() / 2.0f, this.img.getWidth(), this.img.getHeight(), this.scale, this.scale, this.rotation, 0, 0, this.img.getWidth(), this.img.getHeight(), false, false);
         sb.setBlendFunction(770, 771);
     }
+
+    @Override
+    public void dispose() {}
 }
 
