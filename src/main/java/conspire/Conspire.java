@@ -16,6 +16,7 @@ import com.megacrit.cardcrawl.audio.Sfx;
 import com.megacrit.cardcrawl.audio.SoundMaster;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
@@ -167,18 +168,20 @@ public class Conspire implements
 
     @Override
     public void receiveEditStrings() {
-        BaseMod.loadCustomStringsFile(CardStrings.class, "conspire/localization/eng/conspire-cards.json");
-        BaseMod.loadCustomStringsFile(EventStrings.class, "conspire/localization/eng/conspire-events.json");
-        BaseMod.loadCustomStringsFile(MonsterStrings.class, "conspire/localization/eng/conspire-monsters.json");
-        BaseMod.loadCustomStringsFile(OrbStrings.class, "conspire/localization/eng/conspire-orbs.json");
-        BaseMod.loadCustomStringsFile(PotionStrings.class, "conspire/localization/eng/conspire-potions.json");
-        BaseMod.loadCustomStringsFile(PowerStrings.class, "conspire/localization/eng/conspire-powers.json");
-        BaseMod.loadCustomStringsFile(RelicStrings.class, "conspire/localization/eng/conspire-relics.json");
+        String lang = getSupportedLanguage();
+        BaseMod.loadCustomStringsFile(CardStrings.class, "conspire/localization/"+lang+"/conspire-cards.json");
+        BaseMod.loadCustomStringsFile(EventStrings.class, "conspire/localization/"+lang+"/conspire-events.json");
+        BaseMod.loadCustomStringsFile(MonsterStrings.class, "conspire/localization/"+lang+"/conspire-monsters.json");
+        BaseMod.loadCustomStringsFile(OrbStrings.class, "conspire/localization/"+lang+"/conspire-orbs.json");
+        BaseMod.loadCustomStringsFile(PotionStrings.class, "conspire/localization/"+lang+"/conspire-potions.json");
+        BaseMod.loadCustomStringsFile(PowerStrings.class, "conspire/localization/"+lang+"/conspire-powers.json");
+        BaseMod.loadCustomStringsFile(RelicStrings.class, "conspire/localization/"+lang+"/conspire-relics.json");
     }
 
     @Override
     public void receiveEditKeywords() {
-        loadCustomKeywordsStringsFile("conspire/localization/eng/conspire-keywords.json");
+        String lang = getSupportedLanguage();
+        loadCustomKeywordsStringsFile("conspire/localization/"+lang+"/conspire-keywords.json");
     }
 
     void loadCustomKeywordsStringsFile(String filepath) {
@@ -191,6 +194,15 @@ public class Conspire implements
         Map<String,Keyword> keywords = (Map<String,Keyword>)gson.fromJson(strings, typeToken);
         for (Keyword kw : keywords.values()) {
             BaseMod.addKeyword(kw.NAMES, kw.DESCRIPTION);
+        }
+    }
+
+    private static String getSupportedLanguage() {
+        switch (Settings.language) {
+            case ZHS:
+                return "zhs";
+            default:
+                return "eng";
         }
     }
 

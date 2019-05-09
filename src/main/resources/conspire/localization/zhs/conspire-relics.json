@@ -1,0 +1,141 @@
+{
+  "conspire:Boomerang": {
+    "NAME": "回旋镖",
+    "FLAVOR": "总能回到你手中。",
+    "DESCRIPTIONS": [
+      "将你每回合打出的第一张 #y攻击牌 放到你的抽牌堆顶部。"
+    ]
+  },
+  "conspire:BottledYoYo": {
+    "NAME": "瓶装悠悠",
+    "FLAVOR": "悠，悠。",
+    "DESCRIPTIONS": [
+      "拾起时，选择一张牌，每当这张牌进入你的弃牌堆时，将它洗入你的抽牌堆。",
+      "选择一张牌 ",
+      "每当 "," 进入你的弃牌堆时，将它洗入你的抽牌堆。"
+    ]
+  },
+  "conspire:DecoderRing": {
+    "NAME": "秘籍戒指",
+    "FLAVOR": "上上下下左右左右BA",
+    "DESCRIPTIONS": [
+      "每当你打出 #b3 张 #y攻击牌 ，然后打出 #b2 张 #y技能牌 ，再打出 #b2 张 #y攻击牌 ，最后打出 #b1 张 #y技能牌 , 对所有敌人造成 #b"," 点伤害。",
+      "",
+      " NL （打出 #b2 张 #y攻击牌 ，然后打出 #b2 张 #y技能牌 ，再打出 #b2 张 #y攻击牌 ，最后打出 #b1 张 #y技能牌 来触发）",
+      " NL （打出 #b1 张 #y攻击牌 ，然后打出 #b2 张 #y技能牌 ，再打出 #b2 张 #y攻击牌 ，最后打出 #b1 张 #y技能牌 来触发）",
+      " NL （打出 #b2 张 #y技能牌 ，再打出 #b2 张 #y攻击牌 ，最后打出 #b1 张 #y技能牌 来触发）",
+      " NL （打出 #b1 张 #y技能牌 ，再打出 #b2 张 #y攻击牌 ，最后打出 #b1 张 #y技能牌 来触发）",
+      " NL （打出 #b2 张 #y攻击牌 ，再打出 #b1 张 #y技能牌 来触发）",
+      " NL （打出 #b1 张 #y攻击牌 ，再打出 #b1 张 #y技能牌 来触发）",
+      " NL （打出 #b1 张 #y技能牌 来触发）"
+    ]
+  },
+  "conspire:DeflatedDodgeball": {
+    "NAME": "漏气躲避球",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "你现在有 #b10% 的几率躲避攻击。",
+      "躲避"
+    ]
+  },
+  "conspire:Dentures": {
+    "NAME": "假牙",
+    "FLAVOR": "你并不知道这个是属于什么年老怪物的。",
+    "DESCRIPTIONS": [
+      "每当你打出一张 #y能力牌 ，会有 #b50% 几率向你的弃牌堆加入一张复制品。"
+    ]
+  },
+  "conspire:Flyswatter": {
+    "NAME": "苍蝇拍",
+    "FLAVOR": "高塔中充满了各种各样的昆虫。这个苍蝇拍只对其中比较小只的凑效。",
+    "DESCRIPTIONS": [
+      "在接下来的卡牌奖励中，你不会再遇到跳过了的牌。"
+    ]
+  },
+  "conspire:GiftBox": {
+    "NAME": "礼物盒",
+    "FLAVOR": "你感觉拥有了一切。",
+    "DESCRIPTIONS": [
+      "拾起时，选择获得 #b1 张 #y稀有 牌。",
+      "选择获得一张牌"
+    ]
+  },
+  "conspire:GlowingRock": {
+    "NAME": "发热岩石",
+    "FLAVOR": "摸起来感觉有点微热。",
+    "DESCRIPTIONS": [
+      "在你的回合结束时，你能选择手牌中的一张牌 #y消耗 。"
+    ]
+  },
+  "conspire:InfiniteJournal": {
+    "NAME": "无限笔记",
+    "FLAVOR": "它就一直这么继续被写下。",
+    "DESCRIPTIONS": [
+      "现在你的牌能被升级任意次了。"
+    ]
+  },
+  "conspire:RoyalGoblet": {
+    "NAME": "皇家酒杯",
+    "FLAVOR": "与国王相衬。或者只是用便宜塑料做的。",
+    "DESCRIPTIONS": [
+      "每回合开始时，获得 [E] 。 NL 每回合少抽 #b1 张牌。"
+    ]
+  },
+  "conspire:RunicOctahedron": {
+    "NAME": "符文八面体",
+    "FLAVOR": "符文无法解读。",
+    "DESCRIPTIONS": [
+      "每回合少抽 #b"," 张牌。每当你在一回合内打出 #b"," 张牌，抽一张牌。"
+    ]
+  },
+  "conspire:SeveredTorchhead": {
+    "NAME": "火炬头",
+    "FLAVOR": "火已熄灭，拥有者不会再想念它了。",
+    "DESCRIPTIONS": [
+      "每回合开始时，获得 [E] 。 NL 每当你打出一张 #y攻击牌 ，本回合失去 #b1 点 #y敏捷 。 NL 每当你打出一张 #y技能牌，本回合失去 #b1 点 #y力量 。"
+    ]
+  },
+  "conspire:SlowCooker": {
+    "NAME": "慢煮锅",
+    "FLAVOR": "可以让你准备一份丰盛的炖菜。不适合没有耐心的人。",
+    "DESCRIPTIONS": [
+      "每回合开始时，获得 [E] 。 NL 每场战斗的第一个回合失去 [E] [E] "
+    ]
+  },
+  "conspire:SpecialSausage": {
+    "NAME": "特制香肠",
+    "FLAVOR": "在高塔中找到的，应该可以安全食用。",
+    "DESCRIPTIONS": [
+      "拾起时，选择在每场战斗开始时获得 #b",
+      " #y力量 ， #b",
+      " #y敏捷 ，或 #b",
+      " #y集中 。",
+      "选择一个香肠",
+      "每场战斗开始时获得 #b"," 点 #y力量。"," #y敏捷 。"," #y集中 。",
+      "麻辣香肠", "酱香香肠", "烟熏香肠"
+    ]
+  },
+  "conspire:TopHat": {
+    "NAME": "魔术礼帽",
+    "FLAVOR": "这顶时髦的帽子也可以用来存放兔子和多余的牌。",
+    "DESCRIPTIONS": [
+      "如果你的手牌已满时抽一张牌，将变为下一回合将额外多抽一张牌。"
+    ]
+  },
+  "conspire:TreasureMap": {
+    "NAME": "藏宝图",
+    "FLAVOR": "X 为标记点。",
+    "DESCRIPTIONS": [
+      "现在精英和宝箱房中的遗物将会标注出来。",
+      "将在这间房间被找到。"
+    ]
+  },
+
+  "conspire:IceCreamScoop": {
+    "NAME": "冰欺凌勺",
+    "FLAVOR": "挖了一个完美的冰欺凌球。",
+    "DESCRIPTIONS": [
+      "你现在可以拖动充能球来重新排序充能球栏位。"
+    ]
+  }
+}

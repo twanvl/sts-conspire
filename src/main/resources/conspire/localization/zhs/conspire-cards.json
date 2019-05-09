@@ -1,0 +1,100 @@
+{
+  "conspire:Charge": {
+    "NAME": "蓄力",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 本场战斗每回合额外增加 !M! 点伤害。"
+  },
+  "conspire:ExplosiveBarrier": {
+    "NAME": "易爆屏障",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果本回合你的格挡被突破，对攻击者造成 !M! 点伤害。"
+  },
+  "conspire:HitWhereItHurts": {
+    "NAME": "蛇打七寸",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 敌人每有一层 易伤 ，伤害将乘以125%。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 敌人每有一层 易伤 ，伤害将乘以125%。"
+  },
+  "conspire:Purge": {
+    "NAME": "抹除",
+    "DESCRIPTION": "失去 5 生命。 NL 消耗你手牌中的一张牌并将从你的牌组中移除。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "消耗并从牌组中移除"
+    ]
+  },
+
+  "conspire:DoublingDagger": {
+    "NAME": "双持匕首",
+    "DESCRIPTION": "向你的手牌中增加 !M! 张 小刀 。 NL 本场战斗，每将这张牌打出一次，本牌的小刀数量加1。",
+    "UPGRADE_DESCRIPTION": "向你的手牌中增加 !M! 张 小刀 。 NL 本场战斗，每将这张牌打出一次，本牌的小刀数量加1。"
+  },
+  "conspire:PoisonWeapons": {
+    "NAME": "涂毒武器",
+    "DESCRIPTION": "本回合所有未被格挡的伤害将变为给予 中毒 。 NL 消耗 。"
+  },
+
+  "conspire:Rain": {
+    "NAME": "降雨",
+    "DESCRIPTION": "生成 1 个雨水 充能球。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "生成 1 个雨水 充能球。"
+  },
+  "conspire:SharedLibrary": {
+    "NAME": "共享库",
+    "DESCRIPTION": "给予敌人所有拥有的所有能力。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （只能拥有你能拥有的能力）",
+      " NL （没有获得能力）",
+      " NL （获得","）"
+    ]
+  },
+
+  "conspire:Banana": {
+    "NAME": "香蕉",
+    "DESCRIPTION": "获得 !M! 最大生命。 NL 消耗 。"
+  },
+  "conspire:GhostlyDefend": {
+    "NAME": "防御",
+    "DESCRIPTION": "虚无 。 NL 获得 !B! 点 格挡 。"
+  },
+  "conspire:GhostlyStrike": {
+    "NAME": "打击",
+    "DESCRIPTION": "虚无 。 NL 造成 !D! 点伤害。"
+  },
+  "conspire:SpireCoStock": {
+    "NAME": "高塔股票",
+    "DESCRIPTION": "获得 !M! 金币。 NL 消耗 。 NL 赢亏将随时间改变。",
+    "EXTENDED_DESCRIPTION": ["失去 !M! 金币。 NL 消耗 。 NL 赢亏将随时间改变。"]
+  },
+
+  "conspire:InfernalBerry": {
+    "NAME": "炼狱霉果",
+    "DESCRIPTION": "移除 1 层 光环 。 NL 消耗 。"
+  },
+  "conspire:PyramidRune": {
+    "NAME": "符文金字塔",
+    "DESCRIPTION": "保留 。 NL 消耗 。"
+  },
+  "conspire:Treasure": {
+    "NAME": "财宝",
+    "DESCRIPTION": "获得 !M! 金币。 NL 消耗 。"
+  },
+
+  "conspire:Blindness": {
+    "NAME": "致盲",
+    "DESCRIPTION": "不能被打出 。 NL 你的回合结束后，本场战斗你将不能看见敌人的意图。"
+  },
+  "conspire:NecroticWound": {
+    "NAME": "坏死伤口",
+    "DESCRIPTION": "不能被打出 。 NL 每当这张牌被抽到时，将一张伤口加入你的抽牌堆。"
+  },
+
+  "conspire:SausageOptionStrength": {
+    "NAME": "麻辣香肠",
+    "DESCRIPTION": "每场战斗开始时获得 !M! 点 力量 。"
+  },
+  "conspire:SausageOptionDexterity": {
+    "NAME": "酱香香肠",
+    "DESCRIPTION": "每场战斗开始时获得 !M! 点 敏捷 。"
+  },
+  "conspire:SausageOptionFocus": {
+    "NAME": "烟熏香肠",
+    "DESCRIPTION": "每场战斗开始时获得 !M! 点 集中 。"
+  }
+}

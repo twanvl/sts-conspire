@@ -1,3 +1,6 @@
+### v1.6.1
+* Added Simplified Chinese translation by Rita-B
+
 ### v1.6.0
 * Balance: Rain is now uncommon instead of rare
 * Reworked Severed Torchhead

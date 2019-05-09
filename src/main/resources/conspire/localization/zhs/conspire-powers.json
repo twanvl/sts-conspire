@@ -1,0 +1,110 @@
+{
+  "conspire:CubeRune": {
+    "NAME": "符文立方体",
+    "DESCRIPTIONS": [
+      "每当你抽一张牌，受到 #b"," 点伤害。 你的回合开始时，能用上一回合结束时的 #y格挡 防御它的伤害。",
+      "每当你抽一张牌，受到 #b"," 点伤害。", " （目前受到 #b"," 点伤害）"
+    ]
+  },
+  "conspire:DomeRune": {
+    "NAME": "符文圆顶",
+    "DESCRIPTIONS": [
+      "你将不能看见敌人的意图。"
+    ]
+  },
+  "conspire:Blindness": {
+    "NAME": "致盲",
+    "DESCRIPTIONS": [
+      "你将不能看见敌人的意图。"
+    ]
+  },
+  "conspire:DodecahedronRune": {
+    "NAME": "符文十二面体",
+    "DESCRIPTIONS": [
+      "每当你使用了 #b"," 点能量，回复 #b"," #y生命 并获得 #b"," 点 #y力量 。"
+    ]
+  },
+  "conspire:Ghostly": {
+    "NAME": "幽灵",
+    "DESCRIPTIONS": [
+      "每回合受到的第一次伤害将降低为 #b1 。"
+    ]
+  },
+  "conspire:TemporaryConfusion": {
+    "NAME": "短暂混乱",
+    "DESCRIPTIONS": [
+      "接下来的 #b"," 个回合，你抽到的每一张牌，耗能都会随机变化。"
+    ]
+  },
+  "conspire:Capricious": {
+    "NAME": "无常",
+    "DESCRIPTIONS": [
+      "每当你打出一张牌，它将改变意图。"
+    ]
+  },
+  "conspire:ReflectAttack": {
+    "NAME": "反射攻击",
+    "DESCRIPTIONS": [
+      "每当受到未被格挡的伤害， 在它的回合将造成 #b","% 点反伤。",
+      " （将造成 #b"," 点伤害）",
+      " （将造成 #b"," 点伤害， 如果他受到 #g"," 点中毒伤害）",
+      "反射 "," 点伤害"
+    ]
+  },
+  "conspire:ReflectBlock": {
+    "NAME": "反射防御",
+    "DESCRIPTIONS": [
+      "每当你获得 #y格挡 时， 在它的回合将获得 #b","% 的格挡。"," （将获得 #b"," 点 #y格挡 ）",
+      "反射 "," 点格挡"
+    ]
+  },
+  "conspire:Holy": {
+    "NAME": "光环",
+    "DESCRIPTIONS": ["免疫所有的伤害和生命损失。"]
+  },
+  "conspire:DrawnBlood": {
+    "NAME": "抽血",
+    "DESCRIPTIONS": ["将要被杀死时，你讲回复 #b"," #y生命"]
+  },
+  "conspire:PoisonWeapons": {
+    "NAME": "涂毒武器",
+    "DESCRIPTIONS": [
+      "本回合所有未被格挡的伤害将变为给予 中毒 。持续 #b"," 个回合。"," 个回合。"
+    ]
+  },
+  "conspire:Shedding": {
+    "NAME": "脱落",
+    "DESCRIPTIONS": ["每当受到 #y攻击 伤害时，生成一个爪牙。（每回合一次）"]
+  },
+  "conspire:EchoDraught": {
+    "NAME": "回响药水",
+    "DESCRIPTIONS": [
+      "本回合，你打出的下一张牌将会被打出两次。",
+      "本回合，你打出的下 "," 张牌将会被打出两次。"
+    ]
+  },
+  "conspire:ExplosiveBarrier": {
+    "NAME": "易爆屏障",
+    "DESCRIPTIONS": [
+      "每当你的 #y格挡 被突破，对攻击者造成 #b"," 点伤害。"
+    ]
+  },
+  "conspire:RegainStrength": {
+    "NAME": "重获力量",
+    "DESCRIPTIONS": [
+      "在你的回合结束时，获得 #b"," 点 #y力量 "
+    ]
+  },
+  "conspire:RegainDexterity": {
+    "NAME": "重获敏捷",
+    "DESCRIPTIONS": [
+      "在你的回合结束时，获得 #b"," 点 #y敏捷 "
+    ]
+  },
+  "conspire:HoldsTreasure": {
+    "NAME": "内藏财宝",
+    "DESCRIPTIONS": [
+      "每当它受到 #y攻击 伤害，将一张财宝加入你的弃牌堆."
+    ]
+  }
+}

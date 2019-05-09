@@ -3,7 +3,7 @@
   "name": "Conspire",
   "author_list": ["twanvl"],
   "description": "Adds new monsters, elites, bosses, relics, cards, potions and events.",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "sts_version": "10-25-2018",
   "mts_version": "3.0.0",
   "dependencies": ["basemod"],

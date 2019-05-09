@@ -1,0 +1,49 @@
+{
+  "conspire:RoseBush": {
+    "NAME": "玫瑰灌木丛",
+    "MOVES": ["戳刺","生长"],
+    "DIALOG": []
+  },
+  "conspire:SneckoGhost": {
+    "NAME": "异蛇幽灵",
+    "MOVES": ["困惑瞪视","困惑瞪视","噬咬"],
+    "DIALOG": ["把我的头骨还回来！","把我的眼睛还回来！"]
+  },
+  "conspire:MysteriousRune": {
+    "NAME": "神秘符文",
+    "MOVES": ["球体","平面","圆顶","立方体","金字塔","电容器","十二面体"],
+    "DIALOG": []
+  },
+  "conspire:FuzzyDie": {
+    "NAME": "无常骰子",
+    "MOVES": ["伤口"],
+    "DIALOG": []
+  },
+  "conspire:HeadLouse": {
+    "NAME": "虱虫王后",
+    "MOVES": ["增殖","防御","成长"],
+    "DIALOG": []
+  },
+  "conspire:MimicChest": {
+    "NAME": "拟身怪",
+    "MOVES": [],
+    "DIALOG": [
+      "@呜嗷嗷啊嗷！！@"
+    ]
+  },
+  "conspire:HollyBat": {
+    "NAME": "冬青蝙蝠",
+    "MOVES": ["投掷","俯冲","噬咬","传染","俯冲","Glow"],
+    "DIALOG": ["神圣蝙蝠"]
+  },
+  "conspire:OrnateMirror": {
+    "NAME": "华美镜面",
+    "MOVES": ["反射","镜面移动"],
+    "DIALOG": []
+  },
+  "conspire:MirrorImage": {
+    "NAME": "镜像",
+    "MOVES": [],
+    "DIALOG": ["防御，防御，防御", "防御，防御，打击", "防御，打击，打击", "打击，打击，打击"]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "conspire:EchoDraught": {
+    "NAME": "回响药水",
+    "DESCRIPTIONS": [
+      "本回合，你打出的下一张牌将会打出两次。"
+    ]
+  },
+  "conspire:TimeTravelPotion": {
+    "NAME": "时间旅行",
+    "DESCRIPTIONS": [
+      "将你的生命改变为上一回合结束时的值。"
+    ]
+  }
+}
