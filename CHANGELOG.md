@@ -1,3 +1,6 @@
+### v1.6.2
+* Compatiblity with basemod v.5.14+
+
 ### v1.6.1
 * Added Simplified Chinese translation by Rita-B
 

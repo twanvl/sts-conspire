@@ -47,8 +47,8 @@ import javassist.expr.MethodCall;
 @SpirePatch(clz=com.megacrit.cardcrawl.relics.Whetstone.class, method="onEquip")
 
 // BaseMod patches
-@SpirePatch(clz=basemod.DevConsole.class, method="cmdHand")
-@SpirePatch(clz=basemod.DevConsole.class, method="cmdDeck")
+@SpirePatch(clz=basemod.devcommands.hand.HandAdd.class, method="execute")
+@SpirePatch(clz=basemod.devcommands.deck.DeckAdd.class, method="execute")
 @SpirePatch(clz=basemod.patches.com.megacrit.cardcrawl.events.BackToBasics.UpgradeStrikeAndDefends.class, method="Insert")
 @SpirePatch(clz=basemod.patches.com.megacrit.cardcrawl.events.NoteForYourself.MissingCard.class, method="Replace")
 
