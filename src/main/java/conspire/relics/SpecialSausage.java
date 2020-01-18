@@ -31,7 +31,7 @@ public class SpecialSausage extends AbstractConspireRelic implements CustomSavab
     private static final int STR_AMT = 2;
     private static final int DEX_AMT = 2;
     private static final int FOCUS_AMT = 2;
-    enum Buff {
+    public enum Buff {
         STRENGTH, DEXTERITY, FOCUS
     }
     private Buff buff;
@@ -70,26 +70,15 @@ public class SpecialSausage extends AbstractConspireRelic implements CustomSavab
         // Show a screen to select a buff
         buff = null;
         ArrayList<AbstractCard> choices = new ArrayList<>();
-        choices.add(new SausageOptionStrength(STR_AMT));
-        choices.add(new SausageOptionDexterity(DEX_AMT));
-        choices.add(new SausageOptionFocus(FOCUS_AMT));
-        openCardRewardsScreen(choices);
+        choices.add(new SausageOptionStrength(this, STR_AMT));
+        choices.add(new SausageOptionDexterity(this, DEX_AMT));
+        choices.add(new SausageOptionFocus(this, FOCUS_AMT));
+        AbstractDungeon.cardRewardScreen.chooseOneOpen(choices);
     }
 
-    @Override
-    public void update() {
-        super.update();
-        if (buff == null && AbstractDungeon.cardRewardScreen.discoveryCard != null) {
-            if (AbstractDungeon.cardRewardScreen.discoveryCard instanceof SausageOptionStrength) {
-                buff = Buff.STRENGTH;
-            } else if (AbstractDungeon.cardRewardScreen.discoveryCard instanceof SausageOptionDexterity) {
-                buff = Buff.DEXTERITY;
-            } else {
-                buff = Buff.FOCUS;
-            }
-            AbstractDungeon.cardRewardScreen.discoveryCard = null;
-            this.setDescriptionAfterLoading();
-        }
+    public void setBuff(Buff buff) {
+        this.buff = buff;
+        this.setDescriptionAfterLoading();
     }
 
     @Override
@@ -139,33 +128,5 @@ public class SpecialSausage extends AbstractConspireRelic implements CustomSavab
     @Override
     public Buff onSave() {
         return this.buff;
-    }
-
-    private void openCardRewardsScreen(ArrayList<AbstractCard> cards) {
-        // Based on CardRewardScreen.discoveryOpen
-        CardRewardScreen crs = AbstractDungeon.cardRewardScreen;
-        crs.rItem = null;
-        ReflectionHacks.setPrivate(crs, CardRewardScreen.class, "codex", false);
-        ReflectionHacks.setPrivate(crs, CardRewardScreen.class, "discovery", true);
-        ReflectionHacks.setPrivate(crs, CardRewardScreen.class, "draft", false);
-        crs.discoveryCard = null;
-        ((PeekButton)ReflectionHacks.getPrivate(crs, CardRewardScreen.class, "peekButton")).hideInstantly();
-        ((PeekButton)ReflectionHacks.getPrivate(crs, CardRewardScreen.class, "peekButton")).show();
-        ((SingingBowlButton)ReflectionHacks.getPrivate(crs, CardRewardScreen.class, "bowlButton")).hide();
-        ((SkipCardButton)ReflectionHacks.getPrivate(crs, CardRewardScreen.class, "skipButton")).hide();
-        AbstractDungeon.topPanel.unhoverHitboxes();
-        crs.rewardGroup = cards;
-        AbstractDungeon.isScreenUp = true;
-        AbstractDungeon.screen = AbstractDungeon.CurrentScreen.CARD_REWARD;
-        AbstractDungeon.dynamicBanner.appear(DESCRIPTIONS[4]);
-        AbstractDungeon.overlayMenu.showBlackScreen();
-        final float CARD_TARGET_Y = (float)Settings.HEIGHT * 0.45f;
-        try {
-            Method method = CardRewardScreen.class.getDeclaredMethod("placeCards", float.class, float.class);
-            method.setAccessible(true);
-            method.invoke(crs, (float)Settings.WIDTH / 2.0f, CARD_TARGET_Y);
-        } catch (Exception ex) {
-            Conspire.logger.error("Exception occured when calling placeCards", ex);
-        }
     }
 }

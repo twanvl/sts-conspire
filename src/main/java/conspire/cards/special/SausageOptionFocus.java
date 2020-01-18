@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.powers.FocusPower;
 
 import basemod.abstracts.CustomCard;
 import conspire.Conspire;
+import conspire.relics.SpecialSausage;
 
 public class SausageOptionFocus extends CustomCard {
     public static final String ID = "conspire:SausageOptionFocus";
@@ -18,20 +19,26 @@ public class SausageOptionFocus extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = -2;
+    private SpecialSausage parent;
 
-    public SausageOptionFocus(int amount) {
+    public SausageOptionFocus(SpecialSausage parent, int amount) {
         super(ID, NAME, Conspire.cardImage(ID), COST, DESCRIPTION, CardType.SKILL, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.NONE);
         this.magicNumber = this.baseMagicNumber = amount;
+        this.parent = parent;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(p, p, new FocusPower(p, this.magicNumber), this.magicNumber));
+    }
+
+    @Override
+    public void onChoseThisOption() {
+        parent.setBuff(SpecialSausage.Buff.FOCUS);
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new SausageOptionFocus(this.baseMagicNumber);
+    return new SausageOptionFocus(this.parent, this.baseMagicNumber);
     }
 
     @Override
