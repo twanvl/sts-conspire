@@ -4,8 +4,8 @@
   "author_list": ["twanvl"],
   "credits": "translation: Rita-B",
   "description": "Adds new monsters, elites, bosses, relics, cards, potions and events.",
-  "version": "1.6.2",
-  "sts_version": "07-01-2019",
+  "version": "1.7.0",
+  "sts_version": "01-16-2020",
   "mts_version": "3.0.0",
   "dependencies": ["basemod"],
   "update_json": "https://api.github.com/repos/twanvl/sts-conspire/releases/latest"

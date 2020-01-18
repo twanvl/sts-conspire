@@ -17,6 +17,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.CardRewardScreen;
 import com.megacrit.cardcrawl.ui.buttons.SingingBowlButton;
 import com.megacrit.cardcrawl.ui.buttons.SkipCardButton;
+import com.megacrit.cardcrawl.ui.buttons.PeekButton;
 
 import basemod.ReflectionHacks;
 import basemod.abstracts.CustomSavable;
@@ -148,9 +149,10 @@ public class SpecialSausage extends AbstractConspireRelic implements CustomSavab
         ReflectionHacks.setPrivate(crs, CardRewardScreen.class, "discovery", true);
         ReflectionHacks.setPrivate(crs, CardRewardScreen.class, "draft", false);
         crs.discoveryCard = null;
+        ((PeekButton)ReflectionHacks.getPrivate(crs, CardRewardScreen.class, "peekButton")).hideInstantly();
+        ((PeekButton)ReflectionHacks.getPrivate(crs, CardRewardScreen.class, "peekButton")).show();
         ((SingingBowlButton)ReflectionHacks.getPrivate(crs, CardRewardScreen.class, "bowlButton")).hide();
         ((SkipCardButton)ReflectionHacks.getPrivate(crs, CardRewardScreen.class, "skipButton")).hide();
-        crs.onCardSelect = true;
         AbstractDungeon.topPanel.unhoverHitboxes();
         crs.rewardGroup = cards;
         AbstractDungeon.isScreenUp = true;

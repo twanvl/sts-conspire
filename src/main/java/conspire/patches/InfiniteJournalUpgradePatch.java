@@ -49,7 +49,6 @@ import javassist.expr.MethodCall;
 // BaseMod patches
 @SpirePatch(clz=basemod.devcommands.hand.HandAdd.class, method="execute")
 @SpirePatch(clz=basemod.devcommands.deck.DeckAdd.class, method="execute")
-@SpirePatch(clz=basemod.patches.com.megacrit.cardcrawl.events.BackToBasics.UpgradeStrikeAndDefends.class, method="Insert")
 @SpirePatch(clz=basemod.patches.com.megacrit.cardcrawl.events.NoteForYourself.MissingCard.class, method="Replace")
 
 // MadScienceMod patches

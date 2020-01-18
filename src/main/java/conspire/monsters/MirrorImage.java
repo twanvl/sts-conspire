@@ -73,9 +73,6 @@ public class MirrorImage extends AbstractMonster {
     @Override
     public void render(SpriteBatch sb) {
         if (!this.isDead && !this.escaped) {
-            if (this.damageFlash) {
-                ShaderHelper.setShader(sb, ShaderHelper.Shader.WHITE_SILHOUETTE);
-            }
             // Draw the Player's image
             // ... store player's values
             float playerDrawX = AbstractDungeon.player.drawX;
