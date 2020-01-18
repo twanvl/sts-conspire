@@ -1,5 +1,6 @@
 ### v1.7.0
 * Update after Watcher release
+* Removed Echo Draught, because Duplication Potion is the same thing
 
 ### v1.6.2
 * Compatiblity with basemod v.5.14+

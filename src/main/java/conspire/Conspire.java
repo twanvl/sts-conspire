@@ -257,7 +257,7 @@ public class Conspire implements
     }
 
     public void receiveEditPotions() {
-        BaseMod.addPotion(EchoDraught.class, new Color(1.0f,0.8f,0.0f,1.0f), null, new Color(1.0f,0.5f,0.0f,1.0f), EchoDraught.POTION_ID);
+        //BaseMod.addPotion(EchoDraught.class, new Color(1.0f,0.8f,0.0f,1.0f), null, new Color(1.0f,0.5f,0.0f,1.0f), EchoDraught.POTION_ID);
         BaseMod.addPotion(TimeTravelPotion.class, Color.SKY.cpy(), Color.DARK_GRAY.cpy(), null, TimeTravelPotion.POTION_ID);
     }
 
