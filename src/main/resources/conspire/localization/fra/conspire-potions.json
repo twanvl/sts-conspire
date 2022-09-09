@@ -1,0 +1,14 @@
+{
+  "conspire:EchoDraught": {
+    "NAME": "Breuvage échoïque",
+    "DESCRIPTIONS": [
+      "Ce tour, votre prochaine carte est jouée deux fois."
+    ]
+  },
+  "conspire:TimeTravelPotion": {
+    "NAME": "Potion de voyage dans le temps",
+    "DESCRIPTIONS": [
+      "Remettez vos PV à ce qu'ils étaient à la fin de votre dernier tour."
+    ]
+  }
+}

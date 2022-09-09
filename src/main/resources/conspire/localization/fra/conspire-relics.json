@@ -1,0 +1,141 @@
+{
+  "conspire:Boomerang": {
+    "NAME": "Boomerang",
+    "FLAVOR": "Revient toujours vers vous.",
+    "DESCRIPTIONS": [
+      "Placez la première #yAttaque que vous jouez chaque tour au-dessus de votre pioche card."
+    ]
+  },
+  "conspire:BottledYoYo": {
+    "NAME": "Yo-yo embouteillé",
+    "FLAVOR": "Yo, yo.",
+    "DESCRIPTIONS": [
+      "Lorsque vous le récupérez, choisissez une carte. Lorsqu'elle est mise dans votre défausse, mélangez-la dans votre pioche.",
+      "Choisissez une carte pour ",
+      "Lorsque "," est mise dans votre défausse, mélangez-la dans votre pioche."
+    ]
+  },
+  "conspire:DecoderRing": {
+    "NAME": "Anneau décodeur",
+    "FLAVOR": "Haut, Haut, Bas, Bas, Gauche, Droite, Gauche, Droite, B, A.",
+    "DESCRIPTIONS": [
+      "Lorsque vous jouez #b3 #yAttaques, puis #b2 #yCompétences, puis #b2 #yAttaques, puis #b1 #yCompétence, infligez #b"," dégâts à TOUS les ennemis.",
+      "",
+      " NL (Jouez #b2 #yAttaques, puis #b2 #yCompétences, puis #b2 #yAttaques, puis #b1 #yCompétence pour déclencher)",
+      " NL (Jouez #b1 #yAttaque, puis #b2 #yCompétences, puis #b2 #yAttaques, puis #b1 #yCompétence pour déclencher)",
+      " NL (Jouez #b2 #yCompétences, puis #b2 #yAttaques, puis #b1 #yCompétence pour déclencher)",
+      " NL (Jouez #b1 #yCompétence, puis #b2 #yAttaques, puis #b1 #yCompétence pour déclencher)",
+      " NL (Jouez #b2 #yAttaques, puis #b1 #yCompétence pour déclencher)",
+      " NL (Jouez #b1 #yAttaque, puis #b1 #yCompétence pour déclencher)",
+      " NL (Jouez #b1 #yCompétence pour déclencher)"
+    ]
+  },
+  "conspire:DeflatedDodgeball": {
+    "NAME": "Balle au prisonnier dégonflée",
+    "FLAVOR": "",
+    "DESCRIPTIONS": [
+      "Vous avez #b10% de chance d'éviter des Attaques.",
+      "Évité"
+    ]
+  },
+  "conspire:Dentures": {
+    "NAME": "Dentier",
+    "FLAVOR": "Vous ne savez pas à quel monstre retraité ceci appartenait.",
+    "DESCRIPTIONS": [
+      "Lorsque vous jouez un #yPouvoir, ajoutez une copie de celui-ci dans votre défausse #b50% du temps."
+    ]
+  },
+  "conspire:Flyswatter": {
+    "NAME": "Tapette à mouche",
+    "FLAVOR": "La Tour est remplie d'insectes. Cette tapette ne marche que pour les plus petits.",
+    "DESCRIPTIONS": [
+      "Aux prochains écrans de récompense de cartes, il ne vous sera plus offert des cartes que vous avez passé précédemment."
+    ]
+  },
+  "conspire:GiftBox": {
+    "NAME": "Cadeau",
+    "FLAVOR": "Cela pourrait être n'importe quoi.",
+    "DESCRIPTIONS": [
+      "Lorsque vous le récupérez, choisissez et ajoutez #b1 carte rare dans votre deck.",
+      "Choisissez une Carte"
+    ]
+  },
+  "conspire:GlowingRock": {
+    "NAME": "Rocher brillant",
+    "FLAVOR": "Il est légèrement chaud au toucher.",
+    "DESCRIPTIONS": [
+      "À la fin de votre tour vous pouvez #yÉpuiser une carte de votre main."
+    ]
+  },
+  "conspire:InfiniteJournal": {
+    "NAME": "Journal infini",
+    "FLAVOR": "Ça ne s'arrête jamais.",
+    "DESCRIPTIONS": [
+      "Les cartes peuvent être améliorées un nombre infini de fois."
+    ]
+  },
+  "conspire:RoyalGoblet": {
+    "NAME": "Gobelet royal",
+    "FLAVOR": "Digne de servir un roi. Ou peut-être fait de plastique pas cher.",
+    "DESCRIPTIONS": [
+      "Gagnez [E] au début de chaque tour. NL Piochez #b1 carte en moins chaque tour."
+    ]
+  },
+  "conspire:RunicOctahedron": {
+    "NAME": "Octaèdre runique",
+    "FLAVOR": "Les runes sont indéchiffrables.",
+    "DESCRIPTIONS": [
+      "Piochez #b"," carte de moins chaque tour. Chaque fois que vous jouez #b"," cartes en un seul tour, piochez une carte."
+    ]
+  },
+  "conspire:SeveredTorchhead": {
+    "NAME": "Tête de torche sectionnée",
+    "FLAVOR": "La flamme est éteinte, elle ne manquera pas à son propriétaire.",
+    "DESCRIPTIONS": [
+      "Gagnez [E] au début de chaque tour. NL Lorsque vous jouez une #yAttaque, perdez #b1 de #yDextérité pour le tour. NL Lorsque vous jouez une #yCompétence, perdez #b1 de #yForce pour le tour."
+    ]
+  },
+  "conspire:SlowCooker": {
+    "NAME": "Mijoteuse",
+    "FLAVOR": "Vous permet de préparer une délicieuse soupe à la tour. Déconseillé aux impatients.",
+    "DESCRIPTIONS": [
+      "Gagnez [E] au début de chaque tour. NL Au premier tour du combat perdez 2 d'Énergie à la place."
+    ]
+  },
+  "conspire:SpecialSausage": {
+    "NAME": "Saucisse spéciale",
+    "FLAVOR": "Trouvé par terre dans la Tour. Devrait être bonne à manger.",
+    "DESCRIPTIONS": [
+      "Lorsque vous la récupérez, choisissez de commencer chaque combat avec #b",
+      " de #yForce, #b",
+      " de #yDextérité, or #b",
+      " de #yConcentration.",
+      "Choisissez une Saucisse",
+      "Commencez chaque combat avec #b"," de Force #yStrength."," de #yDextérité."," de #yConcentration.",
+      "Saucisse Épicée", "Saucisse Assaisonnée", "Saucisse Fumée"
+    ]
+  },
+  "conspire:TopHat": {
+    "NAME": "Haut-de-forme",
+    "FLAVOR": "Ce chapeau stylisé peut être également utilisé pour stocker des lapins et des cartes en excès.",
+    "DESCRIPTIONS": [
+      "Si votre main est pleine lorsque vous piochez une carte, piochez-en une au prochain tour à la place."
+    ]
+  },
+  "conspire:TreasureMap": {
+    "NAME": "Carte au trésor",
+    "FLAVOR": "Le X marque l'endroit.",
+    "DESCRIPTIONS": [
+      "La carte montre maintenant quelles reliques peuvent être trouvées dans les trésors et les combats d'élite.",
+      "Peut être trouvé dans cette salle."
+    ]
+  },
+
+  "conspire:IceCreamScoop": {
+    "NAME": "Cuillère à glace",
+    "FLAVOR": "Fait de jolies sphères.",
+    "DESCRIPTIONS": [
+      "Vous pouvez réarranger vos Orbes en les glissant."
+    ]
+  }
+}

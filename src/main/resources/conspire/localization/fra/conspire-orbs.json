@@ -1,0 +1,9 @@
+{
+  "conspire:Water": {
+    "NAME": "Aquatique",
+    "DESCRIPTION": [
+      "#yPassif: Au début du tour, piochez #b1 carte. NL #yActivation: Piochez #b",
+      " cartes. NL L'orbe Aquatique n'est pas affecté par la #yConcentration."
+    ]
+  }
+}

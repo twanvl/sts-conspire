@@ -1,0 +1,54 @@
+{
+  "conspire:LoneGhost": {
+    "NAME": "Fantôme solitaire",
+    "DESCRIPTIONS": [
+      "De la fumée sombre vous couvre entièrement, alors que vous repérez un scintillement devant vous, qui fusionne rapidement en un visage masqué. Celui-ci commence à parler. NL NL ~\"Vous~ ~avez~ ~peut-être~ ~entendu~ ~parler~ ~du~ #p~Conseil~ #p~des~ #p~Fantômes.~ ~J'en~ ~étais~ ~un~ ~membre~ ~avant,~ ~vous~ ~savez.~ ~Mais~ ~maintenant~ ~j'ai~ ~été~ ~envoyé~ ~ici~ ~pour~ ~regarder~ ~les~ ~mortels~ ~lutter~ ~et~ ~échouer~ ~pour~ ~l'éternité...\"~ NL ~\"Une~ ~punition~ ~plutôt~ ~absurde,~ ~ne~ ~trouvez-vous~ ~pas?\"~",
+      "~\"Donc~ ~vous~ ~le~ ~voyez~ ~aussi.~ ~Notre~ ~existence~ ~dans~ ~ce~ ~monde~ ~est~ ~éphémère~ ~et~ ~futile.\"~ NL NL La fumée commence à se lever et à devenir de plus en plus épaisse, le visage se perdant dans l'obscurité. NL NL Vous vous sentez vide et seul, mais décidez de continuer.",
+      "~\"Peut-être~ ~que~ ~je~ ~peux~ ~vous~ ~convaincre~ ~de~ ~la~ ~vérité~ ~à~ ~temps.~ ~Ceci~ ~vous~ ~permettra~ ~de~ ~comprendre~ ~notre~ ~existence.\"~ NL NL La forme commence à s'approcher, et vous ressentez l'ectoplasme vous toucher. C'est un peu gluant.",
+      "~\"I~ ~see~ ~you~ ~are~ ~already~ ~enthralled~ ~by~ ~the~ #p@Council.@ ~I~ ~do~ ~not~ ~wish~ ~to~ ~be~ ~involved~ ~with~ ~them~ ~anymore.\"~ NL NL The smoke quietly fades away, and the entity disappears with it."
+    ],
+    "OPTIONS": [
+      "[Accord] #gRendez #gtoutes #gvos #gFrappes #get #gvos #gDéfenses #gÉthérées.",
+      "[Argumenter] #gRecevez #g1 Apparition. #rPerdez #y",
+      " #yd'Or.",
+      "[Désaccord] ",
+      "[Quitter]"
+    ]
+  },
+
+  "conspire:Investor": {
+    "NAME": "Investisseur",
+    "DESCRIPTIONS": [
+      "\"Avez-vous entendu? Cette tour va être #y@IMMENSE!@ Si vous investissez aujourd'hui, vous êtes garanti de doubler votre or en un rien de temps*.\" NL NL *: Ne fondez pas vos décisions d'investissement sur des déclarations faites par des employés de SpireCo. La valeur des investissements peut changer, les performances passées ne sont pas une garantie des performances futures.",
+      "\"Excellent! Vous avez fait un cchoix judicieux!\" NL NL Alors que vous donnez votre or, vous commencez à douter l'investissement que vous venez juste de faire.",
+      "\"Vous allez regretter ce choix ! Alors que vos pairs nageront dans la richesse, vous serez obligé de mendier pour des miettes.\""
+    ],
+    "OPTIONS": [
+      "[Investir] #y",
+      " #yd'Or: Ajoutez #b",
+      " action de SpireCo dans votre deck.",
+      " actions de SpireCo dans votre deck.",
+      "[Décliner]",
+      "[Décliner] #rPrenez #r",
+      " #rdégâts.",
+      "[Quitter]"
+    ]
+  },
+
+  "conspire:DuplicatorExtra": {
+    "NAME": "DuplicatorExtra",
+    "DESCRIPTIONS": [
+      "Vous vous agenouillez respectueusement et inclinez votre tête. Une douzaine d'images miroir apparaissent du sanctuaire et se heurtent à vous."
+    ],
+    "OPTIONS": [
+      "[Prier PLUS FORT] #gDupliquez #gTOUTES #gles #gcartes #gde #gvotre #gdeck."
+    ]
+  },
+
+  "conspire:MimicChest": {
+    "NAME": "Coffre Mimic",
+    "DESCRIPTIONS": [],
+    "OPTIONS": []
+  }
+
+}

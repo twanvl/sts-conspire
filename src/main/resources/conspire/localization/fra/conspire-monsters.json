@@ -1,0 +1,49 @@
+{
+  "conspire:RoseBush": {
+    "NAME": "Buisson de roses",
+    "MOVES": ["Piqûre","Croissance"],
+    "DIALOG": []
+  },
+  "conspire:SneckoGhost": {
+    "NAME": "Fantôme gecko",
+    "MOVES": ["Regard perplexe","Fouet de queue","Morsure"],
+    "DIALOG": ["Rends-moi mon crâne","Rends-moi mon œil!"]
+  },
+  "conspire:MysteriousRune": {
+    "NAME": "Rune mystérieuse",
+    "MOVES": ["Sphère","Plan","Dôme","Cube","Pyramide","Condensateur","Dodécahédron"],
+    "DIALOG": []
+  },
+  "conspire:FuzzyDie": {
+    "NAME": "Dé vague",
+    "MOVES": ["Blessure"],
+    "DIALOG": []
+  },
+  "conspire:HeadLouse": {
+    "NAME": "Chef des poux",
+    "MOVES": ["Mue","Défense","Croissance"],
+    "DIALOG": []
+  },
+  "conspire:MimicChest": {
+    "NAME": "Mimic",
+    "MOVES": [],
+    "DIALOG": [
+      "@RRrrohrrRGHhh!!@"
+    ]
+  },
+  "conspire:HollyBat": {
+    "NAME": "Chauve-s-houx-rie",
+    "MOVES": ["Pelage","Vol","Morsure","Infection","Vol","Éclat"],
+    "DIALOG": ["Holy Bat"]
+  },
+  "conspire:OrnateMirror": {
+    "NAME": "Miroir Orné",
+    "MOVES": ["Réfléchir","Mouvements miroir"],
+    "DIALOG": []
+  },
+  "conspire:MirrorImage": {
+    "NAME": "Image Miroir",
+    "MOVES": [],
+    "DIALOG": ["Défense, Défense, Défense", "Défense, Défense, Frappe", "Défense, Frappe, Frappe", "Frappe, Frappe, Frappe"]
+  }
+}

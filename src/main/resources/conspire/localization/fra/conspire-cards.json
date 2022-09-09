@@ -1,0 +1,100 @@
+{
+  "conspire:Charge": {
+    "NAME": "Charge",
+    "DESCRIPTION": "Deal !D! damage. NL Deals an additional !M! damage for each turn of combat."
+  },
+  "conspire:ExplosiveBarrier": {
+    "NAME": "Explosive Barrier",
+    "DESCRIPTION": "Gain !B! Block. NL If your Block is broken this turn, deal !M! damage to the attacker."
+  },
+  "conspire:HitWhereItHurts": {
+    "NAME": "Hit Where it Hurts",
+    "DESCRIPTION": "Deal !D! damage. NL Damage is multiplied by 125% for each Vulnerable.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Damage is multiplied by 150% for each Vulnerable."
+  },
+  "conspire:Purge": {
+    "NAME": "Purge",
+    "DESCRIPTION": "Lose 5 HP. NL Exhaust a card in your hand and permanently remove it from your deck. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Exhaust and remove from your deck"
+    ]
+  },
+
+  "conspire:DoublingDagger": {
+    "NAME": "Doubling Dagger",
+    "DESCRIPTION": "Add !M! Shiv to your hand. NL Every time this card is played, increase its shiv count by 1 for this combat.",
+    "UPGRADE_DESCRIPTION": "Add !M! Shivs to your hand. NL Every time this card is played, increase its shiv count by 1 for this combat."
+  },
+  "conspire:PoisonWeapons": {
+    "NAME": "Poison Weapons",
+    "DESCRIPTION": "All unblocked attack damage is converted to Poison this turn. NL Exhaust."
+  },
+
+  "conspire:Rain": {
+    "NAME": "Rain",
+    "DESCRIPTION": "Channel 1 Water. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Channel 1 Water."
+  },
+  "conspire:SharedLibrary": {
+    "NAME": "Shared Library",
+    "DESCRIPTION": "Gain all powers an enemy has.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Only applies to powers that you can have)",
+      " NL (Gain no powers)",
+      " NL (Gain ",")"
+    ]
+  },
+
+  "conspire:Banana": {
+    "NAME": "Banana",
+    "DESCRIPTION": "Gain !M! permanent Max HP. NL Exhaust."
+  },
+  "conspire:GhostlyDefend": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Ethereal. NL Gain !B! Block."
+  },
+  "conspire:GhostlyStrike": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage."
+  },
+  "conspire:SpireCoStock": {
+    "NAME": "SpireCo Stock",
+    "DESCRIPTION": "Gain !M! Gold. NL Exhaust. NL Value may change over time.",
+    "EXTENDED_DESCRIPTION": ["Lose !M! Gold. NL Exhaust. NL Value may change over time."]
+  },
+
+  "conspire:InfernalBerry": {
+    "NAME": "Infernal Berry",
+    "DESCRIPTION": "Remove 1 Holy. NL Exhaust."
+  },
+  "conspire:PyramidRune": {
+    "NAME": "Pyramid Rune",
+    "DESCRIPTION": "Retain. NL Exhaust."
+  },
+  "conspire:Treasure": {
+    "NAME": "Treasure",
+    "DESCRIPTION": "Gain !M! Gold. NL Exhaust."
+  },
+
+  "conspire:Blindness": {
+    "NAME": "Blindness",
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, you become unable to see enemy intents for this combat."
+  },
+  "conspire:NecroticWound": {
+    "NAME": "Necrotic Wound",
+    "DESCRIPTION": "Unplayable. NL When this card is drawn, shuffle a Wound into your draw pile."
+  },
+
+  "conspire:SausageOptionStrength": {
+    "NAME": "Spicy Sausage",
+    "DESCRIPTION": "Start each combat with !M! Strength."
+  },
+  "conspire:SausageOptionDexterity": {
+    "NAME": "Seasoned Sausage",
+    "DESCRIPTION": "Start each combat with !M! Dexterity."
+  },
+  "conspire:SausageOptionFocus": {
+    "NAME": "Smokey Sausage",
+    "DESCRIPTION": "Start each combat with !M! Focus."
+  }
+}
