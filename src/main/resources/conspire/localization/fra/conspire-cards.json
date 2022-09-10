@@ -1,100 +1,100 @@
 {
   "conspire:Charge": {
     "NAME": "Charge",
-    "DESCRIPTION": "Deal !D! damage. NL Deals an additional !M! damage for each turn of combat."
+    "DESCRIPTION": "Infligez !D! dégâts. NL Inflige !M! dégâts supplémentaires pour chaque tour du combat."
   },
   "conspire:ExplosiveBarrier": {
-    "NAME": "Explosive Barrier",
-    "DESCRIPTION": "Gain !B! Block. NL If your Block is broken this turn, deal !M! damage to the attacker."
+    "NAME": "Barrière explosive",
+    "DESCRIPTION": "Gagnez !B! d'Armure. NL Si votre Armure est brisée, infligez !M! dégâts à l'attaquant."
   },
   "conspire:HitWhereItHurts": {
-    "NAME": "Hit Where it Hurts",
-    "DESCRIPTION": "Deal !D! damage. NL Damage is multiplied by 125% for each Vulnerable.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Damage is multiplied by 150% for each Vulnerable."
+    "NAME": "Frapper là où ça fait mal",
+    "DESCRIPTION": "Infligez !D! dégâts. NL Les dégâts sont multipliés par 125% pour chaque Vulnérabilité.",
+    "UPGRADE_DESCRIPTION": "Infligez !D! dégâts. NL Les dégâts sont multipliés par 150% pour chaque Vulnérabilité."
   },
   "conspire:Purge": {
     "NAME": "Purge",
-    "DESCRIPTION": "Lose 5 HP. NL Exhaust a card in your hand and permanently remove it from your deck. NL Exhaust.",
+    "DESCRIPTION": "Perdez 5 PV. NL Épuisez une carte dans votre main et retirez-la de façon permanente de votre deck. NL Épuisement.",
     "EXTENDED_DESCRIPTION": [
-      "Exhaust and remove from your deck"
+      "Épuisez et retirez de votre deck"
     ]
   },
 
   "conspire:DoublingDagger": {
-    "NAME": "Doubling Dagger",
-    "DESCRIPTION": "Add !M! Shiv to your hand. NL Every time this card is played, increase its shiv count by 1 for this combat.",
-    "UPGRADE_DESCRIPTION": "Add !M! Shivs to your hand. NL Every time this card is played, increase its shiv count by 1 for this combat."
+    "NAME": "Double dague",
+    "DESCRIPTION": "Ajoutez !M! Surin(s) dans votre main. NL Chaque fois que cette carte est jouée, augmentez le compte de Surin de 1 pour ce combat.",
+    "UPGRADE_DESCRIPTION": "Ajoutez !M! Surins dans votre main. NL Chaque fois que cette carte est jouée, augmentez le compte de Surin de 1 pour ce combat."
   },
   "conspire:PoisonWeapons": {
-    "NAME": "Poison Weapons",
-    "DESCRIPTION": "All unblocked attack damage is converted to Poison this turn. NL Exhaust."
+    "NAME": "Armes empoisonnées",
+    "DESCRIPTION": "Tous les dégâts d'Attaques non-bloqués seront convertis en Poison ce tour. NL Épuisement."
   },
 
   "conspire:Rain": {
-    "NAME": "Rain",
-    "DESCRIPTION": "Channel 1 Water. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Channel 1 Water."
+    "NAME": "Pluie",
+    "DESCRIPTION": "Canalisez 1 orbe Aquatique. NL Épuisement.",
+    "UPGRADE_DESCRIPTION": "Canalisez 1 orbe Aquatique."
   },
   "conspire:SharedLibrary": {
-    "NAME": "Shared Library",
-    "DESCRIPTION": "Gain all powers an enemy has.",
+    "NAME": "Librairie commune",
+    "DESCRIPTION": "Gagnez tous les pouvoirs qu'un ennemi possède.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Only applies to powers that you can have)",
-      " NL (Gain no powers)",
-      " NL (Gain ",")"
+      " NL (Applique uniquement les pouvoirs que vous pouvez avoir)",
+      " NL (Gagnez aucun pouvoir)",
+      " NL (Gagnez ",")"
     ]
   },
 
   "conspire:Banana": {
-    "NAME": "Banana",
-    "DESCRIPTION": "Gain !M! permanent Max HP. NL Exhaust."
+    "NAME": "Banane",
+    "DESCRIPTION": "Gagnez !M! PV Max permanents. NL Épuisement."
   },
   "conspire:GhostlyDefend": {
-    "NAME": "Defend",
-    "DESCRIPTION": "Ethereal. NL Gain !B! Block."
+    "NAME": "Défense",
+    "DESCRIPTION": "Éthérée. NL Gagnez !B! d'Armure."
   },
   "conspire:GhostlyStrike": {
-    "NAME": "Strike",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage."
+    "NAME": "Frappe",
+    "DESCRIPTION": "Éthérée. NL Infligez !D! dégâts."
   },
   "conspire:SpireCoStock": {
-    "NAME": "SpireCo Stock",
-    "DESCRIPTION": "Gain !M! Gold. NL Exhaust. NL Value may change over time.",
-    "EXTENDED_DESCRIPTION": ["Lose !M! Gold. NL Exhaust. NL Value may change over time."]
+    "NAME": "Action de SpireCo",
+    "DESCRIPTION": "Gagnez !M! d'Or. NL Épuisement. NL La valeur peut changer au fil du temps.",
+    "EXTENDED_DESCRIPTION": ["Perdez !M! d'Or. NL Épuisement. NL La valeur peut changer au fil du temps."]
   },
 
   "conspire:InfernalBerry": {
-    "NAME": "Infernal Berry",
-    "DESCRIPTION": "Remove 1 Holy. NL Exhaust."
+    "NAME": "Baie infernale",
+    "DESCRIPTION": "Retirez 1 Saint. NL Épuisement."
   },
   "conspire:PyramidRune": {
-    "NAME": "Pyramid Rune",
-    "DESCRIPTION": "Retain. NL Exhaust."
+    "NAME": "Rune pyramidique",
+    "DESCRIPTION": "Retenue. NL Épuisement."
   },
   "conspire:Treasure": {
-    "NAME": "Treasure",
-    "DESCRIPTION": "Gain !M! Gold. NL Exhaust."
+    "NAME": "Trésor",
+    "DESCRIPTION": "Gagnez !M! d'Or. NL Épuisement."
   },
 
   "conspire:Blindness": {
-    "NAME": "Blindness",
-    "DESCRIPTION": "Unplayable. NL At the end of your turn, you become unable to see enemy intents for this combat."
+    "NAME": "Aveuglé",
+    "DESCRIPTION": "Injouable. NL À la fin de votre tour, vous ne pouvez plus voir les intentions de l'ennemi pour ce combat."
   },
   "conspire:NecroticWound": {
-    "NAME": "Necrotic Wound",
-    "DESCRIPTION": "Unplayable. NL When this card is drawn, shuffle a Wound into your draw pile."
+    "NAME": "Blessure nécrotique",
+    "DESCRIPTION": "Injoouable. NL Lorsque cette carte est piochée, mélangez une Blessure dans votre pioche."
   },
 
   "conspire:SausageOptionStrength": {
-    "NAME": "Spicy Sausage",
-    "DESCRIPTION": "Start each combat with !M! Strength."
+    "NAME": "Saucisse épicée",
+    "DESCRIPTION": "Commencez chaque combat avec !M! de Force."
   },
   "conspire:SausageOptionDexterity": {
-    "NAME": "Seasoned Sausage",
-    "DESCRIPTION": "Start each combat with !M! Dexterity."
+    "NAME": "Saucisse assaisonnée",
+    "DESCRIPTION": "Commencez chaque combat avec !M! Dextérité."
   },
   "conspire:SausageOptionFocus": {
-    "NAME": "Smokey Sausage",
-    "DESCRIPTION": "Start each combat with !M! Focus."
+    "NAME": "Saucisse fumée",
+    "DESCRIPTION": "Commencez chaque combat avec !M! de Concentration."
   }
 }

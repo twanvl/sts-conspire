@@ -52,7 +52,7 @@
     ]
   },
   "conspire:ReflectBlock": {
-    "NAME": "Reflect Defense",
+    "NAME": "Refléchit la Défense",
     "DESCRIPTIONS": [
       "Lorsque vous gagnez de #yl'Armure, gagnera #b","% de l'Armure lors de son tour."," (Gagnera #b"," #yd'Armure)",
       "Réflexion de "," d'Armure"
