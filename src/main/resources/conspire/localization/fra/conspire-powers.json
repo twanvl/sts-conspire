@@ -1,0 +1,110 @@
+{
+  "conspire:CubeRune": {
+    "NAME": "Rune cubique",
+    "DESCRIPTIONS": [
+      "Lorsque vous piochez une carte, prenez #b"," dégâts. Les dégâts au début de votre tour peut être empêché avec #yl'Armure du tour précédent.",
+      "À la fin de votre tour prenez #b"," dégâts pour chaque carte piochée.", " (Actuellement prenez #b"," dégâts)"
+    ]
+  },
+  "conspire:DomeRune": {
+    "NAME": "Rune à forme de dôme",
+    "DESCRIPTIONS": [
+      "Vous ne pouvez plus voir les intentions des ennemis."
+    ]
+  },
+  "conspire:Blindness": {
+    "NAME": "Aveuglé",
+    "DESCRIPTIONS": [
+      "Vous ne pouvez plus voir les intentions des ennemis."
+    ]
+  },
+  "conspire:DodecahedronRune": {
+    "NAME": "Rune Dodécahédrique",
+    "DESCRIPTIONS": [
+      "Après que vous ayez dépensé #b"," d'Énergie, se soigne de #b"," #yPV et gagne #b"," de #yForce."
+    ]
+  },
+  "conspire:Ghostly": {
+    "NAME": "Fantômatique",
+    "DESCRIPTIONS": [
+      "Réduit les premiers dégâts pris à #b1 chaque tour."
+    ]
+  },
+  "conspire:TemporaryConfusion": {
+    "NAME": "Confusion Temporaire",
+    "DESCRIPTIONS": [
+      "Pendant #b"," tours, lorsque vous piochez une carte, randomisez son coût."
+    ]
+  },
+  "conspire:Capricious": {
+    "NAME": "Capricieux",
+    "DESCRIPTIONS": [
+      "Change son intention chaque fois que vous jouez une carte."
+    ]
+  },
+  "conspire:ReflectAttack": {
+    "NAME": "Refléchit les Attaque",
+    "DESCRIPTIONS": [
+      "Lorsqu'il prend des dégâts non-bloqués, renvoie #b","% des dégâts lors de son tour.",
+      " (Infligera #b"," dégâts)",
+      " (Infligera #b"," dégâts, en assumant qu'il prenne #g"," dégâts du Poison)",
+      "Réflexion de "," dégâts"
+    ]
+  },
+  "conspire:ReflectBlock": {
+    "NAME": "Refléchit la Défense",
+    "DESCRIPTIONS": [
+      "Lorsque vous gagnez de #yl'Armure, gagnera #b","% de l'Armure lors de son tour."," (Gagnera #b"," #yd'Armure)",
+      "Réflexion de "," d'Armure"
+    ]
+  },
+  "conspire:Holy": {
+    "NAME": "Saint",
+    "DESCRIPTIONS": ["Empêche tous les dégâts et les pertes de PV."]
+  },
+  "conspire:DrawnBlood": {
+    "NAME": "Sang versé",
+    "DESCRIPTIONS": ["À sa mort, vous soigne de #b"," #yPV"]
+  },
+  "conspire:PoisonWeapons": {
+    "NAME": "Armes empoisonnées",
+    "DESCRIPTIONS": [
+      "Tous les dégâts d'Attaques non-bloqués seront convertis en Poison pendant #b"," tour."," tours."
+    ]
+  },
+  "conspire:Shedding": {
+    "NAME": "Délestage",
+    "DESCRIPTIONS": ["Lorsqu'il prend des dégâts #yd'Attaque, fait appraître un sbire. (Une fois par tour)"]
+  },
+  "conspire:EchoDraught": {
+    "NAME": "Breuvage échoïque",
+    "DESCRIPTIONS": [
+      "Sur ce tour, jouez votre prochaine carte deux fois.",
+      "Sur ce tour, jouez vos "," prochaines cartes deux fois."
+    ]
+  },
+  "conspire:ExplosiveBarrier": {
+    "NAME": "Barrière explosive",
+    "DESCRIPTIONS": [
+      "Lorsque votre #yArmure est brisée, inflige #b"," dégâts à l'attaquant."
+    ]
+  },
+  "conspire:RegainStrength": {
+    "NAME": "Regain de Force",
+    "DESCRIPTIONS": [
+      "À la fin de votre tour, gagnez #b"," de #yForce."
+    ]
+  },
+  "conspire:RegainDexterity": {
+    "NAME": "Regain de Dextérité",
+    "DESCRIPTIONS": [
+      "À la fin de votre tour, gagnez #b"," de #yDextérité."
+    ]
+  },
+  "conspire:HoldsTreasure": {
+    "NAME": "Détient un Trésor",
+    "DESCRIPTIONS": [
+      "Lorsque ceci prend des dégâts #yd'Attaque, ajoutez un Trésor dans votre défausse."
+    ]
+  }
+}

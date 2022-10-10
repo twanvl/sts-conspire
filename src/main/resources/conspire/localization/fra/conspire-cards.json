@@ -1,0 +1,100 @@
+{
+  "conspire:Charge": {
+    "NAME": "Charge",
+    "DESCRIPTION": "Infligez !D! dégâts. NL Inflige !M! dégâts supplémentaires pour chaque tour du combat."
+  },
+  "conspire:ExplosiveBarrier": {
+    "NAME": "Barrière explosive",
+    "DESCRIPTION": "Gagnez !B! d'Armure. NL Si votre Armure est brisée, infligez !M! dégâts à l'attaquant."
+  },
+  "conspire:HitWhereItHurts": {
+    "NAME": "Frapper là où ça fait mal",
+    "DESCRIPTION": "Infligez !D! dégâts. NL Les dégâts sont multipliés par 125% pour chaque Vulnérabilité.",
+    "UPGRADE_DESCRIPTION": "Infligez !D! dégâts. NL Les dégâts sont multipliés par 150% pour chaque Vulnérabilité."
+  },
+  "conspire:Purge": {
+    "NAME": "Purge",
+    "DESCRIPTION": "Perdez 5 PV. NL Épuisez une carte dans votre main et retirez-la de façon permanente de votre deck. NL Épuisement.",
+    "EXTENDED_DESCRIPTION": [
+      "Épuisez et retirez de votre deck"
+    ]
+  },
+
+  "conspire:DoublingDagger": {
+    "NAME": "Double dague",
+    "DESCRIPTION": "Ajoutez !M! Surin(s) dans votre main. NL Chaque fois que cette carte est jouée, augmentez le compte de Surin de 1 pour ce combat.",
+    "UPGRADE_DESCRIPTION": "Ajoutez !M! Surins dans votre main. NL Chaque fois que cette carte est jouée, augmentez le compte de Surin de 1 pour ce combat."
+  },
+  "conspire:PoisonWeapons": {
+    "NAME": "Armes empoisonnées",
+    "DESCRIPTION": "Tous les dégâts d'Attaques non-bloqués seront convertis en Poison ce tour. NL Épuisement."
+  },
+
+  "conspire:Rain": {
+    "NAME": "Pluie",
+    "DESCRIPTION": "Canalisez 1 orbe Aquatique. NL Épuisement.",
+    "UPGRADE_DESCRIPTION": "Canalisez 1 orbe Aquatique."
+  },
+  "conspire:SharedLibrary": {
+    "NAME": "Librairie commune",
+    "DESCRIPTION": "Gagnez tous les pouvoirs qu'un ennemi possède.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Applique uniquement les pouvoirs que vous pouvez avoir)",
+      " NL (Gagnez aucun pouvoir)",
+      " NL (Gagnez ",")"
+    ]
+  },
+
+  "conspire:Banana": {
+    "NAME": "Banane",
+    "DESCRIPTION": "Gagnez !M! PV Max permanents. NL Épuisement."
+  },
+  "conspire:GhostlyDefend": {
+    "NAME": "Défense",
+    "DESCRIPTION": "Éthérée. NL Gagnez !B! d'Armure."
+  },
+  "conspire:GhostlyStrike": {
+    "NAME": "Frappe",
+    "DESCRIPTION": "Éthérée. NL Infligez !D! dégâts."
+  },
+  "conspire:SpireCoStock": {
+    "NAME": "Action de SpireCo",
+    "DESCRIPTION": "Gagnez !M! d'Or. NL Épuisement. NL La valeur peut changer au fil du temps.",
+    "EXTENDED_DESCRIPTION": ["Perdez !M! d'Or. NL Épuisement. NL La valeur peut changer au fil du temps."]
+  },
+
+  "conspire:InfernalBerry": {
+    "NAME": "Baie infernale",
+    "DESCRIPTION": "Retirez 1 Saint. NL Épuisement."
+  },
+  "conspire:PyramidRune": {
+    "NAME": "Rune pyramidique",
+    "DESCRIPTION": "Retenue. NL Épuisement."
+  },
+  "conspire:Treasure": {
+    "NAME": "Trésor",
+    "DESCRIPTION": "Gagnez !M! d'Or. NL Épuisement."
+  },
+
+  "conspire:Blindness": {
+    "NAME": "Aveuglé",
+    "DESCRIPTION": "Injouable. NL À la fin de votre tour, vous ne pouvez plus voir les intentions de l'ennemi pour ce combat."
+  },
+  "conspire:NecroticWound": {
+    "NAME": "Blessure nécrotique",
+    "DESCRIPTION": "Injoouable. NL Lorsque cette carte est piochée, mélangez une Blessure dans votre pioche."
+  },
+
+  "conspire:SausageOptionStrength": {
+    "NAME": "Saucisse épicée",
+    "DESCRIPTION": "Commencez chaque combat avec !M! de Force."
+  },
+  "conspire:SausageOptionDexterity": {
+    "NAME": "Saucisse assaisonnée",
+    "DESCRIPTION": "Commencez chaque combat avec !M! Dextérité."
+  },
+  "conspire:SausageOptionFocus": {
+    "NAME": "Saucisse fumée",
+    "DESCRIPTION": "Commencez chaque combat avec !M! de Concentration."
+  }
+}
